@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Training.Trail">
+
+
+<com.github.siyamed.shapeimageview.CircularImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/padTraining"
+    android:minWidth="120dp"
+    app:siBorderWidth="6dp"
+    app:siBorderColor="#1e88e5"
+    android:src="@drawable/blue"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true" />
+
+<ProgressBar
+    android:id="@+id/trainingProgressBar"
+    style="?android:attr/progressBarStyleHorizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:indeterminate="false"
+    android:layout_above="@+id/padTraining"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentEnd="true" />
+
+<TextView
+    android:id="@+id/trainingMorseChar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:textSize="25sp"
+    android:textStyle="bold"
+    android:layout_above="@+id/tickOneTraining"
+    android:layout_toEndOf="@+id/tickOneTraining"
+    android:layout_marginBottom="44dp" />
+
+<TextView
+    android:id="@+id/trainingTextChar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="40sp"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:layout_below="@+id/trainingTextObjective"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="46dp" />
+
+<TextView
+    android:id="@+id/trainingTextObjective"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true" />
+
+<com.gc.materialdesign.views.ButtonFlat
+    android:id="@+id/trainingButtonPrev"
+    style="?android:attr/buttonStyleSmall"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="false"
+    android:background="#1E88E5"
+    android:onClick="onPreviousClicked"
+    android:text="@string/training_trail_previous"
+    android:width="100dp"
+    android:layout_above="@+id/trainingProgressBar"
+    android:layout_toStartOf="@+id/tickTwoTraining" />
+
+<com.gc.materialdesign.views.ButtonFlat
+    android:id="@+id/trainingButtonNext"
+    style="?android:attr/buttonStyleSmall"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:onClick="onNextClicked"
+    android:text="@string/training_trail_next"
+    android:width="100dp"
+    android:background="#1E88E5"
+    android:layout_above="@+id/trainingProgressBar"
+    android:layout_toEndOf="@+id/tickTwoTraining" />
+
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/tickOneTraining"
+    android:src="@drawable/blank_tick"
+    android:contentDescription="@string/description"
+    android:layout_above="@+id/trainingButtonPrev"
+    android:layout_alignStart="@+id/trainingButtonPrev" />
+
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/tickTwoTraining"
+    android:src="@drawable/blank_tick"
+    android:contentDescription="@string/description"
+    android:layout_above="@+id/trainingButtonPrev"
+    android:layout_centerHorizontal="true" />
+
+ <ImageView
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:id="@+id/tickThreeTraining"
+     android:src="@drawable/blank_tick"
+     android:contentDescription="@string/description"
+     android:layout_above="@+id/trainingButtonNext"
+     android:layout_alignEnd="@+id/trainingButtonNext" />
+
+
+</RelativeLayout>
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="app_name">莫尔斯电码导师</string>
+    <string name="training">训练</string>
+    <string name="tools">工具</string>
+    <string name="options">选项</string>
+    <string name="englishToMorse">英语莫尔斯</string>
+    <string name="MorseToEnglish">莫尔斯英语</string>
+    <string name="translate">翻译</string>
+    <string name="translateText">请输入您想翻译的文本</string>
+    <string name="sos">SOS</string>
+    <string name="morseCode">莫尔斯电码导师</string>
+    <string name="reset">重置</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>

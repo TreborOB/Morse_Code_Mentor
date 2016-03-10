@@ -1,0 +1,52 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="switch_voice"
+        android:summary="@string/pref_title_voice"
+        android:title="@string/pref_description_voice" />
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="switch_dialogs"
+        android:summary="@string/pref_title_dialogs"
+        android:title="@string/pref_description_Dialogs" />
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="switch_progress_bar"
+        android:summary="@string/pref_title_progress_bar"
+        android:title="@string/pref_description_ProgressBar" />
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:switchMinWidth="56dp"
+        android:key="switch_sos_speed"
+        android:summary="@string/pref_title_set_sos_speed"
+        android:title="@string/pref_description_sos_speed"
+        android:summaryOn="@string/pref_sos_fast"
+        android:summaryOff="@string/pref_sos_slow"
+        android:switchTextOn="@string/pref_sos_fast"
+        android:switchTextOff="@string/pref_sos_slow" />
+
+    <ListPreference
+        android:title="@string/morse_code_level"
+        android:summary="Select the level of Morse code"
+        android:key="morse_speed"
+        android:defaultValue="Standard"
+        android:entries="@array/listArray"
+        android:entryValues="@array/listValues" />
+
+
+    <ListPreference
+        android:title="@string/language_selection"
+        android:summary="Select a language"
+        android:key="language"
+        android:defaultValue="English"
+        android:entries="@array/languages"
+        android:entryValues="@array/listLanguages" />
+
+
+
+</PreferenceScreen>

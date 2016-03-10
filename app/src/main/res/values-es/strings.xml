@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Código Morse Mentor</string>
+    <string name="training">Formación</string>
+    <string name="tools">Instrumentos</string>
+    <string name="options">Opciones</string>
+    <string name="englishToMorse">Inglés a Morse</string>
+    <string name="MorseToEnglish">Morse a Inglés</string>
+    <string name="translate">Traducir</string>
+    <string name="translateText">Por favor, introduzca el texto que le gustaría traducida</string>
+    <string name="sos">SOS</string>
+    <string name="morseCode">Código Morse Mentor</string>
+    <string name="reset">restablecer</string>
+
+
+
+
+
+
+
+
+
+
+</resources>

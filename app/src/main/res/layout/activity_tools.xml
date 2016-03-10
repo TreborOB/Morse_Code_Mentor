@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".Tools.Tools">
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/englishToMorse"
+        android:id="@+id/english_to_morse_button"
+        android:onClick="englishMorse"
+        android:textColor="#FFFFFF"
+        android:layout_above="@+id/morsePad"
+        android:layout_centerHorizontal="true" />
+
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/morse_pad"
+        android:id="@+id/morsePad"
+        android:onClick="morsePad"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="71dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/english_to_morse_button"
+        android:layout_alignEnd="@+id/english_to_morse_button" />
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/MorseToEnglish"
+        android:id="@+id/button8"
+        android:onClick="convertMorse"
+        android:layout_above="@+id/english_to_morse_button"
+        android:layout_alignStart="@+id/english_to_morse_button"
+        android:layout_alignEnd="@+id/english_to_morse_button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/tools_morse_tools"
+        android:id="@+id/morseTools"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="66dp" />
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tools_open_screen_flash"
+        android:onClick="openScreenFlash"
+        android:id="@+id/button11"
+        android:layout_above="@+id/button8"
+        android:layout_alignStart="@+id/button8"
+        android:layout_alignEnd="@+id/button8" />
+
+</RelativeLayout>
