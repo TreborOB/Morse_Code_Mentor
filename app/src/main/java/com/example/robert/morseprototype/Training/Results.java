@@ -21,12 +21,12 @@ public class Results extends BaseActivity {
 
         Bundle extras = getIntent().getExtras();
         String[] scoresArray = extras.getStringArray("scores");
+        String[] questionArray = extras.getStringArray("question");
         String testLetters   = extras.getString("testLetters");
 
 
 
-        
-        ResultsAdapter adapter = new ResultsAdapter(this, scoresArray, testLetters);
+        ResultsAdapter adapter = new ResultsAdapter(this, scoresArray, testLetters, questionArray);
         listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(adapter);
 

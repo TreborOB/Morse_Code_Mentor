@@ -9,12 +9,14 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.robert.morseprototype.Hardware.Sound;
+import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.example.robert.morseprototype.Misc.Logger;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
 import com.example.robert.morseprototype.SwipeDialogs.MorseSymbols;
 import java.util.ArrayList;
 
+import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 
 
 public class Training extends AppCompatActivity {
@@ -28,6 +30,7 @@ public class Training extends AppCompatActivity {
 
     private TrainingAdapter adapter;
 
+    private ShowcaseConfig config = new ShowcaseConfig();
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +98,7 @@ public class Training extends AppCompatActivity {
         });
 
     }
+
 
 
 

@@ -51,6 +51,7 @@ public class Test extends BaseActivity implements MorseInput.OnOnEndOfInput {
 
 
     private String scores[];
+    private String question[];
 
     private ShowcaseConfig config = new ShowcaseConfig();
 
@@ -111,6 +112,8 @@ public class Test extends BaseActivity implements MorseInput.OnOnEndOfInput {
         noOfQuestions = mSteps.size()-1;
 
         scores = new String [mSteps.size()];
+
+        question = new String [mSteps.size()];
     }
 
 
@@ -126,6 +129,7 @@ public class Test extends BaseActivity implements MorseInput.OnOnEndOfInput {
 
             Bundle extras = new Bundle();
             extras.putStringArray("scores", scores);
+            extras.putStringArray("question", question);
             extras.putString("testLetters", data);
             intent.putExtras(extras);
 
@@ -190,6 +194,7 @@ public class Test extends BaseActivity implements MorseInput.OnOnEndOfInput {
         if (inputSentence.equals(answer)) {
 
             scores[mCurrentStep] = "Correct";
+            question[mCurrentStep] = mSteps.get(mCurrentStep).getAnswer();
 
             displayToast("Correct!");
 

@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.gc.materialdesign.views.ButtonFlat;
 import com.gc.materialdesign.views.Switch;
@@ -47,6 +49,7 @@ public class EnglishToMorse extends BaseActivity {
         setContentView(R.layout.activity_english_to_morse);
         ButterKnife.bind(this);
 
+
         mDetector = new GestureDetectorCompat(this, new mainMorseGestureDetector());
 
         morseTranslations = new MorseTranslations();
@@ -80,8 +83,7 @@ public class EnglishToMorse extends BaseActivity {
         String str = textViewSource.getText().toString().trim();
 
         if (str.isEmpty()) {
-            SuperToast.create(this, "You must enter some text", SuperToast.Duration.VERY_SHORT,
-             Style.getStyle(Style.BLUE, SuperToast.Animations.FLYIN)).show();
+            YoYo.with(Techniques.Shake).duration(700).playOn(findViewById(R.id.editText));
         } else {
             String translatedText = morseTranslations.translatedText(str);
             textViewResult.setText(translatedText);

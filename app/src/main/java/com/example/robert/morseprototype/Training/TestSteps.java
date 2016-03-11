@@ -13,7 +13,7 @@ public class TestSteps {
 
         aToFSteps.add(new MorseTutorial("This test will consist of the letters A to F. There will be 10 questions in total. The pass rate is 80%", "", false, true, false, "Start", false, false, false));
         aToFSteps.add(new MorseTutorial("A", "A", true, false, false, "Start", false, false, false));
-        //aToFSteps.add(new MorseTutorial("B", "B", true, false, false, null, false, false, false));
+        aToFSteps.add(new MorseTutorial("B", "B", true, false, false, null, false, false, false));
         //aToFSteps.add(new MorseTutorial("C", "C", true, false, false, null, false, false, false));
         //aToFSteps.add(new MorseTutorial("D", "D", true, false, false, null, false, false, false));
         //aToFSteps.add(new MorseTutorial("E", "E", true, false, false, null, false, false, false));

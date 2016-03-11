@@ -20,6 +20,7 @@ import com.example.robert.morseprototype.Training.Training;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+
 import uk.co.deanwild.materialshowcaseview.MaterialShowcaseSequence;
 import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 
@@ -27,6 +28,7 @@ import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 public class MainActivity extends BaseActivity {
     private GestureDetectorCompat mDetector;
     private Sound playSound = new Sound();
+
 
 
     @Bind(R.id.swipeTop) TextView    topSwipe;
@@ -144,15 +146,15 @@ public class MainActivity extends BaseActivity {
 
 
         sequence.start();
+
+
     }
 
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-
             case R.id.action_favorite:
-
                 showCaseMainActivity();
         }
         return true;

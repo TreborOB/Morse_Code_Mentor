@@ -15,15 +15,17 @@ public class ResultsAdapter extends ArrayAdapter <String> {
 
 
     private String results [];
+    private String question [];
     private String testLetters;
     private SnappyDB snappy;
 
 
 
-    public ResultsAdapter(Activity context, String [] array, String testLetters) {
+    public ResultsAdapter(Activity context, String [] array, String testLetters, String [] question) {
         super(context, R.layout.activity_results_item, array);
         mInflater = LayoutInflater.from(context);
         this.results = array;
+        this.question = question;
         this.testLetters = testLetters;
 
 
@@ -74,7 +76,7 @@ public class ResultsAdapter extends ArrayAdapter <String> {
             TextView answer         = (TextView) view.findViewById(R.id.answer);
 
 
-            questionNumber.setText("Question Number " + position);
+            questionNumber.setText("Question Number " + position + ": " + question[position]);
             answer.setText(textToDisplay);
         }
 

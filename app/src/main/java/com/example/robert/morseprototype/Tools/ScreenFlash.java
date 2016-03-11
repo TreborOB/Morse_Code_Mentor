@@ -8,6 +8,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.example.robert.morseprototype.Hardware.Output;
 import com.example.robert.morseprototype.Misc.MorseTranslations;
@@ -36,7 +39,6 @@ public class ScreenFlash extends BaseActivity {
     private ShowcaseConfig config = new ShowcaseConfig();
 
 
-    String SHOWCASE_ID;
 
     private Output mOutput;
 
@@ -98,8 +100,7 @@ public class ScreenFlash extends BaseActivity {
        String str = textToFlash.getText().toString().trim();
 
        if(str.isEmpty()) {
-           SuperToast.create(this, "You must enter some text", SuperToast.Duration.VERY_SHORT,
-           Style.getStyle(Style.BLUE, SuperToast.Animations.FLYIN)).show();
+           YoYo.with(Techniques.Shake).duration(700).playOn(findViewById(R.id.editText4));
        }
        else{
            final String st = morseTranslations.translatedText(str);
