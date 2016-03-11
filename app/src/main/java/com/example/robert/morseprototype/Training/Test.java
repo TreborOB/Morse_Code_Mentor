@@ -5,13 +5,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.CountDownTimer;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.example.robert.morseprototype.Hardware.Sound;
-import com.example.robert.morseprototype.Misc.Logger;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
 import com.gc.materialdesign.views.ButtonFlat;
@@ -23,7 +22,8 @@ import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-
+import uk.co.deanwild.materialshowcaseview.MaterialShowcaseSequence;
+import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 
 
 @SuppressWarnings("ResourceType")
@@ -52,6 +52,10 @@ public class Test extends BaseActivity implements MorseInput.OnOnEndOfInput {
 
     private String scores[];
 
+    private ShowcaseConfig config = new ShowcaseConfig();
+
+
+
 
 
     @Override
@@ -63,7 +67,6 @@ public class Test extends BaseActivity implements MorseInput.OnOnEndOfInput {
 
 
         progressBarInvisible();
-
 
         data = getIntent().getExtras().getString("keyName");
 
@@ -231,7 +234,7 @@ public class Test extends BaseActivity implements MorseInput.OnOnEndOfInput {
 
     private void countDown() {
 
-        countDownTimer = new CountDownTimer(9000, 1000) {
+        countDownTimer = new CountDownTimer(Options.TIMER, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 timer.setText("seconds remaining: " + millisUntilFinished / 1000);
@@ -330,6 +333,44 @@ public class Test extends BaseActivity implements MorseInput.OnOnEndOfInput {
         countDownTimer.cancel();
     }
 
+
+
+    private void showCaseMainActivity(){
+
+
+        config.setDelay(300);
+
+        MaterialShowcaseSequence sequence = new MaterialShowcaseSequence(this);
+
+        sequence.setConfig(config);
+
+        sequence.addSequenceItem(testObjective,
+                "The objective will for each question will be displayed in the center of the screen. In order to correctly" +
+                "answer the question you must key in the Morse code for the objective", "GOT IT");
+
+        sequence.addSequenceItem(timer,
+                "You must answer the question before the timer counts down!", "GOT IT");
+
+
+        sequence.addSequenceItem(questionNumber,
+                "The current question number and total number of questions will be displayed here", "GOT IT");
+
+
+        sequence.start();
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.action_favorite:
+
+                showCaseMainActivity();
+        }
+        return true;
+
+    }
 
 
 }

@@ -29,6 +29,8 @@ public class Options extends AppCompatPreferenceActivity {
     public static int INTER_DOT_LENGTH       = 100;
     public static int INTER_CHARACTER_LENGTH = 200;
 
+    public static int TIMER                  = 10000;
+
 
 
     @Override
@@ -69,10 +71,13 @@ public class Options extends AppCompatPreferenceActivity {
 
         switch (typeSpeed) {
             case "Standard":
+                TIMER = 9000;
                 return new InputSpeeds(700, 200, 600, 1400, 800, 20, 10);
             case "Expert":
+                TIMER = 7000;
                 return new InputSpeeds(350, 100, 300, 700, 450, 10, 20);
             default: //"Beginner"
+                TIMER = 12000;
                 return new InputSpeeds(1050, 300, 900, 2100, 1250, 30, 8);
         }
 
@@ -93,6 +98,10 @@ public class Options extends AppCompatPreferenceActivity {
             listPreferenceSpeed = (ListPreference) findPreference("morse_speed");
             listPreferenceLanguage = (ListPreference) findPreference("language");
 
+
+
+            listPreferenceSpeed.setSummary(listPreferenceSpeed.getEntry());
+            listPreferenceLanguage.setSummary(listPreferenceLanguage.getEntry());
 
             if (listPreferenceSpeed.getValue() == null) {
                 // to ensure we don't get a null value
@@ -161,6 +170,7 @@ public class Options extends AppCompatPreferenceActivity {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         return sharedPreferences.getString(MORSE_LANGUAGE, MORSE_LANGUAGE);
     }
+
 
 
 

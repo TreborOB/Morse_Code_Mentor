@@ -3,14 +3,12 @@ package com.example.robert.morseprototype.Tools;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.example.robert.morseprototype.Misc.MorseTranslations;
 import com.example.robert.morseprototype.R;
 
-import org.w3c.dom.Text;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
