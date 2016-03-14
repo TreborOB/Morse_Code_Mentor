@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import com.example.robert.morseprototype.Database.SnappyDB;
-import com.example.robert.morseprototype.Misc.Logger;
 import com.example.robert.morseprototype.R;
 import com.google.common.base.Strings;
 
@@ -72,8 +71,6 @@ public class ResultsAdapter extends ArrayAdapter <String> {
 
 
             String textToDisplay = getItem(position);
-
-            if(Strings.isNullOrEmpty(textToDisplay)){}
 
             TextView questionNumber = (TextView) view.findViewById(R.id.questionNumber);
             TextView answer         = (TextView) view.findViewById(R.id.answer);

@@ -54,7 +54,7 @@
     android:layout_centerHorizontal="true"
     android:layout_marginTop="46dp" />
 
-s<com.uncopt.android.widget.text.justify.JustifiedTextView
+<com.uncopt.android.widget.text.justify.JustifiedTextView
     android:id="@+id/trainingTextObjective"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"

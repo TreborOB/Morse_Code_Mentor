@@ -53,11 +53,12 @@ public class SnappyDB {
     }
 
 
+    @SuppressWarnings("unchecked")
     public static HashMap<String, Boolean> getSnappy(){
         try {
 
             if(snappyExist()){
-            map = snappyDB.getObject("testProgress", HashMap.class);}
+                map = snappyDB.getObject("testProgress", HashMap.class);}
         }catch(SnappydbException e){
             Logger.log("Get snappy exception");
         }
@@ -92,9 +93,7 @@ public class SnappyDB {
 
     public int snappyDBCount(){
 
-        int elementsInDB = map.size();
-
-        return elementsInDB;
+        return map.size();
     }
 
 

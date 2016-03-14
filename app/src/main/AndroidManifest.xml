@@ -39,7 +39,9 @@
         <activity android:name=".Tools.MorseToEnglish" />
         <activity android:name=".Training.Results" />
         <activity android:name=".Tools.ScreenFlash" />
-        <activity android:name=".Training.FinishedTrailSection"></activity>
+        <activity android:name=".Training.FinishedTrailSection"/>
+
+
     </application>
 
 </manifest>

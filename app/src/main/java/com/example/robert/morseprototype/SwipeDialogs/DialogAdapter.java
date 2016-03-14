@@ -2,17 +2,18 @@ package com.example.robert.morseprototype.SwipeDialogs;
 
 
 import android.app.Activity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.ArrayAdapter;
+        import android.widget.TextView;
 
-import com.example.robert.morseprototype.R;
+        import com.example.robert.morseprototype.R;
 
-import java.util.List;
+        import java.util.List;
 
 
+@SuppressWarnings("unchecked")
 class DialogAdapter extends ArrayAdapter<MorseSymbols> {
     private final LayoutInflater mInflater;
 

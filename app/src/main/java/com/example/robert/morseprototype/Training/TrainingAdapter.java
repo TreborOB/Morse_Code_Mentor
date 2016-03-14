@@ -36,6 +36,7 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
 
 
 
+    @SuppressWarnings("unchecked")
     public TrainingAdapter(Activity context, List list) {
         super(context, R.layout.training_list_item, list);
         mInflater = LayoutInflater.from(context);
