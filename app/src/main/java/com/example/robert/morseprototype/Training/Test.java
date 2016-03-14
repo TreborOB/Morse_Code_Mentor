@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.example.robert.morseprototype.Hardware.Sound;
+import com.example.robert.morseprototype.Misc.Logger;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
 import com.gc.materialdesign.views.ButtonFlat;
@@ -27,7 +28,7 @@ import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 
 
 @SuppressWarnings("ResourceType")
-public class Test extends BaseActivity implements MorseInput.OnOnEndOfInput {
+public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
 
     private MorseInput morseInput;
     private Sound playSound = new Sound();
@@ -126,6 +127,7 @@ public class Test extends BaseActivity implements MorseInput.OnOnEndOfInput {
 
             Intent intent = new Intent(this, Results.class);
 
+            Logger.log("Log "  + scores.length+ " " + scores[0] + " " + scores[1]);
 
             Bundle extras = new Bundle();
             extras.putStringArray("scores", scores);
@@ -242,7 +244,7 @@ public class Test extends BaseActivity implements MorseInput.OnOnEndOfInput {
         countDownTimer = new CountDownTimer(Options.TIMER, 1000) {
 
             public void onTick(long millisUntilFinished) {
-                timer.setText("seconds remaining: " + millisUntilFinished / 1000);
+                timer.setText("Seconds remaining: " + millisUntilFinished / 1000);
                 isTimerRunning = true;
             }
 
@@ -298,7 +300,18 @@ public class Test extends BaseActivity implements MorseInput.OnOnEndOfInput {
             public void onClick(View v) {
 
 
+
                 Intent intent = new Intent(Test.this, Results.class);
+
+                Bundle extras = new Bundle();
+                extras.putStringArray("scores", scores);
+                extras.putStringArray("question", question);
+                extras.putString("testLetters", data);
+                intent.putExtras(extras);
+
+                //finishes the activity when the results page is opened
+                finish();
+
                 startActivity(intent);
 
             }

@@ -19,6 +19,7 @@ import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
 import com.gc.materialdesign.views.Button;
 import com.gc.materialdesign.views.ButtonFlat;
+import com.google.common.base.Strings;
 
 
 import butterknife.Bind;
@@ -98,7 +99,7 @@ public class ScreenFlash extends BaseActivity {
 
        String str = textToFlash.getText().toString().trim();
 
-       if(str.isEmpty()) {
+       if(Strings.isNullOrEmpty(str)) {
            YoYo.with(Techniques.Shake).duration(700).playOn(findViewById(R.id.editText4));
        }
        else{

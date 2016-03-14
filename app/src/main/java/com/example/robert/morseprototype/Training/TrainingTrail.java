@@ -15,6 +15,8 @@ import com.github.johnpersano.supertoasts.SuperToast;
 import com.github.johnpersano.supertoasts.util.Style;
 import com.github.siyamed.shapeimageview.CircularImageView;
 import com.example.robert.morseprototype.R;
+import com.uncopt.android.widget.text.justify.JustifiedTextView;
+
 import java.util.ArrayList;
 
 import butterknife.Bind;
@@ -22,22 +24,24 @@ import butterknife.ButterKnife;
 
 
 @SuppressWarnings("ResourceType")
-public class TrainingTrail extends BaseActivity implements MorseInput.OnOnEndOfInput {
+public class TrainingTrail extends BaseActivity implements MorseInput.OnEndOfInput {
 
     private Sound playSound = new Sound();
 
     private MorseInput morseInput;
 
-    @Bind(R.id.padTraining) CircularImageView   trainingPad;
-    @Bind(R.id.trainingTextChar) TextView       trainingTextViewTextChar;
-    @Bind(R.id.trainingMorseChar) TextView      trainingTextViewMorseChar;
-    @Bind(R.id.trainingTextObjective) TextView  trainingObjective;
-    @Bind(R.id.tickOneTraining) ImageView       tickOne;
-    @Bind(R.id.tickTwoTraining) ImageView       tickTwo;
-    @Bind(R.id.tickThreeTraining) ImageView     tickThree;
-    @Bind(R.id.trainingButtonNext)ButtonFlat    trainingNext;
-    @Bind(R.id.trainingButtonPrev) ButtonFlat   trainingPrevious;
-    @Bind(R.id.trainingProgressBar) ProgressBar trainingProgressBar;
+
+
+    @Bind(R.id.padTraining) CircularImageView           trainingPad;
+    @Bind(R.id.trainingTextChar) TextView               trainingTextViewTextChar;
+    @Bind(R.id.trainingMorseChar) TextView              trainingTextViewMorseChar;
+    @Bind(R.id.trainingTextObjective) JustifiedTextView trainingObjective;
+    @Bind(R.id.tickOneTraining) ImageView               tickOne;
+    @Bind(R.id.tickTwoTraining) ImageView               tickTwo;
+    @Bind(R.id.tickThreeTraining) ImageView             tickThree;
+    @Bind(R.id.trainingButtonNext)ButtonFlat            trainingNext;
+    @Bind(R.id.trainingButtonPrev) ButtonFlat           trainingPrevious;
+    @Bind(R.id.trainingProgressBar) ProgressBar         trainingProgressBar;
 
 
 

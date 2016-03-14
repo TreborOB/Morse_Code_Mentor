@@ -21,6 +21,7 @@ import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
 import com.example.robert.morseprototype.SwipeDialogs.LettersDialog;
 import com.example.robert.morseprototype.SwipeDialogs.MorseGestureDetector;
+import com.google.common.base.Strings;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -82,7 +83,7 @@ public class EnglishToMorse extends BaseActivity {
 
         String str = textViewSource.getText().toString().trim();
 
-        if (str.isEmpty()) {
+        if (Strings.isNullOrEmpty(str)) {
             YoYo.with(Techniques.Shake).duration(700).playOn(findViewById(R.id.editText));
         } else {
             String translatedText = morseTranslations.translatedText(str);

@@ -2,11 +2,12 @@ package com.example.robert.morseprototype.Training;
 
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.example.robert.morseprototype.R;
 
-public class Results extends BaseActivity {
+public class Results extends AppCompatActivity {
 
 
     private ListView listView;

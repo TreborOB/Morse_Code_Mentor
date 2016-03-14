@@ -5,11 +5,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.example.robert.morseprototype.Hardware.Sound;
 import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.example.robert.morseprototype.Misc.MorseTranslations;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
+import com.google.common.base.Strings;
 
 
 import butterknife.Bind;
@@ -81,25 +84,28 @@ public class MorseToEnglish extends BaseActivity {
 
     public void displayConvertedMorse(View view) {
 
-
         if(Options.getEnabledVoice(this))
             playSound.playSymbol(MorseToEnglish.this, R.raw.convert);
 
-        String s = morseToConvert.toString();
-        String res[] = s.split("\\|", -1);
-        String x = "";
+        if(Strings.isNullOrEmpty(morseToConvert.toString())){
+            YoYo.with(Techniques.Shake).duration(700).playOn(findViewById(R.id.enterMorse));
+        }else {
+            String s = morseToConvert.toString();
+            String res[] = s.split("\\|", -1);
+            String x = "";
 
-         for(String var : res) {
+            for(String var : res) {
 
-             x = x + " " + mt.convertMorse(var);
-             if(x.equals("|")){
-              x = x + " ";
-         }
-         }
+                x = x + " " + mt.convertMorse(var);
+                if(x.equals("|")){
+                    x = x + " ";
+                }
+            }
 
-         convertedMorse.setText(x);
+            convertedMorse.setText(x);
 
-         reset();
+            reset();
+        }
 
     }
 
@@ -137,10 +143,6 @@ public class MorseToEnglish extends BaseActivity {
         return true;
 
     }
-
-
-
-
 
 
 

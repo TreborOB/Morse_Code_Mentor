@@ -41,7 +41,7 @@ public class MorseInput {
         void onPadReleased();
     }
 
-    public interface OnOnEndOfInput {
+    public interface OnEndOfInput {
         void onInputEnded();
     }
 
@@ -68,7 +68,7 @@ public class MorseInput {
     private long padReleased;
     private long timeSincePadReleased;
 
-    OnOnEndOfInput             mOnEndOfInputCallback;
+    OnEndOfInput               mOnEndOfInputCallback;
     private OnCharacterDecoded mOnCharacterDecodedCallback;
     private OnPadStateChanged  mOnStateChangedBack;
 
@@ -120,7 +120,7 @@ public class MorseInput {
     }
 
     public void setOnEndOfInputCallback(Activity activity) {
-        mOnEndOfInputCallback = (OnOnEndOfInput) activity;
+        mOnEndOfInputCallback = (OnEndOfInput) activity;
     }
 
     public void init() {

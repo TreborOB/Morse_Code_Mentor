@@ -17,7 +17,7 @@ public class TutorialSteps {
         intro.add(new MorseTutorial("Well done! Now we will send a dash, remember a dash is 3 times the length of a dot. The progress bar will turn light blue when you are sending a dash", "T", true, true, true, "Next", true, true, true));
         intro.add(new MorseTutorial("The time between dots and dashes are important in Morse code. Large spaces mean a new word while small spaces represent a new letter. The gaps between dots and dashes of the same letter are very small. Try and send a dot then a dash with a small gap in between. This tells Morse that it is the same letter", "A", true, true, true, "Next", true, true, true));
         intro.add(new MorseTutorial("Now send a dot then a dash with a space in between, this represents a new word in Morse", "E T", true, true, true, "Next", true, true, true));
-        intro.add(new MorseTutorial("We will now send 3 dots then a space to represent a new word and then 3 dashes", "EEE TTT", true, false, true, "Next", true, true, true));
+        intro.add(new MorseTutorial("We will now send 2 dots then a space to represent a new word and then a dash", "I T", true, false, true, "Next", true, true, true));
 
         return intro;
     }
@@ -28,11 +28,11 @@ public class TutorialSteps {
         ArrayList<MorseTutorial> aTof = new ArrayList<>();
 
         aTof.add(new MorseTutorial("This section will comprise of the letters A to F", "", false, true, false, "Start", false, false, false));
-        aTof.add(new MorseTutorial("Press on the pad to send the letter A: dot dash", "A", true, true, true, "Next", true, true, true));
-        //aTof.add(new MorseTutorial("Press on the pad to send the letter B: dash dot dot dot", "B", true, true, true, "Next", true, true, true));
-        //aTof.add(new MorseTutorial("Press on the pad to send the letter C: dash dot dash dot", "C", true, true, true, "Next", true, true, true));
-        //aTof.add(new MorseTutorial("Press on the pad to send the letter D: dash dot dot", "D", true, true, true, "Next", true, true, true));
-        //aTof.add(new MorseTutorial("Press on the pad to send the letter E: dot", "E", true, false, true, "Next", true, true, true));
+        aTof.add(new MorseTutorial("Press on the pad to send the letters A: dot dash", "A", true, true, true, "Next", true, true, true));
+        aTof.add(new MorseTutorial("Press on the pad to send the letter B: dash dot dot dot", "B", true, true, true, "Next", true, true, true));
+        aTof.add(new MorseTutorial("Press on the pad to send the letter C: dash dot dash dot", "C", true, true, true, "Next", true, true, true));
+        aTof.add(new MorseTutorial("Press on the pad to send the letter D: dash dot dot", "D", true, true, true, "Next", true, true, true));
+        aTof.add(new MorseTutorial("Press on the pad to send the letter E: dot", "E", true, false, true, "Next", true, true, true));
 
         return aTof;
 

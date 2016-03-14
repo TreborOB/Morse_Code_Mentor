@@ -10,11 +10,13 @@ import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.example.robert.morseprototype.Hardware.Sound;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
-import com.example.robert.morseprototype.Training.MorseInput.OnOnEndOfInput;
+import com.example.robert.morseprototype.Training.MorseInput.OnEndOfInput;
 import com.gc.materialdesign.views.ButtonFlat;
 import com.github.johnpersano.supertoasts.SuperToast;
 import com.github.johnpersano.supertoasts.util.Style;
 import com.github.siyamed.shapeimageview.CircularImageView;
+import com.uncopt.android.widget.text.justify.JustifiedTextView;
+
 import java.util.ArrayList;
 
 import butterknife.Bind;
@@ -24,7 +26,7 @@ import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 
 
 @SuppressWarnings("ResourceType")
-public class Introduction extends BaseActivity implements OnOnEndOfInput {
+public class Introduction extends BaseActivity implements OnEndOfInput {
 
 
     private Sound playSound = new Sound();
@@ -42,7 +44,7 @@ public class Introduction extends BaseActivity implements OnOnEndOfInput {
     @Bind(R.id.introMorseChar)     TextView             introTextViewMorseChar;
     @Bind(R.id.introTextChar)      TextView             introTextViewTextChar;
     @Bind(R.id.introProgressBar)   ProgressBar          introProgressBar;
-    @Bind(R.id.introTextObjective) TextView             introObjective;
+    @Bind(R.id.introTextObjective) JustifiedTextView    introObjective;
     @Bind(R.id.introButtonNext)    ButtonFlat           introNext;
     @Bind(R.id.introButtonPrev)    ButtonFlat           introPrevious;
     @Bind(R.id.tickOne)            ImageView            tickOne;
