@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.example.robert.morseprototype.Hardware.Sound;
 import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.gc.materialdesign.views.ButtonFlat;
 import com.gc.materialdesign.views.Switch;
@@ -20,8 +21,6 @@ import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
 import com.example.robert.morseprototype.SwipeDialogs.LettersDialog;
 import com.example.robert.morseprototype.SwipeDialogs.MorseGestureDetector;
-import com.github.johnpersano.supertoasts.SuperToast;
-import com.github.johnpersano.supertoasts.util.Style;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -42,6 +41,7 @@ public class EnglishToMorse extends BaseActivity {
 
     private ShowcaseConfig config = new ShowcaseConfig();
 
+    private Sound playSound = new Sound();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -158,6 +158,9 @@ public class EnglishToMorse extends BaseActivity {
         switch (item.getItemId()) {
 
             case R.id.action_favorite:
+
+                if(Options.getEnabledVoice(this))
+                    playSound.playSymbol(EnglishToMorse.this, R.raw.help);
 
                 showCaseMainActivity();
         }

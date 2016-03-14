@@ -5,8 +5,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.robert.morseprototype.Hardware.Sound;
 import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.example.robert.morseprototype.Misc.MorseTranslations;
+import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
 
 
@@ -27,6 +29,8 @@ public class MorseToEnglish extends BaseActivity {
     private StringBuilder morseToConvert = new StringBuilder();
     private MorseTranslations mt = new MorseTranslations();
 
+    private Sound playSound = new Sound();
+
 
     @Bind(R.id.enterMorse) TextView     enterMorse;
     @Bind(R.id.convertedMorse) TextView convertedMorse;
@@ -46,12 +50,20 @@ public class MorseToEnglish extends BaseActivity {
         morseToConvert.append(".");
         enterMorse.setText(morseToConvert);
 
+
+        if(Options.getEnabledVoice(this))
+            playSound.playSymbol(MorseToEnglish.this, R.raw.dot);
+
     }
 
     public void dash(View view){
 
         morseToConvert.append("-");
         enterMorse.setText(morseToConvert);
+
+
+        if(Options.getEnabledVoice(this))
+            playSound.playSymbol(MorseToEnglish.this, R.raw.dash);
 
     }
 
@@ -61,11 +73,17 @@ public class MorseToEnglish extends BaseActivity {
         enterMorse.setText(morseToConvert);
 
 
+        if(Options.getEnabledVoice(this))
+            playSound.playSymbol(MorseToEnglish.this, R.raw.space);
+
+
     }
 
     public void displayConvertedMorse(View view) {
 
 
+        if(Options.getEnabledVoice(this))
+            playSound.playSymbol(MorseToEnglish.this, R.raw.convert);
 
         String s = morseToConvert.toString();
         String res[] = s.split("\\|", -1);
@@ -110,6 +128,9 @@ public class MorseToEnglish extends BaseActivity {
         switch (item.getItemId()) {
 
             case R.id.action_favorite:
+
+                if(Options.getEnabledVoice(this))
+                    playSound.playSymbol(MorseToEnglish.this, R.raw.help);
 
                 showCaseMainActivity();
         }

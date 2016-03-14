@@ -37,21 +37,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="25sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:gravity="center_horizontal"
-        android:layout_marginBottom="47dp"
-        android:layout_above="@+id/introTextChar"
-        android:layout_toStartOf="@+id/tickThree" />
+        android:layout_alignTop="@+id/introTextChar"
+        android:layout_alignEnd="@+id/tickTwo" />
 
     <TextView
         android:id="@+id/introTextChar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="40sp"
+        android:textStyle="bold"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:gravity="center_horizontal"
-        android:layout_marginBottom="37dp"
+        android:layout_marginBottom="56dp"
         android:layout_above="@+id/tickTwo"
         android:layout_centerHorizontal="true" />
 
@@ -63,6 +63,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:background="@drawable/custom_design"
         android:gravity="center_horizontal" />
 
 
@@ -76,7 +77,7 @@
         android:text="@string/previous"
         android:width="100dp"
         android:layout_above="@+id/introProgressBar"
-        android:layout_toStartOf="@+id/tickOne" />
+        android:layout_toStartOf="@+id/tickTwo" />
 
 
     <com.gc.materialdesign.views.ButtonFlat
@@ -96,8 +97,8 @@
         android:id="@+id/tickTwo"
         android:contentDescription="@string/description"
         android:src="@drawable/blank_tick"
-        android:layout_above="@+id/introButtonPrev"
-        android:layout_toStartOf="@+id/padIntro" />
+        android:layout_above="@+id/introButtonNext"
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -105,8 +106,8 @@
         android:id="@+id/tickOne"
         android:contentDescription="@string/description"
         android:src="@drawable/blank_tick"
-        android:layout_below="@+id/introTextChar"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/introButtonPrev"
+        android:layout_alignStart="@+id/introButtonPrev" />
 
     <ImageView
         android:layout_width="wrap_content"

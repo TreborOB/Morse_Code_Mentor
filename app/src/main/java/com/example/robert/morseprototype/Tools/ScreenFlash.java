@@ -11,6 +11,7 @@ import android.widget.ImageView;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.example.robert.morseprototype.Hardware.Sound;
 import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.example.robert.morseprototype.Hardware.Output;
 import com.example.robert.morseprototype.Misc.MorseTranslations;
@@ -18,8 +19,6 @@ import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
 import com.gc.materialdesign.views.Button;
 import com.gc.materialdesign.views.ButtonFlat;
-import com.github.johnpersano.supertoasts.SuperToast;
-import com.github.johnpersano.supertoasts.util.Style;
 
 
 import butterknife.Bind;
@@ -38,7 +37,7 @@ public class ScreenFlash extends BaseActivity {
 
     private ShowcaseConfig config = new ShowcaseConfig();
 
-
+    private Sound playSound = new Sound();
 
     private Output mOutput;
 
@@ -114,7 +113,6 @@ public class ScreenFlash extends BaseActivity {
 
 
 
-
     private void showCaseMainActivity(){
 
 
@@ -140,6 +138,9 @@ public class ScreenFlash extends BaseActivity {
         switch (item.getItemId()) {
 
             case R.id.action_favorite:
+
+                if(Options.getEnabledVoice(this))
+                    playSound.playSymbol(ScreenFlash.this, R.raw.help);
 
                 showCaseMainActivity();
         }

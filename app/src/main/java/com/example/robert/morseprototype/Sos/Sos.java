@@ -171,6 +171,9 @@ public class Sos extends BaseActivity {
 
             case R.id.action_favorite:
 
+                if(Options.getEnabledVoice(this))
+                    playSound.playSymbol(Sos.this, R.raw.help);
+
                 showCaseMainActivity();
         }
         return true;

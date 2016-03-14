@@ -21,6 +21,18 @@ public class Tools extends AppCompatActivity {
         setContentView(R.layout.activity_tools);
     }
 
+
+
+    public void openScreenFlash(View view) {
+
+        Intent intent = new Intent(this, ScreenFlash.class);
+        startActivity(intent);
+
+        if(Options.getEnabledVoice(this))
+            playSound.playSymbol(Tools.this, R.raw.screenflash);
+    }
+
+
     public void englishMorse(View view) {
 
         Intent intent = new Intent(this, EnglishToMorse.class);
@@ -30,32 +42,24 @@ public class Tools extends AppCompatActivity {
             playSound.playSymbol(Tools.this, R.raw.englishtomorse);
     }
 
-    public void morsePad(View view) {
-
-        Intent intent = new Intent(this, MorsePad.class);
-        startActivity(intent);
-
-
-        if(Options.getEnabledVoice(this))
-            playSound.playSymbol(Tools.this, R.raw.morsetoenglish);
-
-
-    }
-
 
     public void convertMorse(View view) {
 
         Intent intent = new Intent(this, MorseToEnglish.class);
         startActivity(intent);
 
+        if(Options.getEnabledVoice(this))
+            playSound.playSymbol(Tools.this, R.raw.morsetoenglish);
     }
 
 
+    public void morsePad(View view) {
 
-    public void openScreenFlash(View view) {
-
-        Intent intent = new Intent(this, ScreenFlash.class);
+        Intent intent = new Intent(this, MorsePad.class);
         startActivity(intent);
+
+        if(Options.getEnabledVoice(this))
+            playSound.playSymbol(Tools.this, R.raw.morsepad);
 
     }
 }

@@ -155,6 +155,10 @@ public class MainActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_favorite:
+
+                if(Options.getEnabledVoice(this))
+                    playSound.playSymbol(MainActivity.this, R.raw.help);
+
                 showCaseMainActivity();
         }
         return true;

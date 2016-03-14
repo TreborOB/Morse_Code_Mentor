@@ -9,7 +9,6 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.robert.morseprototype.Hardware.Sound;
-import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.example.robert.morseprototype.Misc.Logger;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;

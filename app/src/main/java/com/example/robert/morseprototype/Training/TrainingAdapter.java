@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.robert.morseprototype.Database.SnappyDB;
 import com.example.robert.morseprototype.Hardware.Sound;
 import com.example.robert.morseprototype.Misc.Logger;
+import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
 import com.example.robert.morseprototype.SwipeDialogs.MorseSymbols;
 import com.gc.materialdesign.views.ButtonFlat;
@@ -101,7 +102,8 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
             test.setOnClickListener(new Button.OnClickListener() {
                 public void onClick(View v) {
 
-
+                    if(Options.getEnabledVoice(context))
+                        playSound.playSymbol(context, R.raw.test);
 
 
                     Intent intent = new Intent(context, Test.class);

@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.example.robert.morseprototype.Hardware.Sound;
 import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.github.siyamed.shapeimageview.CircularImageView;
 import android.widget.ProgressBar;
@@ -35,6 +36,8 @@ public class MorsePad extends BaseActivity implements OnCharacterDecoded, OnPadS
     private Output mOutput;
 
     private ShowcaseConfig config = new ShowcaseConfig();
+
+    private Sound playSound = new Sound();
 
 
     @Bind(R.id.imgView) CircularImageView    introPad;
@@ -188,7 +191,8 @@ public class MorsePad extends BaseActivity implements OnCharacterDecoded, OnPadS
         switch (item.getItemId()) {
 
             case R.id.action_favorite:
-
+                if(Options.getEnabledVoice(this))
+                    playSound.playSymbol(MorsePad.this, R.raw.help);
                 showCaseMainActivity();
         }
         return true;
