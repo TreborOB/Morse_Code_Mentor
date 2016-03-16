@@ -30,8 +30,6 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
 
     private Sound playSound = new Sound();
 
-    private SnappyDB snappy;
-
     HashMap<String, Boolean> map;
 
 
@@ -42,11 +40,11 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
         mInflater = LayoutInflater.from(context);
         this.context = context;
 
-        snappy = new SnappyDB(context);
+        SnappyDB snappy = new SnappyDB(context);
         SnappyDB.initSnappy();
 
 
-           map = SnappyDB.getSnappy();
+        map = SnappyDB.getSnappy();
 
 
         Logger.log("Training Adapter: map.size() = " + map.size());

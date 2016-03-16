@@ -15,7 +15,6 @@ import com.example.robert.morseprototype.R;
 import com.example.robert.morseprototype.SwipeDialogs.MorseSymbols;
 import java.util.ArrayList;
 
-import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 
 
 public class Training extends AppCompatActivity {
@@ -29,7 +28,6 @@ public class Training extends AppCompatActivity {
 
     private TrainingAdapter adapter;
 
-    private ShowcaseConfig config = new ShowcaseConfig();
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,10 +100,12 @@ public class Training extends AppCompatActivity {
 
 
 
+
     public void onResume(){
         super.onResume();
 
-        Logger.log("Training: Recreate()");
+
+        Logger.log("Training: Resume()");
 
     }
 }

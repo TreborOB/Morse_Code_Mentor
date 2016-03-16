@@ -118,5 +118,14 @@
         android:layout_alignTop="@+id/tickTwo"
         android:layout_alignEnd="@+id/introButtonNext" />
 
+    <com.gc.materialdesign.views.Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/introSound"
+        android:checked="false"
+        android:background="#1E88E5"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/tickThree" />
+
 
 </RelativeLayout>

@@ -79,11 +79,6 @@
     <string name="training_trail_previous">Previous</string>
     <!--training_trail-->
 
-    <!--header_morse-->
-    <string name="header_letters">Morse Tutorial</string>
-    <string name="header_description">Morse Introduction</string>
-    <!--header_morse-->
-
     <!--Options-->
     <string name="pref_title_voice">Enable voice</string>
     <string name="pref_title_dialogs">Enable dialogs</string>

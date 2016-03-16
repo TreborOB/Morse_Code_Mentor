@@ -11,7 +11,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.example.robert.morseprototype.Hardware.Sound;
-import com.example.robert.morseprototype.Misc.Logger;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
 import com.gc.materialdesign.views.ButtonFlat;
@@ -126,8 +125,6 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
         if(mCurrentStep == mSteps.size()){
 
             Intent intent = new Intent(this, Results.class);
-
-            Logger.log("Log "  + scores.length+ " " + scores[0] + " " + scores[1]);
 
             Bundle extras = new Bundle();
             extras.putStringArray("scores", scores);

@@ -9,10 +9,6 @@ import com.example.robert.morseprototype.R;
 public class Results extends AppCompatActivity {
 
 
-    private ListView listView;
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,8 +23,10 @@ public class Results extends AppCompatActivity {
 
 
         ResultsAdapter adapter = new ResultsAdapter(this, scoresArray, testLetters, questionArray);
-        listView = (ListView) findViewById(R.id.list);
+        ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(adapter);
+
+
 
 
     }

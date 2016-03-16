@@ -60,7 +60,7 @@ public class TrainingTrail extends BaseActivity implements MorseInput.OnEndOfInp
         data = getIntent().getExtras().getString("keyName");
 
 
-
+        assert data != null;
         switch (data) {
             case "Introduction":
                 Logger.log("Introduction");

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string-array name="listArray">
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="listArray" tools:ignore="MissingTranslation">
         <item>Beginner</item>
         <item>Standard</item>
         <item>Expert</item>
     </string-array>
-    <string-array name="listValues">
+    <string-array name="listValues" tools:ignore="MissingTranslation">
         <item>Beginner</item>
         <item>Standard</item>
         <item>Expert</item>
@@ -13,12 +13,12 @@
 
 
 
-    <string-array name="languages">
+    <string-array name="languages" tools:ignore="MissingTranslation">
         <item>English</item>
         <item>Spanish</item>
         <item>Chinese</item>
     </string-array>
-    <string-array name="listLanguages">
+    <string-array name="listLanguages" tools:ignore="MissingTranslation">
         <item>English</item>
         <item>Spanish</item>
         <item>Chinese</item>

@@ -16,8 +16,6 @@
     <string name="description">desciption imagen</string>
     <string name="dot">punto</string>
     <string name="english_to_morse_light">ligero</string>
-    <string name="header_description">Morse Introducción</string>
-    <string name="header_letters">Morse Tutorial</string>
     <string name="light_morse_pad">Ligero</string>
     <string name="morse_pad">Morse Pad</string>
     <string name="morse_to_be_converted">Añadir Morse para ser convertido</string>

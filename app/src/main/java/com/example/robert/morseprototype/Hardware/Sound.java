@@ -9,6 +9,7 @@ import android.media.SoundPool;
 import com.example.robert.morseprototype.R;
 
 
+@SuppressWarnings("deprecation")
 public class Sound {
 
     private static final int DEFAULT_SOUND = R.raw.morse;

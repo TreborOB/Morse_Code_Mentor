@@ -38,8 +38,6 @@
     <string name="dot">点</string>
     <string name="description">图片说明</string>
     <string name="convert">兑换</string>
-    <string name="header_description">莫尔斯介绍</string>
-    <string name="header_letters">莫尔斯教程</string>
     <string name="light_morse_pad">光</string>
     <string name="answer">回答</string>
     <string name="q_name">Q号</string>

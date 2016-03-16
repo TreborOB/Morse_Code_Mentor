@@ -22,6 +22,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 import uk.co.deanwild.materialshowcaseview.MaterialShowcaseSequence;
+import uk.co.deanwild.materialshowcaseview.MaterialShowcaseView;
 import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 
 
@@ -46,6 +47,12 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         mDetector = new GestureDetectorCompat(this, new mainMorseGestureDetector());
         ButterKnife.bind(this);
+
+        showStartUpTutorial();
+
+        //sets the action bar text to the chosen language
+        getSupportActionBar().setTitle(getResources().getString(R.string.app_name));
+
 
     }
 
@@ -147,7 +154,22 @@ public class MainActivity extends BaseActivity {
 
         sequence.start();
 
+    }
 
+
+    public void showStartUpTutorial(){
+
+        String SHOWCASE_ID = "showcase_id";
+        new MaterialShowcaseView.Builder(this)
+                .setTarget(topSwipe)
+                .setDismissText("GOT IT")
+                .setContentText("Welcome to Morse code mentor! In the top right hand corner of the screen is" +
+                                " a question mark - pressing this will help you guide you on how to use some of" +
+                                " the features of app!")
+                .withoutShape()
+                .setDelay(200) // optional but starting animations immediately in onCreate can make them choppy
+                .singleUse(SHOWCASE_ID) // provide a unique ID used to ensure it is only shown once
+                .show();
     }
 
 

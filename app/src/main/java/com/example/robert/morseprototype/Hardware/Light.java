@@ -9,6 +9,7 @@ import android.hardware.Camera.Parameters;
 
 
 
+@SuppressWarnings("deprecation")
 public class Light {
 
     private Camera            mCamera;

@@ -30,7 +30,7 @@ import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 
 public class EnglishToMorse extends BaseActivity {
 
-    private GestureDetectorCompat mDetector;
+    private GestureDetectorCompat         mDetector;
     private MorseTranslations             morseTranslations;
     private Output                        mOutput;
 
@@ -58,6 +58,7 @@ public class EnglishToMorse extends BaseActivity {
 
         mOutput = new Output(this, false, false, false, false);
 
+        //Allows the user to turn on the camera flash if the device has one
         switchLight.setClickable(mOutput.getHasCamera());
 
         switchLight.setOncheckListener(new Switch.OnCheckListener() {

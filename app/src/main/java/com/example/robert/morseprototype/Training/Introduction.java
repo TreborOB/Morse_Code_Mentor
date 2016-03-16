@@ -1,17 +1,25 @@
 package com.example.robert.morseprototype.Training;
 
 import android.os.Bundle;
+import android.support.v4.view.GestureDetectorCompat;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.example.robert.morseprototype.Hardware.Output;
 import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.example.robert.morseprototype.Hardware.Sound;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
+import com.example.robert.morseprototype.SwipeDialogs.LettersDialog;
+import com.example.robert.morseprototype.SwipeDialogs.MorseGestureDetector;
+import com.example.robert.morseprototype.Tools.EnglishToMorse;
 import com.example.robert.morseprototype.Training.MorseInput.OnEndOfInput;
 import com.gc.materialdesign.views.ButtonFlat;
+import com.gc.materialdesign.views.Switch;
 import com.github.johnpersano.supertoasts.SuperToast;
 import com.github.johnpersano.supertoasts.util.Style;
 import com.github.siyamed.shapeimageview.CircularImageView;
@@ -26,10 +34,13 @@ import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 
 
 @SuppressWarnings("ResourceType")
-public class Introduction extends BaseActivity implements OnEndOfInput {
+public class Introduction extends BaseActivity implements OnEndOfInput, MorseInput.OnPadStateChanged {
 
 
-    private Sound playSound = new Sound();
+    private GestureDetectorCompat mDetector;
+
+    private Sound   playSound = new Sound();
+    private Output  mOutput;
 
     MorseInput morseInput;
 
@@ -38,6 +49,8 @@ public class Introduction extends BaseActivity implements OnEndOfInput {
     private ArrayList<MorseTutorial> mSteps;
     private int                      mCurrentStep;
     private int                      tickProgress;
+
+
 
 
     @Bind(R.id.padIntro)           CircularImageView    introPad;
@@ -50,6 +63,7 @@ public class Introduction extends BaseActivity implements OnEndOfInput {
     @Bind(R.id.tickOne)            ImageView            tickOne;
     @Bind(R.id.tickTwo)            ImageView            tickTwo;
     @Bind(R.id.tickThree)          ImageView            tickThree;
+    @Bind(R.id.introSound)         Switch               introSound;
 
 
     @Override
@@ -57,6 +71,9 @@ public class Introduction extends BaseActivity implements OnEndOfInput {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introduction);
         ButterKnife.bind(this);
+
+
+        mDetector = new GestureDetectorCompat(this, new mainMorseGestureDetector());
 
         progressBarInvisible();
         morseInput = new MorseInput(this, introTextViewMorseChar, introTextViewTextChar, introPad, introProgressBar, tickOne, tickTwo, tickThree);
@@ -67,7 +84,53 @@ public class Introduction extends BaseActivity implements OnEndOfInput {
 
         updateCurrentStep();
 
+
+        mOutput = new Output(this, false, false, false, false);
+
+
+        introSound.setOncheckListener(new Switch.OnCheckListener() {
+            @Override
+            public void onCheck(Switch buttonView, boolean isChecked) {
+                mOutput.setSoundEnabled(isChecked);
+            }
+        });
+
+
+        morseInput.setOnPadChangeChangedCallback(this);
     }
+
+
+
+
+
+    @Override
+    public void onPadPressed() {
+        mOutput.turnOn();
+    }
+
+    @Override
+    public void onPadReleased() {
+        mOutput.turnOff();
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mOutput.release();
+    }
+
+
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+
+        if(Options.getEnabledDialogs(this))
+            this.mDetector.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }
+
+
 
 
     @SuppressWarnings("WrongConstant")
@@ -91,6 +154,8 @@ public class Introduction extends BaseActivity implements OnEndOfInput {
 
     }
 
+
+
     public void onNextClicked(View view) {
 
         if (mCurrentStep == 1) morseInput.reset();
@@ -103,6 +168,8 @@ public class Introduction extends BaseActivity implements OnEndOfInput {
         setNextButtonInvisible();
     }
 
+
+
     public void onPreviousClicked(View view) {
         if (mCurrentStep <= 0) return;
 
@@ -112,10 +179,14 @@ public class Introduction extends BaseActivity implements OnEndOfInput {
         setNextButtonVisible();
     }
 
+
+
     private void resetText() {
         introTextViewTextChar.setText("");
         introTextViewMorseChar.setText("");
     }
+
+
 
     private void updateTicks() {
 
@@ -146,6 +217,7 @@ public class Introduction extends BaseActivity implements OnEndOfInput {
         }
     }
 
+
     private void setNextButtonInvisible() {
         introNext.setVisibility(4);
     }
@@ -161,6 +233,8 @@ public class Introduction extends BaseActivity implements OnEndOfInput {
     private void playFailureSound() {
         playSound.playSymbol(this, R.raw.failure);
     }
+
+
 
     @Override
     public void onInputEnded() {
@@ -222,6 +296,29 @@ public class Introduction extends BaseActivity implements OnEndOfInput {
         }
         return true;
 
+    }
+
+
+
+
+
+    private class mainMorseGestureDetector extends MorseGestureDetector {
+
+        public void onSwipeRight() {
+            LettersDialog.showLetters(Introduction.this);
+        }
+
+        public void onSwipeLeft() {
+            LettersDialog.showNumbers(Introduction.this);
+        }
+
+        public void onSwipeBottom() {
+            LettersDialog.showQCodes(Introduction.this);
+        }
+
+        public void onSwipeTop() {
+            LettersDialog.showZCodes(Introduction.this);
+        }
     }
 
 }

@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import com.example.robert.morseprototype.Database.SnappyDB;
+import com.example.robert.morseprototype.Misc.Logger;
 import com.example.robert.morseprototype.R;
 import com.google.common.base.Strings;
 
@@ -18,7 +19,6 @@ public class ResultsAdapter extends ArrayAdapter <String> {
     private String results [];
     private String question [];
     private String testLetters;
-    private SnappyDB snappy;
 
 
 
@@ -30,9 +30,7 @@ public class ResultsAdapter extends ArrayAdapter <String> {
         this.testLetters = testLetters;
 
 
-        snappy = new SnappyDB(context);
         SnappyDB.initSnappy();
-
 
     }
 
@@ -120,22 +118,26 @@ public class ResultsAdapter extends ArrayAdapter <String> {
 
         SnappyDB.insertElement(lettersProgress);
 
-        if(snappy.snappyDBCount() == 1){
-            SnappyDB.insertElement("G-K");
-        }
-        else if(snappy.snappyDBCount() == 2)
-        {
-            SnappyDB.insertElement("L-P");
-        }
-        else if(snappy.snappyDBCount() == 3)
-        {
-            SnappyDB.insertElement("Q-U");
-        }
-        else if(snappy.snappyDBCount() == 4){
-            SnappyDB.insertElement("V-Z");
-        }
-        else{
-            SnappyDB.insertElement("Numbers");
+        Logger.log("ResultsAdapter: " + lettersProgress);
+
+
+        //Opens up the next stage of the trail
+        switch (lettersProgress) {
+            case "A-F":
+                SnappyDB.insertElement("G-K");
+                break;
+            case "G-K":
+                SnappyDB.insertElement("L-P");
+                break;
+            case "L-P":
+                SnappyDB.insertElement("Q-U");
+                break;
+            case "Q-U":
+                SnappyDB.insertElement("V-Z");
+                break;
+            case "V-Z":
+                SnappyDB.insertElement("Numbers");
+                break;
         }
 
 

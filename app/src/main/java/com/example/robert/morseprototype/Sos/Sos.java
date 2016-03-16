@@ -138,7 +138,7 @@ public class Sos extends BaseActivity {
 
     }
 
-    public void startSOS(View v) {
+    public void startSOS(View view) {
 
         final MorseTranslations morseTranslations = new MorseTranslations();
         final String st = morseTranslations.translatedText("SOS");
