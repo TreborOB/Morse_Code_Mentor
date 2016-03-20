@@ -9,7 +9,6 @@ import com.snappydb.DBFactory;
 import com.snappydb.SnappydbException;
 
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 
 public class SnappyDB {
 
@@ -17,7 +16,10 @@ public class SnappyDB {
     private static DB snappyDB;
     private static Context context;
 
+
     static HashMap<String, Boolean> map;
+
+
 
     public SnappyDB(Context context){
         SnappyDB.context = context;
@@ -30,10 +32,12 @@ public class SnappyDB {
         try {
             snappyDB = DBFactory.open(context, "testProgress");
 
-            if(snappyExist()) {
+
+
+            if (snappyExist()) {
                 map = getSnappy();
-            }else{
-                map = new LinkedHashMap<>();
+            } else {
+                map = new HashMap<>();
 
             }
 
@@ -44,7 +48,7 @@ public class SnappyDB {
      }
 
 
-    private  static void saveSnappy(){
+    private static void saveSnappy(){
         try {
             snappyDB.put("testProgress", map);
         }catch(SnappydbException e){
@@ -71,8 +75,6 @@ public class SnappyDB {
     public static void insertElement(String letterProgress){
         map.put(letterProgress, true);
         saveSnappy();
-
-        Logger.log("SnappyDB:  = " + map.size());
     }
 
 
@@ -90,11 +92,6 @@ public class SnappyDB {
       }
 
 
-
-    public int snappyDBCount(){
-
-        return map.size();
-    }
 
 
 

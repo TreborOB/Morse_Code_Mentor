@@ -40,9 +40,9 @@ public class EnglishToMorse extends BaseActivity {
     @Bind(R.id.translate) ButtonFlat translate;
     @Bind(R.id.reset) ButtonFlat     reset;
 
-    private ShowcaseConfig config = new ShowcaseConfig();
+    private final ShowcaseConfig config = new ShowcaseConfig();
 
-    private Sound playSound = new Sound();
+    private final Sound playSound = new Sound();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

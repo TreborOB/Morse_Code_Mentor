@@ -2,6 +2,7 @@ package com.example.robert.morseprototype.Training;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.example.robert.morseprototype.Hardware.Sound;
 import com.example.robert.morseprototype.Misc.Logger;
+import com.example.robert.morseprototype.Misc.ShowCaseViewArrays;
 import com.example.robert.morseprototype.Options.Options;
 import com.gc.materialdesign.views.ButtonFlat;
 import com.github.johnpersano.supertoasts.SuperToast;
@@ -21,6 +23,8 @@ import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import uk.co.deanwild.materialshowcaseview.MaterialShowcaseSequence;
+import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 
 
 @SuppressWarnings("ResourceType")
@@ -43,13 +47,14 @@ public class TrainingTrail extends BaseActivity implements MorseInput.OnEndOfInp
     @Bind(R.id.trainingButtonPrev) ButtonFlat           trainingPrevious;
     @Bind(R.id.trainingProgressBar) ProgressBar         trainingProgressBar;
 
-
+    private ShowcaseConfig config = new ShowcaseConfig();
 
     private ArrayList<MorseTutorial> mSteps;
     private int                      mCurrentStep;
     private int                      tickProgress;
     private String                   data;
 
+    private String language;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,34 +65,111 @@ public class TrainingTrail extends BaseActivity implements MorseInput.OnEndOfInp
         data = getIntent().getExtras().getString("keyName");
 
 
-        assert data != null;
-        switch (data) {
-            case "Introduction":
-                Logger.log("Introduction");
+        //Gets the current language
+        language = Options.getLanguage(TrainingTrail.this).toString();
+
+
+        switch (language) {
+            case "English":
+                switch (data) {
+                    case "Introduction":
+                        Logger.log("Introduction");
+
+                        break;
+                    case "A-F":
+                        mSteps = TutorialSteps.getListAtoF();
+
+                        break;
+                    case "G-K":
+                        mSteps = TutorialSteps.getListGtoK();
+
+                        break;
+                    case "L-P":
+                        mSteps = TutorialSteps.getListLtoP();
+
+                        break;
+                    case "Q-U":
+                        mSteps = TutorialSteps.getListQtoU();
+
+                        break;
+                    case "V-Z":
+                        mSteps = TutorialSteps.getListVtoZ();
+
+                        break;
+                    case "Numbers":
+                        mSteps = TutorialSteps.getListNumbers();
+
+                        break;
+                }
+
 
                 break;
-            case "A-F":
-                mSteps = TutorialSteps.getListAtoF();
+            case "Spanish":
+                switch (data) {
+                    case "Introduction":
+                        Logger.log("Introduction");
 
-                break;
-            case "G-K":
-                mSteps = TutorialSteps.getListGtoK();
+                        break;
+                    case "A-F":
+                        mSteps = TutorialSteps.getListAtoFSpanish();
 
-                break;
-            case "L-P":
-                mSteps = TutorialSteps.getListLtoP();
+                        break;
+                    case "G-K":
+                        mSteps = TutorialSteps.getListGtoKSpanish();
 
-                break;
-            case "Q-U":
-                mSteps = TutorialSteps.getListQtoU();
+                        break;
+                    case "L-P":
+                        mSteps = TutorialSteps.getListLtoPSpanish();
 
-                break;
-            case "V-Z":
-                mSteps = TutorialSteps.getListVtoZ();
+                        break;
+                    case "Q-U":
+                        mSteps = TutorialSteps.getListQtoUSpanish();
 
+                        break;
+                    case "V-Z":
+                        mSteps = TutorialSteps.getListVtoZSpanish();
+
+                        break;
+                    case "Numbers":
+                        mSteps = TutorialSteps.getListNumbersSpanish();
+
+                        break;
+                }
+
+                //Chinese
                 break;
-            case "Numbers":
-                mSteps = TutorialSteps.getListNumbers();
+            default:
+                switch (data) {
+                    case "Introduction":
+                        Logger.log("Introduction");
+
+                        break;
+                    case "A-F":
+                        mSteps = TutorialSteps.getListAtoFChinese();
+
+                        break;
+                    case "G-K":
+                        mSteps = TutorialSteps.getListGtoKChinese();
+
+                        break;
+                    case "L-P":
+                        mSteps = TutorialSteps.getListLtoPChinese();
+
+                        break;
+                    case "Q-U":
+                        mSteps = TutorialSteps.getListQtoUChinese();
+
+                        break;
+                    case "V-Z":
+                        mSteps = TutorialSteps.getListVtoZChinese();
+
+                        break;
+                    case "Numbers":
+                        mSteps = TutorialSteps.getListNumbersChinese();
+
+                        break;
+                }
+
 
                 break;
         }
@@ -186,6 +268,7 @@ public class TrainingTrail extends BaseActivity implements MorseInput.OnEndOfInp
         }
 
         morseInput.reset();
+        resetText();
     }
 
 
@@ -226,6 +309,59 @@ public class TrainingTrail extends BaseActivity implements MorseInput.OnEndOfInp
             trainingProgressBar.setVisibility(View.INVISIBLE);
         }
     }
+
+
+
+    private void showCaseMainActivity(){
+
+
+        config.setDelay(300);
+
+        MaterialShowcaseSequence sequence = new MaterialShowcaseSequence(this);
+
+        String array[];
+
+        switch (language) {
+            case "English":
+                array = ShowCaseViewArrays.trainingEnglish();
+                break;
+            case "Spanish":
+                array = ShowCaseViewArrays.trainingSpanish();
+                break;
+            default:
+                array = ShowCaseViewArrays.trainingChinese();
+                break;
+        }
+
+
+
+        sequence.setConfig(config);
+
+        sequence.addSequenceItem(trainingObjective,
+                array[0], array[2]);
+
+        sequence.addSequenceItem(tickOne,
+                array[1], array[2]);
+
+
+        sequence.start();
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.action_favorite:
+
+                showCaseMainActivity();
+        }
+        return true;
+
+    }
+
+
+
 
     private void setNextButtonInvisible(){
         trainingNext.setVisibility(4);

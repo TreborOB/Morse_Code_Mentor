@@ -3,6 +3,8 @@ package com.example.robert.morseprototype.SwipeDialogs;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 
+
+//Class took from Stackoverflow - i did not write any of the code in this class
 public class MorseGestureDetector extends GestureDetector.SimpleOnGestureListener {
     private static final float SWIPE_DISTANCE_THRESHOLD = 100;
     private static final float SWIPE_VELOCITY_THRESHOLD = 100;

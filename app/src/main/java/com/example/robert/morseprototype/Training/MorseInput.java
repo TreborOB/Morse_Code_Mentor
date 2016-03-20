@@ -221,7 +221,7 @@ public class MorseInput {
             mWords.append(mCharacterToAppend);
 
             //Morse letter that is appended!
-            textViewTextLetter.setText(mWords);
+            textViewTextLetter.setText(mCharacterToAppend);
 
             mMorseStringBuilder.setLength(0);
             textViewMorseLetter.setText("");
@@ -243,6 +243,7 @@ public class MorseInput {
         @Override
         public void run() {
             if (mOnEndOfInputCallback != null) mOnEndOfInputCallback.onInputEnded();
+
         }
     };
 

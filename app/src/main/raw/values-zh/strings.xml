@@ -42,4 +42,12 @@
     <string name="answer">回答</string>
     <string name="q_name">Q号</string>
     <string name="dash">短跑</string>
+    <string name="finished_section">恭喜！你完成了</string>
+    <string name="section">部分</string>
+    <string name="seconds_remaining">剩余秒数:</string>
+    <string name="time_up"> 时间到</string>
+    <string name="fail">失败</string>
+    <string name="pass">通过</string>
+    <string name="question_number">问题编号</string>
+    <string name="q">Q</string>
 </resources>

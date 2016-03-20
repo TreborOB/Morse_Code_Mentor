@@ -8,6 +8,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
+
 import com.example.robert.morseprototype.Hardware.Sound;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
@@ -28,9 +29,9 @@ import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 
 public class MainActivity extends BaseActivity {
     private GestureDetectorCompat mDetector;
-    private Sound playSound = new Sound();
+    private final Sound playSound = new Sound();
 
-
+    private String language;
 
     @Bind(R.id.swipeTop) TextView    topSwipe;
     @Bind(R.id.swipeRight) TextView  rightSwipe;
@@ -38,7 +39,7 @@ public class MainActivity extends BaseActivity {
     @Bind(R.id.swipeLeft) TextView   leftSwipe;
 
 
-    private ShowcaseConfig config = new ShowcaseConfig();
+    private final ShowcaseConfig config = new ShowcaseConfig();
 
 
     @Override
@@ -48,9 +49,14 @@ public class MainActivity extends BaseActivity {
         mDetector = new GestureDetectorCompat(this, new mainMorseGestureDetector());
         ButterKnife.bind(this);
 
+
+        language = Options.getLanguage(MainActivity.this);
+
+
         showStartUpTutorial();
 
         //sets the action bar text to the chosen language
+        //noinspection ConstantConditions,ConstantConditions,ConstantConditions,ConstantConditions
         getSupportActionBar().setTitle(getResources().getString(R.string.app_name));
 
 
@@ -133,6 +139,24 @@ public class MainActivity extends BaseActivity {
     private void showCaseMainActivity(){
 
 
+        String array[];
+
+        switch (language) {
+            case "English":
+                array = ShowCaseViewArrays.mainActivity();
+                break;
+            case "Spanish":
+                array = ShowCaseViewArrays.mainActivitySpanish();
+                break;
+            default:
+                array = ShowCaseViewArrays.mainActivityChinese();
+                break;
+        }
+
+
+
+
+
         config.setDelay(300);
 
         MaterialShowcaseSequence sequence = new MaterialShowcaseSequence(this);
@@ -140,16 +164,16 @@ public class MainActivity extends BaseActivity {
         sequence.setConfig(config);
 
         sequence.addSequenceItem(topSwipe,
-                "Swiping from the top of the activity will show the Q codes", "GOT IT");
+                array[0], array[4]);
 
         sequence.addSequenceItem(rightSwipe,
-                "Swiping from the right of the activity will show Morse numbers", "GOT IT");
+                array[1], array[4]);
 
         sequence.addSequenceItem(bottomSwipe,
-                "Swiping from the bottom of the activity will show Z codes", "GOT IT");
+                array[2], array[4]);
 
         sequence.addSequenceItem(leftSwipe,
-                "Swiping from the left of the activity will show Morse letters", "GOT IT");
+                array[3], array[4]);
 
 
         sequence.start();

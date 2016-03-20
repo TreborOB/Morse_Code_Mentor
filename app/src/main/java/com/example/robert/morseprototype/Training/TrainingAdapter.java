@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import com.example.robert.morseprototype.Database.SnappyDB;
 import com.example.robert.morseprototype.Hardware.Sound;
-import com.example.robert.morseprototype.Misc.Logger;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
 import com.example.robert.morseprototype.SwipeDialogs.MorseSymbols;
@@ -27,11 +26,9 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
     private final LayoutInflater mInflater;
     private Context context;
 
-
     private Sound playSound = new Sound();
 
     HashMap<String, Boolean> map;
-
 
 
     @SuppressWarnings("unchecked")
@@ -40,14 +37,14 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
         mInflater = LayoutInflater.from(context);
         this.context = context;
 
+
+
         SnappyDB snappy = new SnappyDB(context);
         SnappyDB.initSnappy();
 
 
         map = SnappyDB.getSnappy();
 
-
-        Logger.log("Training Adapter: map.size() = " + map.size());
 
 
 
@@ -76,7 +73,7 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
 
 
             view.setEnabled(false);
-           view.setOnClickListener(null);
+            view.setOnClickListener(null);
 
 
         }else{
@@ -88,9 +85,10 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
             TextView extraTxt       = (TextView) view.findViewById(R.id.textView1);
             ButtonFlat test         = (ButtonFlat) view.findViewById(R.id.textView4);
 
+
             //Sets the introduction list items test button to invisible as it has no test function
             if(position == 0){
-              test.setVisibility(View.INVISIBLE);
+                test.setVisibility(View.INVISIBLE);
             }
 
 

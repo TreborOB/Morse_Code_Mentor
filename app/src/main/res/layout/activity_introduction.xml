@@ -8,7 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Training.Introduction">
+    tools:context=".Training.Introduction"
+    android:id="@+id/k">
 
 
 
@@ -40,8 +41,9 @@
         android:textSize="30sp"
         android:textStyle="bold"
         android:gravity="center_horizontal"
-        android:layout_alignTop="@+id/introTextChar"
-        android:layout_alignEnd="@+id/tickTwo" />
+        android:textColor="#1E88E5"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/introTextChar"
@@ -51,8 +53,9 @@
         android:textStyle="bold"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:gravity="center_horizontal"
-        android:layout_marginBottom="56dp"
-        android:layout_above="@+id/tickTwo"
+        android:textColor="#1E88E5"
+        android:layout_marginTop="47dp"
+        android:layout_below="@+id/introTextObjective"
         android:layout_centerHorizontal="true" />
 
     <com.uncopt.android.widget.text.justify.JustifiedTextView
@@ -107,7 +110,7 @@
         android:contentDescription="@string/description"
         android:src="@drawable/blank_tick"
         android:layout_above="@+id/introButtonPrev"
-        android:layout_alignStart="@+id/introButtonPrev" />
+        android:layout_alignStart="@+id/padIntro" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -115,8 +118,8 @@
         android:id="@+id/tickThree"
         android:contentDescription="@string/description"
         android:src="@drawable/blank_tick"
-        android:layout_alignTop="@+id/tickTwo"
-        android:layout_alignEnd="@+id/introButtonNext" />
+        android:layout_above="@+id/introButtonNext"
+        android:layout_alignEnd="@+id/padIntro" />
 
     <com.gc.materialdesign.views.Switch
         android:layout_width="wrap_content"
@@ -124,8 +127,17 @@
         android:id="@+id/introSound"
         android:checked="false"
         android:background="#1E88E5"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/tickThree" />
+        android:layout_above="@+id/textView15"
+        android:layout_toStartOf="@+id/introButtonPrev" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/sos_audio"
+        android:id="@+id/textView15"
+        android:layout_alignBottom="@+id/padIntro"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>

@@ -37,11 +37,12 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textAppearance="?android:attr/textAppearanceMedium"
-    android:textSize="25sp"
+    android:textSize="40sp"
     android:textStyle="bold"
-    android:layout_above="@+id/tickOneTraining"
-    android:layout_toEndOf="@+id/tickOneTraining"
-    android:layout_marginBottom="44dp" />
+    android:layout_marginBottom="43dp"
+    android:layout_above="@+id/tickTwoTraining"
+    android:layout_centerHorizontal="true"
+    android:textColor="#1E88E5" />
 
 <TextView
     android:id="@+id/trainingTextChar"
@@ -52,7 +53,8 @@
     android:textAppearance="?android:attr/textAppearanceMedium"
     android:layout_below="@+id/trainingTextObjective"
     android:layout_centerHorizontal="true"
-    android:layout_marginTop="46dp" />
+    android:layout_marginTop="46dp"
+    android:textColor="#1E88E5"/>
 
 <com.uncopt.android.widget.text.justify.JustifiedTextView
     android:id="@+id/trainingTextObjective"

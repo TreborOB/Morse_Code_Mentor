@@ -19,6 +19,7 @@
         android:layout_marginTop="49dp"
         android:textStyle="bold"
         android:textSize="40sp"
+        android:textColor="#1E88E5"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -28,9 +29,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/textViewTextChar"
         android:textStyle="bold"
-        android:textSize="25sp"
+        android:textSize="40sp"
+        android:textColor="#1E88E5"
         android:layout_below="@+id/textViewMorseChar"
-        android:layout_alignStart="@+id/imgView" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"

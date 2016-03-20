@@ -64,7 +64,6 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/textView2"
         android:layout_marginTop="61dp"
-        android:background="@drawable/custom_design"
         android:layout_below="@+id/textView"
         android:textSize="26sp"
         android:textStyle="bold"

@@ -37,10 +37,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="25sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         android:layout_above="@+id/testTextChar"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="#1E88E5"/>
 
     <TextView
         android:id="@+id/testTextChar"
@@ -49,7 +50,9 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:textSize="40sp"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#1E88E5"/>
 
     <TextView
         android:id="@+id/testTextObjective"
@@ -58,7 +61,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_below="@+id/timer"
         android:textStyle="bold"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="37dp" />
 

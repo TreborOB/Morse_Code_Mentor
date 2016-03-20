@@ -42,4 +42,12 @@
     <string name="answer">responder</string>
     <string name="q_name">Número Q</string>
     <string name="dash">Guión</string>
+    <string name="finished_section">Felicidades! Has completado el</string>
+    <string name="section">Sección</string>
+    <string name="seconds_remaining">Segundos restantes:</string>
+    <string name="time_up">Tiempo hasta</string>
+    <string name="fail">Fallar</string>
+    <string name="pass">Pasar</string>
+    <string name="question_number">Número de pregunta</string>
+    <string name="q">Q</string>
 </resources>

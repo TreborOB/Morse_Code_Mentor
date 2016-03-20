@@ -32,6 +32,7 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
     private MorseInput morseInput;
     private Sound playSound = new Sound();
 
+
     @Bind(R.id.padTest) CircularImageView   testPad;
     @Bind(R.id.testTextChar) TextView       testTextViewTextChar;
     @Bind(R.id.testMorseChar) TextView      testTextViewMorseChar;
@@ -54,7 +55,6 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
     private String question[];
 
     private ShowcaseConfig config = new ShowcaseConfig();
-
 
 
 
@@ -121,6 +121,12 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
     private void updateCurrentStep() {
         resetText();
 
+        if(mCurrentStep == 0){
+            testObjective.setTextSize(20.0f);
+        }else{
+            testObjective.setTextSize(40.0f);
+        }
+
 
         if(mCurrentStep == mSteps.size()){
 
@@ -150,7 +156,7 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
             testPad.setVisibility(step.getPadVisibility());
 
             if (mCurrentStep != 0) {
-                questionNumber.setText("Q " + mCurrentStep + "/" + noOfQuestions);
+                questionNumber.setText(getResources().getText(R.string.q)+ " " + mCurrentStep + "/" + noOfQuestions);
                 countDown();
 
             }
@@ -241,12 +247,12 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
         countDownTimer = new CountDownTimer(Options.TIMER, 1000) {
 
             public void onTick(long millisUntilFinished) {
-                timer.setText("Seconds remaining: " + millisUntilFinished / 1000);
+                timer.setText(getResources().getText(R.string.seconds_remaining) + " " + millisUntilFinished / 1000);
                 isTimerRunning = true;
             }
 
             public void onFinish() {
-                timer.setText("Time up" );
+                timer.setText(getResources().getText(R.string.time_up));
                 isTimerRunning = false;
                 showDialog();
 

@@ -1,13 +1,13 @@
 package com.example.robert.morseprototype.Training;
 
 import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import com.example.robert.morseprototype.Database.SnappyDB;
-import com.example.robert.morseprototype.Misc.Logger;
 import com.example.robert.morseprototype.R;
 import com.google.common.base.Strings;
 
@@ -19,15 +19,16 @@ public class ResultsAdapter extends ArrayAdapter <String> {
     private String results [];
     private String question [];
     private String testLetters;
-
+    private Context context;
 
 
     public ResultsAdapter(Activity context, String [] array, String testLetters, String [] question) {
         super(context, R.layout.activity_results_item, array);
-        mInflater = LayoutInflater.from(context);
-        this.results = array;
-        this.question = question;
+        mInflater        = LayoutInflater.from(context);
+        this.results     = array;
+        this.question    = question;
         this.testLetters = testLetters;
+        this.context     = context;
 
 
         SnappyDB.initSnappy();
@@ -55,11 +56,11 @@ public class ResultsAdapter extends ArrayAdapter <String> {
             score.setText("" + i + "%");
 
             if(i >0){
-                percentage.setText("Pass");
+                percentage.setText(context.getResources().getText(R.string.pass));
                 updateProgress(testLetters);
 
             }else{
-                percentage.setText("Fail");
+                percentage.setText(context.getResources().getText(R.string.fail));
             }
 
 
@@ -78,7 +79,7 @@ public class ResultsAdapter extends ArrayAdapter <String> {
                 questionNumber.setText("");
 
             }else{
-                questionNumber.setText("Question Number " + position + ": " + question[position]);
+                questionNumber.setText(context.getResources().getText(R.string.question_number) + " " + position + ": " + question[position]);
             }
                 answer.setText(textToDisplay);
 
@@ -118,7 +119,6 @@ public class ResultsAdapter extends ArrayAdapter <String> {
 
         SnappyDB.insertElement(lettersProgress);
 
-        Logger.log("ResultsAdapter: " + lettersProgress);
 
 
         //Opens up the next stage of the trail
@@ -143,7 +143,5 @@ public class ResultsAdapter extends ArrayAdapter <String> {
 
 
     }
-
-
 
 }

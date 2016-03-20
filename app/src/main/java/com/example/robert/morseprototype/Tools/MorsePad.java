@@ -116,11 +116,15 @@ public class MorsePad extends BaseActivity implements OnCharacterDecoded, OnPadS
     @Override
     public void onCharacterDecoded(String character) {
         sentence.setText(morseInput.getWord());
+
+
     }
 
     @Override
     public void onPadPressed() {
         mOutput.turnOn();
+        textViewMorseChar.setText("");
+
     }
 
     @Override

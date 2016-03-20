@@ -23,7 +23,13 @@
     <!--Results-->
     <string name="q_name">Q Number</string>
     <string name="answer">Answer</string>
+    <string name="pass">Pass</string>
+    <string name="fail">Fail</string>
     <!--Results-->
+
+    <!--Results Adapter-->
+    <string name="question_number">Question Number</string>
+    <!--Results Adapter-->
 
     <!--Introduction-->
     <string name="previous">Previous</string>
@@ -62,6 +68,9 @@
 
     <!--test-->
     <string name="test_start">Start</string>
+    <string name="seconds_remaining">Seconds remaining:</string>
+    <string name="time_up">Time up</string>
+    <string name="q">Q</string>
     <!--test-->
 
     <!--tools-->
@@ -96,5 +105,11 @@
     <string name="morse_code_level">Morse code level</string>
     <string name="language_selection">Language selection</string>
     <!--Options-->
+
+
+    <!--Finished Trail-->
+    <string name="finished_section">Congratulations! You completed the</string>
+    <string name="section">Section</string>
+    <!--Finished Trail-->
 
 </resources>

@@ -11,6 +11,7 @@ import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.example.robert.morseprototype.Hardware.Output;
 import com.example.robert.morseprototype.Hardware.Sound;
 import com.example.robert.morseprototype.Misc.MorseTranslations;
+import com.example.robert.morseprototype.Misc.ShowCaseViewArrays;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
 import com.gc.materialdesign.views.ButtonFlat;
@@ -34,7 +35,7 @@ public class Sos extends BaseActivity {
 
 
     private ShowcaseConfig config = new ShowcaseConfig();
-
+    String language;
 
     private Sound playSound = new Sound();
     Output mOutput;
@@ -55,6 +56,7 @@ public class Sos extends BaseActivity {
         setContentView(R.layout.activity_sos);
         ButterKnife.bind(this);
 
+        language = Options.getLanguage(Sos.this);
 
         if(Options.getSosSpeed(this)) {
             Options.setSpeedFast();
@@ -152,12 +154,28 @@ public class Sos extends BaseActivity {
 
         config.setDelay(300);
 
+
+        String array[];
+
+        switch (language) {
+            case "English":
+                array = ShowCaseViewArrays.sosEnglish();
+                break;
+            case "Spanish":
+                array = ShowCaseViewArrays.sosSpanish();
+                break;
+            default:
+                array = ShowCaseViewArrays.sosChinese();
+                break;
+        }
+
+
+
         MaterialShowcaseSequence sequence = new MaterialShowcaseSequence(this);
 
         sequence.setConfig(config);
 
-        sequence.addSequenceItem(sosButton,
-                "Select how you would like to send the SOS Morse sequence and hit this button to start", "GOT IT");
+        sequence.addSequenceItem(sosButton, array[0], array[1]);
 
 
 

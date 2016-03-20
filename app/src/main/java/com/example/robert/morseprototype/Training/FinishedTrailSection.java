@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.example.robert.morseprototype.R;
 
 import butterknife.Bind;
@@ -25,9 +27,9 @@ public class FinishedTrailSection extends AppCompatActivity {
         Intent intent = getIntent();
         String trailSection = intent.getExtras().getString("trailSection");
 
-        trailCompleted.setText("Congratulations! You completed the " + trailSection + " section");
+        trailCompleted.setText(getResources().getString(R.string.finished_section) + " " + trailSection + " "+ getResources().getString(R.string.section));
 
-
+        YoYo.with(Techniques.BounceIn).duration(700).playOn(findViewById(R.id.trailCompleted));
 
     }
 }

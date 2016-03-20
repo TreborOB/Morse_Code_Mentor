@@ -36,30 +36,83 @@ public class Training extends AppCompatActivity {
 
 
 
+        String language = Options.getLanguage(Training.this).toString();
+
+
+
+
         final ArrayList<MorseSymbols> trail = new ArrayList<>();
-        MorseSymbols m1 = new MorseSymbols("Introduction", "Morse Introduction", R.raw.morseintroduction);
-        MorseSymbols m2 = new MorseSymbols("A-F", "Letters A-F", R.raw.lettersatof);
-        MorseSymbols m3 = new MorseSymbols("G-K", "Letters G-K", R.raw.lettersgtok);
-        MorseSymbols m4 = new MorseSymbols("L-P", "Letters L-P", R.raw.lettersltop);
-        MorseSymbols m5 = new MorseSymbols("Q-U", "Letters Q-U", R.raw.lettersqtou);
-        MorseSymbols m6 = new MorseSymbols("V-Z", "Letters V-Z", R.raw.lettersvtoz);
-        MorseSymbols m7 = new MorseSymbols("Numbers", "Numbers 1-9", R.raw.numbers);
 
 
-        trail.add(m1);
-        trail.add(m2);
-        trail.add(m3);
-        trail.add(m4);
-        trail.add(m5);
-        trail.add(m6);
-        trail.add(m7);
+        switch (language) {
+            case "English": {
+                MorseSymbols m1 = new MorseSymbols("Introduction", "Morse Introduction", R.raw.morseintroduction);
+                MorseSymbols m2 = new MorseSymbols("A-F", "Letters A-F", R.raw.lettersatof);
+                MorseSymbols m3 = new MorseSymbols("G-K", "Letters G-K", R.raw.lettersgtok);
+                MorseSymbols m4 = new MorseSymbols("L-P", "Letters L-P", R.raw.lettersltop);
+                MorseSymbols m5 = new MorseSymbols("Q-U", "Letters Q-U", R.raw.lettersqtou);
+                MorseSymbols m6 = new MorseSymbols("V-Z", "Letters V-Z", R.raw.lettersvtoz);
+                MorseSymbols m7 = new MorseSymbols("Numbers", "Numbers 1-9", R.raw.numbers);
+
+                trail.add(m1);
+                trail.add(m2);
+                trail.add(m3);
+                trail.add(m4);
+                trail.add(m5);
+                trail.add(m6);
+                trail.add(m7);
+
+                break;
+            }
+            case "Spanish": {
+
+                MorseSymbols m1 = new MorseSymbols("Introduction", "Spanish", R.raw.morseintroduction);
+                MorseSymbols m2 = new MorseSymbols("A-F", "Spanish", R.raw.lettersatof);
+                MorseSymbols m3 = new MorseSymbols("G-K", "Spanish", R.raw.lettersgtok);
+                MorseSymbols m4 = new MorseSymbols("L-P", "Spanish", R.raw.lettersltop);
+                MorseSymbols m5 = new MorseSymbols("Q-U", "Spanish-U", R.raw.lettersqtou);
+                MorseSymbols m6 = new MorseSymbols("V-Z", "Spanish", R.raw.lettersvtoz);
+                MorseSymbols m7 = new MorseSymbols("Numbers", "Spanish", R.raw.numbers);
+
+                trail.add(m1);
+                trail.add(m2);
+                trail.add(m3);
+                trail.add(m4);
+                trail.add(m5);
+                trail.add(m6);
+                trail.add(m7);
+
+                break;
+            }
+            default: {
+
+                MorseSymbols m1 = new MorseSymbols("Introduction", "Chinese", R.raw.morseintroduction);
+                MorseSymbols m2 = new MorseSymbols("A-F", "Chinese", R.raw.lettersatof);
+                MorseSymbols m3 = new MorseSymbols("G-K", "Chinese", R.raw.lettersgtok);
+                MorseSymbols m4 = new MorseSymbols("L-P", "Chinese", R.raw.lettersltop);
+                MorseSymbols m5 = new MorseSymbols("Q-U", "Chinese", R.raw.lettersqtou);
+                MorseSymbols m6 = new MorseSymbols("V-Z", "Chinese", R.raw.lettersvtoz);
+                MorseSymbols m7 = new MorseSymbols("Numbers", "Chinese", R.raw.numbers);
+
+                trail.add(m1);
+                trail.add(m2);
+                trail.add(m3);
+                trail.add(m4);
+                trail.add(m5);
+                trail.add(m6);
+                trail.add(m7);
+
+
+                break;
+            }
+        }
+
 
 
 
 
         adapter = new TrainingAdapter(this, trail);
         listView = (ListView) findViewById(R.id.list);
-
 
 
 
@@ -103,7 +156,6 @@ public class Training extends AppCompatActivity {
 
     public void onResume(){
         super.onResume();
-
 
         Logger.log("Training: Resume()");
 

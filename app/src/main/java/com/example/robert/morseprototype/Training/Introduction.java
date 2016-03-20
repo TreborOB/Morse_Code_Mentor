@@ -12,11 +12,11 @@ import android.widget.TextView;
 import com.example.robert.morseprototype.Hardware.Output;
 import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.example.robert.morseprototype.Hardware.Sound;
+import com.example.robert.morseprototype.Misc.ShowCaseViewArrays;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
 import com.example.robert.morseprototype.SwipeDialogs.LettersDialog;
 import com.example.robert.morseprototype.SwipeDialogs.MorseGestureDetector;
-import com.example.robert.morseprototype.Tools.EnglishToMorse;
 import com.example.robert.morseprototype.Training.MorseInput.OnEndOfInput;
 import com.gc.materialdesign.views.ButtonFlat;
 import com.gc.materialdesign.views.Switch;
@@ -65,6 +65,7 @@ public class Introduction extends BaseActivity implements OnEndOfInput, MorseInp
     @Bind(R.id.tickThree)          ImageView            tickThree;
     @Bind(R.id.introSound)         Switch               introSound;
 
+    String language;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +80,24 @@ public class Introduction extends BaseActivity implements OnEndOfInput, MorseInp
         morseInput = new MorseInput(this, introTextViewMorseChar, introTextViewTextChar, introPad, introProgressBar, tickOne, tickTwo, tickThree);
         morseInput.setOnEndOfInputCallback(this);
 
-        mSteps = TutorialSteps.getIntro();
+
+        language = Options.getLanguage(Introduction.this);
+
+
+        switch (language) {
+            case "English":
+                mSteps = TutorialSteps.getIntro();
+                break;
+            case "Spanish":
+                mSteps = TutorialSteps.getIntroSpanish();
+                break;
+            default:
+                mSteps = TutorialSteps.getIntroChinese();
+                break;
+        }
+
+
+
         mCurrentStep = 0;
 
         updateCurrentStep();
@@ -272,14 +290,29 @@ public class Introduction extends BaseActivity implements OnEndOfInput, MorseInp
 
         MaterialShowcaseSequence sequence = new MaterialShowcaseSequence(this);
 
+        String array[];
+
+        switch (language) {
+            case "English":
+                array = ShowCaseViewArrays.introductionEnglish();
+                break;
+            case "Spanish":
+                array = ShowCaseViewArrays.introductionSpanish();
+                break;
+            default:
+                array = ShowCaseViewArrays.introductionChinese();
+                break;
+        }
+
+
+
         sequence.setConfig(config);
 
         sequence.addSequenceItem(introObjective,
-                "Each step of the introduction will have an objective", "GOT IT");
+                array[0], array[2]);
 
         sequence.addSequenceItem(introTextViewMorseChar,
-                "When you key in the Morse your Morse code will be displayed here - you must get the objective correct 3 " +
-                 "times in order to move onto the next stage", "GOT IT");
+                array[1], array[2]);
 
 
         sequence.start();

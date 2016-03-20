@@ -172,7 +172,11 @@ public class Options extends AppCompatPreferenceActivity {
     }
 
 
+   public static String getLevel(Context context){
 
+       SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+       return sharedPreferences.getString(MORSE_LEVEL, MORSE_LEVEL);
+   }
 
 
 
