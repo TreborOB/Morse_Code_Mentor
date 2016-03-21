@@ -16,8 +16,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:icon"
-        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning"
+        tools:replace="android:icon">
         <activity
             android:name=".Misc.MainActivity"
             android:screenOrientation="portrait">
@@ -40,9 +40,9 @@
         <activity android:name=".Tools.MorseToEnglish" />
         <activity android:name=".Training.Results" />
         <activity android:name=".Tools.ScreenFlash" />
-        <activity android:name=".Training.FinishedTrailSection"/>
-
-
+        <activity android:name=".Training.FinishedTrailSection" />
+        <activity android:name=".Tools.TrainingType" />
+        <activity android:name=".Training.Receive"></activity>
     </application>
 
 </manifest>

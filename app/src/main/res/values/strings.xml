@@ -112,4 +112,17 @@
     <string name="section">Section</string>
     <!--Finished Trail-->
 
+
+    <!--Training Type-->
+    <string name="transmit">Transmit</string>
+    <string name="receive">Receive</string>
+    <string name="morse_code_training">Morse Training</string>
+    <!--Training Type-->
+
+    <!--Receive-->
+    <string name="start_receive">Start Receiving</string>
+    <!--Receive-->
+
+
+
 </resources>

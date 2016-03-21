@@ -46,6 +46,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/tools_morse_tools"
         android:id="@+id/morseTools"
+        android:textStyle="bold"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="66dp" />

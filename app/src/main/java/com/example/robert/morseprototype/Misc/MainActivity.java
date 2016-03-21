@@ -16,7 +16,8 @@ import com.example.robert.morseprototype.Sos.Sos;
 import com.example.robert.morseprototype.SwipeDialogs.LettersDialog;
 import com.example.robert.morseprototype.SwipeDialogs.MorseGestureDetector;
 import com.example.robert.morseprototype.Tools.Tools;
-import com.example.robert.morseprototype.Training.Training;
+import com.example.robert.morseprototype.Tools.TrainingType;
+
 
 
 import butterknife.Bind;
@@ -60,6 +61,8 @@ public class MainActivity extends BaseActivity {
         getSupportActionBar().setTitle(getResources().getString(R.string.app_name));
 
 
+
+
     }
 
 
@@ -73,7 +76,7 @@ public class MainActivity extends BaseActivity {
 
 
     public void openTraining(View view) {
-        Intent intent = new Intent(this, Training.class);
+        Intent intent = new Intent(this, TrainingType.class);
         startActivity(intent);
 
 

@@ -92,6 +92,14 @@ public class SnappyDB {
       }
 
 
+    public static void closeSnappy(){
+        try {
+            snappyDB.close();
+        }catch(SnappydbException e)
+        {
+            Logger.log("SnappyDB close exception");
+        }
+    }
 
 
 

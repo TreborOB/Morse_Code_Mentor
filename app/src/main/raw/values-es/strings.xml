@@ -50,4 +50,8 @@
     <string name="pass">Pasar</string>
     <string name="question_number">Número de pregunta</string>
     <string name="q">Q</string>
+    <string name="transmit">Transmitir</string>
+    <string name="receive">Recibir</string>
+    <string name="start_receive">Comenzar a recibir</string>
+    <string name="morse_code_training">Morse Code Training</string>
 </resources>

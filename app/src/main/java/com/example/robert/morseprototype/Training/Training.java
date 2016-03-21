@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.robert.morseprototype.Database.SnappyDB;
 import com.example.robert.morseprototype.Hardware.Sound;
 import com.example.robert.morseprototype.Misc.Logger;
 import com.example.robert.morseprototype.Options.Options;
@@ -36,7 +37,7 @@ public class Training extends AppCompatActivity {
 
 
 
-        String language = Options.getLanguage(Training.this).toString();
+        String language = Options.getLanguage(Training.this);
 
 
 
@@ -153,6 +154,10 @@ public class Training extends AppCompatActivity {
 
 
 
+    public void onPause(){
+        super.onPause();
+        SnappyDB.closeSnappy();
+    }
 
     public void onResume(){
         super.onResume();

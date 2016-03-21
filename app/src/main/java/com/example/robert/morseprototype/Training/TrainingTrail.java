@@ -66,7 +66,7 @@ public class TrainingTrail extends BaseActivity implements MorseInput.OnEndOfInp
 
 
         //Gets the current language
-        language = Options.getLanguage(TrainingTrail.this).toString();
+        language = Options.getLanguage(TrainingTrail.this);
 
 
         switch (language) {
