@@ -34,6 +34,7 @@ public class MorseToEnglish extends BaseActivity {
 
     private Sound playSound = new Sound();
 
+    String language;
 
     @Bind(R.id.enterMorse) TextView     enterMorse;
     @Bind(R.id.convertedMorse) TextView convertedMorse;
@@ -45,6 +46,7 @@ public class MorseToEnglish extends BaseActivity {
         setContentView(R.layout.activity_morse_to_english);
         ButterKnife.bind(this);
 
+        language = Options.getLanguage(MorseToEnglish.this);
 
     }
 
@@ -55,8 +57,20 @@ public class MorseToEnglish extends BaseActivity {
 
 
         if(Options.getEnabledVoice(this))
-            playSound.playSymbol(MorseToEnglish.this, R.raw.dot);
 
+            switch(language) {
+                case "English":
+                    playSound.playSymbol(MorseToEnglish.this, R.raw.dot);
+                    break;
+
+                case "Spanish":
+                    playSound.playSymbol(MorseToEnglish.this, R.raw.dotspanish);
+                    break;
+
+                default:
+                    playSound.playSymbol(MorseToEnglish.this, R.raw.dashchinese);
+                    break;
+            }
     }
 
     public void dash(View view){
@@ -66,7 +80,20 @@ public class MorseToEnglish extends BaseActivity {
 
 
         if(Options.getEnabledVoice(this))
-            playSound.playSymbol(MorseToEnglish.this, R.raw.dash);
+
+        switch(language) {
+            case "English":
+                playSound.playSymbol(MorseToEnglish.this, R.raw.dash);
+                break;
+
+            case "Spanish":
+                playSound.playSymbol(MorseToEnglish.this, R.raw.dashspanish);
+                break;
+
+            default:
+                playSound.playSymbol(MorseToEnglish.this, R.raw.dashchinese);
+                break;
+        }
 
     }
 
@@ -77,15 +104,40 @@ public class MorseToEnglish extends BaseActivity {
 
 
         if(Options.getEnabledVoice(this))
-            playSound.playSymbol(MorseToEnglish.this, R.raw.space);
+            switch(language) {
+                case "English":
+                    playSound.playSymbol(MorseToEnglish.this, R.raw.space);
+                    break;
 
+                case "Spanish":
+                    playSound.playSymbol(MorseToEnglish.this, R.raw.screenflashspanish);
+                    break;
+
+                default:
+                    playSound.playSymbol(MorseToEnglish.this, R.raw.spacechinese);
+                    break;
+            }
 
     }
 
     public void displayConvertedMorse(View view) {
 
         if(Options.getEnabledVoice(this))
-            playSound.playSymbol(MorseToEnglish.this, R.raw.convert);
+
+
+            switch(language) {
+                case "English":
+                    playSound.playSymbol(MorseToEnglish.this, R.raw.convert);
+                    break;
+
+                case "Spanish":
+                    playSound.playSymbol(MorseToEnglish.this, R.raw.convertspanish);
+                    break;
+
+                default:
+                    playSound.playSymbol(MorseToEnglish.this, R.raw.convertspanish);
+                    break;
+            }
 
         if(Strings.isNullOrEmpty(morseToConvert.toString())){
             YoYo.with(Techniques.Shake).duration(700).playOn(findViewById(R.id.enterMorse));
@@ -136,7 +188,22 @@ public class MorseToEnglish extends BaseActivity {
             case R.id.action_favorite:
 
                 if(Options.getEnabledVoice(this))
-                    playSound.playSymbol(MorseToEnglish.this, R.raw.help);
+
+
+                    switch(language) {
+                        case "English":
+                            playSound.playSymbol(MorseToEnglish.this, R.raw.help);
+                            break;
+
+                        case "Spanish":
+                            playSound.playSymbol(MorseToEnglish.this, R.raw.helpspanish);
+                            break;
+
+                        default:
+                            playSound.playSymbol(MorseToEnglish.this, R.raw.helpchinese);
+                            break;
+                    }
+
 
                 showCaseMainActivity();
         }

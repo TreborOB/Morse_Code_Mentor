@@ -1,6 +1,7 @@
 package com.example.robert.morseprototype.Sos;
 
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -35,11 +36,13 @@ public class Sos extends BaseActivity {
 
 
     private ShowcaseConfig config = new ShowcaseConfig();
+
     String language;
 
     private Sound playSound = new Sound();
     Output mOutput;
 
+    @SuppressLint("HandlerLeak")
     Handler mImageHandler = new Handler() {
         public void handleMessage(android.os.Message msg) {
 
@@ -84,9 +87,39 @@ public class Sos extends BaseActivity {
                 mOutput.setSoundEnabled(isChecked);
 
                 if (Options.getEnabledVoice(Sos.this))
-                    if (isChecked)
-                        playSound.playSymbol(Sos.this, R.raw.audioon);
-                    else playSound.playSymbol(Sos.this, R.raw.audiooff);
+                    if (isChecked){
+
+                        switch(language) {
+                            case "English":
+                                playSound.playSymbol(Sos.this, R.raw.audioon);
+                                break;
+
+                            case "Spanish":
+                                playSound.playSymbol(Sos.this, R.raw.audioonspanish);
+                                break;
+
+                            default:
+                                playSound.playSymbol(Sos.this, R.raw.audioonchinese);
+                                break;
+                        }
+                    }
+                    else {
+
+
+                        switch(language) {
+                            case "English":
+                                playSound.playSymbol(Sos.this, R.raw.audiooff);
+                                break;
+
+                            case "Spanish":
+                                playSound.playSymbol(Sos.this, R.raw.audioonspanish);
+                                break;
+
+                            default:
+                                playSound.playSymbol(Sos.this, R.raw.audiooffchinese);
+                                break;
+                        }
+                    }
             }
         });
 
@@ -99,9 +132,37 @@ public class Sos extends BaseActivity {
                 mOutput.setVibratorEnabled(isChecked);
 
                 if (Options.getEnabledVoice(Sos.this))
-                    if (isChecked)
-                        playSound.playSymbol(Sos.this, R.raw.vibrateon);
-                    else playSound.playSymbol(Sos.this, R.raw.vibrateoff);
+                    if (isChecked) {
+
+                        switch(language) {
+                            case "English":
+                                playSound.playSymbol(Sos.this, R.raw.vibrateon);
+                                break;
+
+                            case "Spanish":
+                                playSound.playSymbol(Sos.this, R.raw.vibrateonspanish);
+                                break;
+
+                            default:
+                                playSound.playSymbol(Sos.this, R.raw.vibrateonchinese);
+                                break;
+                        }
+                    }
+                    else {
+                        switch(language) {
+                            case "English":
+                                playSound.playSymbol(Sos.this, R.raw.vibrateoff);
+                                break;
+
+                            case "Spanish":
+                                playSound.playSymbol(Sos.this, R.raw.virbrateoffspanish);
+                                break;
+
+                            default:
+                                playSound.playSymbol(Sos.this, R.raw.vibrateoffchinese);
+                                break;
+                        }
+                    }
             }
         });
 
@@ -110,15 +171,42 @@ public class Sos extends BaseActivity {
             @Override
             public void onCheck(Switch View, boolean isChecked) {
                 if(!isChecked)
-                   mOutput.cancel();
+                    mOutput.cancel();
 
 
                 mOutput.setLightEnabled(isChecked);
 
                 if (Options.getEnabledVoice(Sos.this))
-                    if (isChecked)
-                        playSound.playSymbol(Sos.this, R.raw.flashon);
-                    else playSound.playSymbol(Sos.this, R.raw.flashoff);
+                    if (isChecked) {
+                        switch(language) {
+                            case "English":
+                                playSound.playSymbol(Sos.this, R.raw.flashon);
+                                break;
+
+                            case "Spanish":
+                                playSound.playSymbol(Sos.this, R.raw.flashonspanish);
+                                break;
+
+                            default:
+                                playSound.playSymbol(Sos.this, R.raw.flashonchinese);
+                                break;
+                        }
+                    }
+                    else{
+                        switch(language) {
+                            case "English":
+                                playSound.playSymbol(Sos.this, R.raw.flashoff);
+                                break;
+
+                            case "Spanish":
+                                playSound.playSymbol(Sos.this, R.raw.flashoffspanish);
+                                break;
+
+                            default:
+                                playSound.playSymbol(Sos.this, R.raw.screenflashoffchinese);
+                                break;
+                        }
+                    }
             }
         });
 
@@ -132,9 +220,36 @@ public class Sos extends BaseActivity {
                 mOutput.setScreenEnabled(isChecked, mImageHandler);
 
                 if (Options.getEnabledVoice(Sos.this))
-                    if (isChecked)
-                        playSound.playSymbol(Sos.this, R.raw.screenflashon);
-                    else playSound.playSymbol(Sos.this, R.raw.screenflashoff);
+                    if (isChecked) {
+                        switch(language) {
+                            case "English":
+                                playSound.playSymbol(Sos.this, R.raw.screenflashon);
+                                break;
+
+                            case "Spanish":
+                                playSound.playSymbol(Sos.this, R.raw.screenflashonspanish);
+                                break;
+
+                            default:
+                                playSound.playSymbol(Sos.this, R.raw.screenflashoffchinese);
+                                break;
+                        }
+                    }
+                    else {
+                        switch(language) {
+                            case "English":
+                                playSound.playSymbol(Sos.this, R.raw.screenflashoff);
+                                break;
+
+                            case "Spanish":
+                                playSound.playSymbol(Sos.this, R.raw.screenflashoffspanish);
+                                break;
+
+                            default:
+                                playSound.playSymbol(Sos.this, R.raw.screenflashoffchinese);
+                                break;
+                        }
+                    }
             }
         });
 
@@ -189,8 +304,19 @@ public class Sos extends BaseActivity {
 
             case R.id.action_favorite:
 
-                if(Options.getEnabledVoice(this))
-                    playSound.playSymbol(Sos.this, R.raw.help);
+                switch(language) {
+                    case "English":
+                        playSound.playSymbol(Sos.this, R.raw.help);
+                        break;
+
+                    case "Spanish":
+                        playSound.playSymbol(Sos.this, R.raw.helpspanish);
+                        break;
+
+                    default:
+                        playSound.playSymbol(Sos.this, R.raw.helpchinese);
+                        break;
+                }
 
                 showCaseMainActivity();
         }

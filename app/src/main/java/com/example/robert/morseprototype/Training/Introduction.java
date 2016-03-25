@@ -52,7 +52,6 @@ public class Introduction extends BaseActivity implements OnEndOfInput, MorseInp
 
 
 
-
     @Bind(R.id.padIntro)           CircularImageView    introPad;
     @Bind(R.id.introMorseChar)     TextView             introTextViewMorseChar;
     @Bind(R.id.introTextChar)      TextView             introTextViewTextChar;
@@ -324,6 +323,20 @@ public class Introduction extends BaseActivity implements OnEndOfInput, MorseInp
         switch (item.getItemId()) {
 
             case R.id.action_favorite:
+
+                switch(language) {
+                    case "English":
+                        playSound.playSymbol(Introduction.this, R.raw.help);
+                        break;
+
+                    case "Spanish":
+                        playSound.playSymbol(Introduction.this, R.raw.helpspanish);
+                        break;
+
+                    default:
+                        playSound.playSymbol(Introduction.this, R.raw.helpchinese);
+                        break;
+                }
 
                 showCaseMainActivity();
         }

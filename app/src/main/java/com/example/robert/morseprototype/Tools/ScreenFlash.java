@@ -1,6 +1,7 @@
 package com.example.robert.morseprototype.Tools;
 
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -42,6 +43,9 @@ public class ScreenFlash extends BaseActivity {
 
     private Output mOutput;
 
+    String language;
+
+    @SuppressLint("HandlerLeak")
     Handler mImageHandler = new Handler() {
         public void handleMessage(android.os.Message msg) {
 
@@ -59,6 +63,8 @@ public class ScreenFlash extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_screen_flash);
         ButterKnife.bind(this);
+
+        language = Options.getLanguage(ScreenFlash.this);
 
 
         if(Options.getSosSpeed(this)) {
@@ -141,7 +147,20 @@ public class ScreenFlash extends BaseActivity {
             case R.id.action_favorite:
 
                 if(Options.getEnabledVoice(this))
-                    playSound.playSymbol(ScreenFlash.this, R.raw.help);
+                    switch(language) {
+                        case "English":
+                            playSound.playSymbol(ScreenFlash.this, R.raw.help);
+                            break;
+
+                        case "Spanish":
+                            playSound.playSymbol(ScreenFlash.this, R.raw.helpspanish);
+                            break;
+
+                        default:
+                            playSound.playSymbol(ScreenFlash.this, R.raw.helpchinese);
+                            break;
+                    }
+
 
                 showCaseMainActivity();
         }

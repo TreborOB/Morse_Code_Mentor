@@ -39,6 +39,8 @@ public class MorsePad extends BaseActivity implements OnCharacterDecoded, OnPadS
 
     private Sound playSound = new Sound();
 
+    String language;
+
 
     @Bind(R.id.imgView) CircularImageView    introPad;
     @Bind(R.id.textViewMorseChar) TextView   textViewMorseChar;
@@ -55,6 +57,8 @@ public class MorsePad extends BaseActivity implements OnCharacterDecoded, OnPadS
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_morse_pad);
         ButterKnife.bind(this);
+
+        language = Options.getLanguage(MorsePad.this);
 
 
         mDetector = new GestureDetectorCompat(this, new mainMorseGestureDetector());
@@ -196,7 +200,20 @@ public class MorsePad extends BaseActivity implements OnCharacterDecoded, OnPadS
 
             case R.id.action_favorite:
                 if(Options.getEnabledVoice(this))
-                    playSound.playSymbol(MorsePad.this, R.raw.help);
+                    switch(language) {
+                        case "English":
+                            playSound.playSymbol(MorsePad.this, R.raw.help);
+                            break;
+
+                        case "Spanish":
+                            playSound.playSymbol(MorsePad.this, R.raw.help);
+                            break;
+
+                        default:
+                            playSound.playSymbol(MorsePad.this, R.raw.help);
+                            break;
+                    }
+
                 showCaseMainActivity();
         }
         return true;

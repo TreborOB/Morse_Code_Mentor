@@ -21,8 +21,6 @@ import java.util.ArrayList;
 public class Training extends AppCompatActivity {
 
 
-    private ListView listView;
-
     private static String[] items = {"Introduction", "A-F", "G-K", "L-P", "Q-U", "V-Z", "Numbers"};
 
     private Sound playSound = new Sound();
@@ -37,7 +35,7 @@ public class Training extends AppCompatActivity {
 
 
 
-        String language = Options.getLanguage(Training.this);
+        final String language = Options.getLanguage(Training.this);
 
 
 
@@ -67,13 +65,13 @@ public class Training extends AppCompatActivity {
             }
             case "Spanish": {
 
-                MorseSymbols m1 = new MorseSymbols("Introduction", "Spanish", R.raw.morseintroduction);
-                MorseSymbols m2 = new MorseSymbols("A-F", "Spanish", R.raw.lettersatof);
-                MorseSymbols m3 = new MorseSymbols("G-K", "Spanish", R.raw.lettersgtok);
-                MorseSymbols m4 = new MorseSymbols("L-P", "Spanish", R.raw.lettersltop);
-                MorseSymbols m5 = new MorseSymbols("Q-U", "Spanish-U", R.raw.lettersqtou);
-                MorseSymbols m6 = new MorseSymbols("V-Z", "Spanish", R.raw.lettersvtoz);
-                MorseSymbols m7 = new MorseSymbols("Numbers", "Spanish", R.raw.numbers);
+                MorseSymbols m1 = new MorseSymbols("Introduction", "Spanish", R.raw.morseintroductionspanish);
+                MorseSymbols m2 = new MorseSymbols("A-F", "Spanish", R.raw.lettersatofspanish);
+                MorseSymbols m3 = new MorseSymbols("G-K", "Spanish", R.raw.lettersgtokspanish);
+                MorseSymbols m4 = new MorseSymbols("L-P", "Spanish", R.raw.lettersltopspanish);
+                MorseSymbols m5 = new MorseSymbols("Q-U", "Spanish-U", R.raw.lettersqtouspanish);
+                MorseSymbols m6 = new MorseSymbols("V-Z", "Spanish", R.raw.lettersvtozspanish);
+                MorseSymbols m7 = new MorseSymbols("Numbers", "Spanish", R.raw.numbersspansih);
 
                 trail.add(m1);
                 trail.add(m2);
@@ -87,13 +85,13 @@ public class Training extends AppCompatActivity {
             }
             default: {
 
-                MorseSymbols m1 = new MorseSymbols("Introduction", "Chinese", R.raw.morseintroduction);
-                MorseSymbols m2 = new MorseSymbols("A-F", "Chinese", R.raw.lettersatof);
-                MorseSymbols m3 = new MorseSymbols("G-K", "Chinese", R.raw.lettersgtok);
-                MorseSymbols m4 = new MorseSymbols("L-P", "Chinese", R.raw.lettersltop);
-                MorseSymbols m5 = new MorseSymbols("Q-U", "Chinese", R.raw.lettersqtou);
+                MorseSymbols m1 = new MorseSymbols("Introduction", "Chinese", R.raw.morseintroductionchinese);
+                MorseSymbols m2 = new MorseSymbols("A-F", "Chinese", R.raw.lettersatofchinese);
+                MorseSymbols m3 = new MorseSymbols("G-K", "Chinese", R.raw.lettersgtokchinese);
+                MorseSymbols m4 = new MorseSymbols("L-P", "Chinese", R.raw.lettersltopchinese);
+                MorseSymbols m5 = new MorseSymbols("Q-U", "Chinese", R.raw.lettersqtouchinese);
                 MorseSymbols m6 = new MorseSymbols("V-Z", "Chinese", R.raw.lettersvtoz);
-                MorseSymbols m7 = new MorseSymbols("Numbers", "Chinese", R.raw.numbers);
+                MorseSymbols m7 = new MorseSymbols("Numbers", "Chinese", R.raw.numberschinese);
 
                 trail.add(m1);
                 trail.add(m2);
@@ -113,7 +111,7 @@ public class Training extends AppCompatActivity {
 
 
         adapter = new TrainingAdapter(this, trail);
-        listView = (ListView) findViewById(R.id.list);
+        ListView listView = (ListView) findViewById(R.id.list);
 
 
 
@@ -127,12 +125,10 @@ public class Training extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
 
-
                 String selectedItem = items[position];
 
+                playSound.playSymbol(Training.this, trail.get(position).getAudioResID());
 
-                if (Options.getEnabledVoice(Training.this))
-                    playSound.playSymbol(Training.this, trail.get(position).getAudioResID());
 
                 if (selectedItem.equals("Introduction")) {
                     Intent intent = new Intent(Training.this, Introduction.class);

@@ -56,7 +56,7 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
 
     private ShowcaseConfig config = new ShowcaseConfig();
 
-
+    String language;
 
 
     @Override
@@ -65,7 +65,7 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
         setContentView(R.layout.activity_test);
         ButterKnife.bind(this);
 
-
+        language = Options.getLanguage(Test.this);
 
         progressBarInvisible();
 
@@ -386,6 +386,22 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
         switch (item.getItemId()) {
 
             case R.id.action_favorite:
+
+
+
+                switch(language) {
+                    case "English":
+                        playSound.playSymbol(Test.this, R.raw.help);
+                        break;
+
+                    case "Spanish":
+                        playSound.playSymbol(Test.this, R.raw.helpspanish);
+                        break;
+
+                    default:
+                        playSound.playSymbol(Test.this, R.raw.helpchinese);
+                        break;
+                }
 
                 showCaseMainActivity();
         }

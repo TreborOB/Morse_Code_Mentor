@@ -4,7 +4,10 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 
 
-//Class took from Stackoverflow - i did not write any of the code in this class
+//Class took from Stack overflow - i did not write any of the code in this class
+
+//http://stackoverflow.com/questions/4139288/android-how-to-handle-right-to-left-swipe-gestures
+
 public class MorseGestureDetector extends GestureDetector.SimpleOnGestureListener {
     private static final float SWIPE_DISTANCE_THRESHOLD = 100;
     private static final float SWIPE_VELOCITY_THRESHOLD = 100;

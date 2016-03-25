@@ -4,13 +4,9 @@
     <string name="morse_code_level">莫尔斯电码等级</string>
     <string name="pref_description_Dialogs">对话框</string>
     <string name="pref_description_ProgressBar">进度条</string>
-    <string name="pref_description_sos_speed">SOS速度</string>
     <string name="pref_description_voice">语音</string>
-    <string name="pref_sos_fast">快速</string>
-    <string name="pref_sos_slow">慢</string>
     <string name="pref_title_dialogs">启用对话框</string>
     <string name="pref_title_progress_bar">启用进度条</string>
-    <string name="pref_title_set_sos_speed">SOS速度</string>
     <string name="pref_title_voice">启用语音</string>
     <string name="tools_open_screen_flash">屏的Flash</string>
     <string name="tools_morse_tools">莫尔斯工具</string>
@@ -54,4 +50,7 @@
     <string name="receive">接收</string>
     <string name="start_receive">开始接收</string>
     <string name="morse_code_training">莫尔斯电码培训</string>
+    <string name="fast_screen_flash">快速闪屏</string>
+    <string name="Off">离</string>
+    <string name="On">上</string>
 </resources>

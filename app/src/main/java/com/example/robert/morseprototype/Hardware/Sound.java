@@ -21,11 +21,10 @@ public class Sound {
     private int loadedSoundPool;
     private int sound;
 
-    private Context mContext;
     private MediaPlayer mMediaPlayer;
 
     public Sound(Context context) {
-        this.mContext = context;
+        Context mContext = context;
         soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
         sound = soundPool.load(context, DEFAULT_SOUND, 1);
         soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {

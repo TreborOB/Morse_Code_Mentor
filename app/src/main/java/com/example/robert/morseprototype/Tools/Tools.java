@@ -15,10 +15,15 @@ public class Tools extends AppCompatActivity {
 
     private Sound playSound = new Sound();
 
+    String language;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tools);
+
+        language = Options.getLanguage(Tools.this);
+
     }
 
 
@@ -29,7 +34,20 @@ public class Tools extends AppCompatActivity {
         startActivity(intent);
 
         if(Options.getEnabledVoice(this))
-            playSound.playSymbol(Tools.this, R.raw.screenflash);
+
+            switch(language) {
+                case "English":
+                    playSound.playSymbol(Tools.this, R.raw.screenflash);
+                    break;
+
+                case "Spanish":
+                    playSound.playSymbol(Tools.this, R.raw.screenflashspanish);
+                    break;
+
+                default:
+                    playSound.playSymbol(Tools.this, R.raw.screenflashchinese);
+                    break;
+            }
     }
 
 
@@ -39,7 +57,20 @@ public class Tools extends AppCompatActivity {
         startActivity(intent);
 
         if(Options.getEnabledVoice(this))
-            playSound.playSymbol(Tools.this, R.raw.englishtomorse);
+
+            switch(language) {
+                case "English":
+                    playSound.playSymbol(Tools.this, R.raw.englishtomorse);
+                    break;
+
+                case "Spanish":
+                    playSound.playSymbol(Tools.this, R.raw.englishtomorsespanish);
+                    break;
+
+                default:
+                    playSound.playSymbol(Tools.this, R.raw.englishtomorsechinese);
+                    break;
+            }
     }
 
 
@@ -49,7 +80,20 @@ public class Tools extends AppCompatActivity {
         startActivity(intent);
 
         if(Options.getEnabledVoice(this))
-            playSound.playSymbol(Tools.this, R.raw.morsetoenglish);
+
+            switch(language) {
+                case "English":
+                    playSound.playSymbol(Tools.this, R.raw.morsetoenglish);
+                    break;
+
+                case "Spanish":
+                    playSound.playSymbol(Tools.this, R.raw.morsetoenglishspanish);
+                    break;
+
+                default:
+                    playSound.playSymbol(Tools.this, R.raw.morsetoenglishchinese);
+                    break;
+            }
     }
 
 
@@ -59,7 +103,20 @@ public class Tools extends AppCompatActivity {
         startActivity(intent);
 
         if(Options.getEnabledVoice(this))
-            playSound.playSymbol(Tools.this, R.raw.morsepad);
+
+            switch(language) {
+                case "English":
+                    playSound.playSymbol(Tools.this, R.raw.morsepad);
+                    break;
+
+                case "Spanish":
+                    playSound.playSymbol(Tools.this, R.raw.morsetoenglishspanish);
+                    break;
+
+                default:
+                    playSound.playSymbol(Tools.this, R.raw.morsepadchinese);
+                    break;
+            }
 
     }
 }

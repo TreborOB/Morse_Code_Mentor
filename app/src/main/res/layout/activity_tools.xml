@@ -14,8 +14,9 @@
         android:id="@+id/english_to_morse_button"
         android:onClick="englishMorse"
         android:textColor="#FFFFFF"
-        android:layout_above="@+id/morsePad"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/button11"
+        android:layout_alignRight="@+id/morseTools"
+        android:layout_alignStart="@+id/button8" />
 
 
     <com.gc.materialdesign.views.ButtonRectangle
@@ -25,20 +26,20 @@
         android:id="@+id/morsePad"
         android:onClick="morsePad"
         android:textColor="#FFFFFF"
-        android:layout_marginBottom="71dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/english_to_morse_button"
-        android:layout_alignEnd="@+id/english_to_morse_button" />
+        android:layout_below="@+id/morseTools"
+        android:layout_marginTop="59dp"
+        android:layout_alignStart="@+id/morseTools"
+        android:layout_alignEnd="@+id/morseTools" />
 
     <com.gc.materialdesign.views.ButtonRectangle
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/MorseToEnglish"
         android:id="@+id/button8"
+        android:minWidth="100dp"
         android:onClick="convertMorse"
-        android:layout_above="@+id/english_to_morse_button"
-        android:layout_alignStart="@+id/english_to_morse_button"
-        android:layout_alignEnd="@+id/english_to_morse_button" />
+        android:layout_below="@+id/morsePad"
+        android:layout_alignStart="@+id/morsePad" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -57,8 +58,8 @@
         android:text="@string/tools_open_screen_flash"
         android:onClick="openScreenFlash"
         android:id="@+id/button11"
-        android:layout_above="@+id/button8"
+        android:layout_below="@+id/button8"
         android:layout_alignStart="@+id/button8"
-        android:layout_alignEnd="@+id/button8" />
+        android:layout_alignEnd="@+id/english_to_morse_button" />
 
 </RelativeLayout>

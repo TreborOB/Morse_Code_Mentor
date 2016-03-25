@@ -23,12 +23,12 @@
         android:defaultValue="true"
         android:switchMinWidth="56dp"
         android:key="switch_sos_speed"
-        android:summary="@string/pref_title_set_sos_speed"
-        android:title="@string/pref_description_sos_speed"
-        android:summaryOn="@string/pref_sos_fast"
-        android:summaryOff="@string/pref_sos_slow"
-        android:switchTextOn="@string/pref_sos_fast"
-        android:switchTextOff="@string/pref_sos_slow" />
+        android:summary="@string/fast_screen_flash"
+        android:title="@string/fast_screen_flash"
+        android:summaryOn="@string/On"
+        android:summaryOff="@string/Off"
+        android:switchTextOn="@string/On"
+        android:switchTextOff="@string/Off" />
 
     <ListPreference
         android:title="@string/morse_code_level"

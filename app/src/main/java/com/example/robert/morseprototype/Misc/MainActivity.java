@@ -80,10 +80,21 @@ public class MainActivity extends BaseActivity {
         startActivity(intent);
 
 
-        if(Options.getEnabledVoice(this))
-        playSound.playSymbol(MainActivity.this, R.raw.training);
+        if(Options.getEnabledVoice(this)) {
+            switch (language) {
+                case "English":
+                    playSound.playSymbol(MainActivity.this, R.raw.training);
+                    break;
 
+                case "Spanish":
+                    playSound.playSymbol(MainActivity.this, R.raw.trainingspanish);
+                    break;
 
+                default:
+                    playSound.playSymbol(MainActivity.this, R.raw.trainingchinese);
+                    break;
+            }
+        }
     }
 
 
@@ -91,8 +102,21 @@ public class MainActivity extends BaseActivity {
         Intent intent = new Intent(this, Tools.class);
         startActivity(intent);
 
-        if(Options.getEnabledVoice(this))
-            playSound.playSymbol(MainActivity.this, R.raw.tools);
+        if(Options.getEnabledVoice(this)) {
+        switch(language){
+            case "English":
+                playSound.playSymbol(MainActivity.this, R.raw.tools);
+                break;
+
+            case "Spanish":
+                playSound.playSymbol(MainActivity.this, R.raw.toolspanish);
+                break;
+
+            default:
+                playSound.playSymbol(MainActivity.this, R.raw.toolschinese);
+                break;
+        }
+        }
 
     }
 
@@ -101,9 +125,20 @@ public class MainActivity extends BaseActivity {
         Intent intent = new Intent(this, Options.class);
         startActivity(intent);
 
+        if(Options.getEnabledVoice(this)) {
+        switch(language){
+            case "English":
+                playSound.playSymbol(MainActivity.this, R.raw.options);
+                break;
 
-        if(Options.getEnabledVoice(this))
-            playSound.playSymbol(MainActivity.this, R.raw.options);
+            case "Spanish":
+                playSound.playSymbol(MainActivity.this, R.raw.oprionsspanish);
+                break;
+
+            default:
+                playSound.playSymbol(MainActivity.this, R.raw.optionschinese);
+                break;
+        }}
 
     }
 
@@ -112,9 +147,22 @@ public class MainActivity extends BaseActivity {
         Intent intent = new Intent(this, Sos.class);
         startActivity(intent);
 
+        if(Options.getEnabledVoice(this)) {
+        switch(language) {
+            case "English":
+                playSound.playSymbol(MainActivity.this, R.raw.sos);
+                break;
 
-        if(Options.getEnabledVoice(this))
-            playSound.playSymbol(MainActivity.this, R.raw.sos);
+            case "Spanish":
+                playSound.playSymbol(MainActivity.this, R.raw.sosspanish);
+                break;
+
+            default:
+                playSound.playSymbol(MainActivity.this, R.raw.soschinese);
+                break;
+        }
+        }
+
     }
 
 
@@ -205,8 +253,20 @@ public class MainActivity extends BaseActivity {
         switch (item.getItemId()) {
             case R.id.action_favorite:
 
-                if(Options.getEnabledVoice(this))
-                    playSound.playSymbol(MainActivity.this, R.raw.help);
+                switch(language) {
+                    case "English":
+                        playSound.playSymbol(MainActivity.this, R.raw.help);
+                        break;
+
+                    case "Spanish":
+                        playSound.playSymbol(MainActivity.this, R.raw.helpspanish);
+                        break;
+
+                    default:
+                        playSound.playSymbol(MainActivity.this, R.raw.helpchinese);
+                        break;
+                }
+
 
                 showCaseMainActivity();
         }

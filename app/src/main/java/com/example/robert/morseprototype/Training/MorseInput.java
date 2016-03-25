@@ -52,9 +52,6 @@ public class MorseInput {
     private TextView          textViewMorseLetter;
     private TextView          textViewTextLetter;
     private ProgressBar       progressBar;
-    private ImageView         tickOne;
-    private ImageView         tickTwo;
-    private ImageView         tickThree;
 
 
     private StringBuilder mMorseStringBuilder = new StringBuilder();
@@ -62,11 +59,9 @@ public class MorseInput {
 
 
     private long padPressedAtTime;
-    private long padPressDuration;
     private int  progressBarValue;
 
     private long padReleased;
-    private long timeSincePadReleased;
 
     OnEndOfInput               mOnEndOfInputCallback;
     private OnCharacterDecoded mOnCharacterDecodedCallback;
@@ -78,9 +73,7 @@ public class MorseInput {
         this.textViewMorseLetter    = textViewMorseLetter;
         this.introPad               = introPad;
         this.progressBar            = progressBar;
-        this.tickOne                = tickOne;
-        this.tickTwo                = tickTwo;
-        this.tickThree              = tickThree;
+
 
         Options.InputSpeeds inputSpeeds = Options.getInputSpeeds(activity);
 
@@ -159,7 +152,7 @@ public class MorseInput {
 
     private void onPadPressedStart() {
         padPressedAtTime = System.currentTimeMillis();
-        timeSincePadReleased = System.currentTimeMillis() - padReleased;
+        long timeSincePadReleased = System.currentTimeMillis() - padReleased;
 
         introPad.setImageResource(R.drawable.pressed_blue);
 
@@ -181,7 +174,7 @@ public class MorseInput {
 
     private void onPadPressedEnd() {
 
-        padPressDuration = System.currentTimeMillis() - padPressedAtTime;
+        long padPressDuration = System.currentTimeMillis() - padPressedAtTime;
         padReleased = System.currentTimeMillis();
 
         introPad.setImageResource(R.drawable.blue);

@@ -1,6 +1,7 @@
 package com.example.robert.morseprototype.Training;
 
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -46,6 +47,7 @@ public class Receive extends BaseActivity {
 
     String randomWord;
 
+    @SuppressLint("HandlerLeak")
     Handler mImageHandler = new Handler() {
         public void handleMessage(android.os.Message msg) {
 
@@ -61,6 +63,7 @@ public class Receive extends BaseActivity {
 
     ArrayList<String> list = new ArrayList<>();
 
+    String language;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +71,7 @@ public class Receive extends BaseActivity {
         setContentView(R.layout.activity_receive);
         ButterKnife.bind(this);
 
+        language = Options.getLanguage(Receive.this);
 
         if(Options.getSosSpeed(this)) {
             Options.setSpeedFast();
@@ -75,19 +79,25 @@ public class Receive extends BaseActivity {
             Options.setSpeedSlow();
         }
 
-        mOutput = new Output(this, false, false, false, false);
+        init();
 
-        bindInterface();
+        String difficulty = Options.getLevel(Receive.this);
 
-        mOutput.setScreenViewHandler(mImageHandler);
+        switch(difficulty){
+            case "Beginner":
 
-        startReceive.setOnClickListener(new Button.OnClickListener() {
-            public void onClick(View v) {
+            break;
 
-                startScreenFlash();
+            case "Standard":
 
-            }
-        });
+            break;
+
+            case "Expert":
+
+            break;
+        }
+
+
 
         SnappyStrings snappy = new SnappyStrings(Receive.this);
         SnappyStrings.initSnappy();
@@ -118,6 +128,10 @@ public class Receive extends BaseActivity {
 
     private void startScreenFlash(){
 
+
+        release();
+
+        init();
 
         final MorseTranslations morseTranslations = new MorseTranslations();
 
@@ -170,7 +184,21 @@ public class Receive extends BaseActivity {
             case R.id.action_favorite:
 
                 if(Options.getEnabledVoice(this))
-                    playSound.playSymbol(Receive.this, R.raw.help);
+
+
+                    switch(language) {
+                        case "English":
+                            playSound.playSymbol(Receive.this, R.raw.help);
+                            break;
+
+                        case "Spanish":
+                            playSound.playSymbol(Receive.this, R.raw.helpspanish);
+                            break;
+
+                        default:
+                            playSound.playSymbol(Receive.this, R.raw.helpchinese);
+                            break;
+                    }
 
                 showCaseMainActivity();
         }
@@ -202,6 +230,23 @@ public class Receive extends BaseActivity {
         wordFlashed.setText("Press here to see the answer");
     }
 
+
+    public void init(){
+
+        mOutput = new Output(this, false, false, false, false);
+
+        bindInterface();
+
+        mOutput.setScreenViewHandler(mImageHandler);
+
+        startReceive.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+
+                startScreenFlash();
+
+            }
+        });
+    }
 
 
 }

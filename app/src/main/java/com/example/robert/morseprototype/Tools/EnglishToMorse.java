@@ -44,12 +44,15 @@ public class EnglishToMorse extends BaseActivity {
 
     private final Sound playSound = new Sound();
 
+    String language;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_english_to_morse);
         ButterKnife.bind(this);
 
+        language = Options.getLanguage(EnglishToMorse.this);
 
         mDetector = new GestureDetectorCompat(this, new mainMorseGestureDetector());
 
@@ -162,7 +165,20 @@ public class EnglishToMorse extends BaseActivity {
             case R.id.action_favorite:
 
                 if(Options.getEnabledVoice(this))
-                    playSound.playSymbol(EnglishToMorse.this, R.raw.help);
+
+                    switch(language) {
+                        case "English":
+                            playSound.playSymbol(EnglishToMorse.this, R.raw.help);
+                            break;
+
+                        case "Spanish":
+                            playSound.playSymbol(EnglishToMorse.this, R.raw.help);
+                            break;
+
+                        default:
+                            playSound.playSymbol(EnglishToMorse.this, R.raw.help);
+                            break;
+                    }
 
                 showCaseMainActivity();
         }
