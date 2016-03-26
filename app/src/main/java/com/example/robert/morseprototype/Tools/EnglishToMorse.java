@@ -44,7 +44,9 @@ public class EnglishToMorse extends BaseActivity {
 
     private final Sound playSound = new Sound();
 
-    String language;
+    private String language;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

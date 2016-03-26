@@ -95,7 +95,7 @@ public class Options extends AppCompatPreferenceActivity {
             addPreferencesFromResource(R.xml.pref_general);
 
 
-            listPreferenceSpeed = (ListPreference) findPreference("morse_speed");
+            listPreferenceSpeed    = (ListPreference) findPreference("morse_speed");
             listPreferenceLanguage = (ListPreference) findPreference("language");
 
 
@@ -221,6 +221,7 @@ public class Options extends AppCompatPreferenceActivity {
         INTER_CHARACTER_LENGTH = 200;
 
     }
+
 
 
 

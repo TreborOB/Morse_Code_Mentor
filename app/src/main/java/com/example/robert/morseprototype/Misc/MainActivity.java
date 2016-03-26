@@ -53,6 +53,7 @@ public class MainActivity extends BaseActivity {
 
         language = Options.getLanguage(MainActivity.this);
 
+        Logger.log(language);
 
         showStartUpTutorial();
 
@@ -193,6 +194,10 @@ public class MainActivity extends BaseActivity {
         String array[];
 
         switch (language) {
+            case "language":
+                //First time the app starts the language parameter will be 'language' (English)
+                array = ShowCaseViewArrays.mainActivity();
+                break;
             case "English":
                 array = ShowCaseViewArrays.mainActivity();
                 break;
@@ -253,16 +258,21 @@ public class MainActivity extends BaseActivity {
         switch (item.getItemId()) {
             case R.id.action_favorite:
 
+
                 switch(language) {
+
                     case "English":
+                        if(Options.getEnabledVoice(this))
                         playSound.playSymbol(MainActivity.this, R.raw.help);
                         break;
 
                     case "Spanish":
+                        if(Options.getEnabledVoice(this))
                         playSound.playSymbol(MainActivity.this, R.raw.helpspanish);
                         break;
 
-                    default:
+                    case "Chinese":
+                        if(Options.getEnabledVoice(this))
                         playSound.playSymbol(MainActivity.this, R.raw.helpchinese);
                         break;
                 }
@@ -273,6 +283,7 @@ public class MainActivity extends BaseActivity {
         return true;
 
     }
+
 
 
 }

@@ -60,6 +60,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_below="@+id/timer"
+        android:background="@drawable/custom_design"
         android:textStyle="bold"
         android:textSize="20sp"
         android:layout_centerHorizontal="true"
@@ -92,7 +93,6 @@
         android:textStyle="bold"
         android:layout_above="@+id/testTextObjective"
         android:layout_alignParentTop="true" />
-
 
 </RelativeLayout>
 

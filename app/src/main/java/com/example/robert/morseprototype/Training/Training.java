@@ -90,7 +90,7 @@ public class Training extends AppCompatActivity {
                 MorseSymbols m3 = new MorseSymbols("G-K", "Chinese", R.raw.lettersgtokchinese);
                 MorseSymbols m4 = new MorseSymbols("L-P", "Chinese", R.raw.lettersltopchinese);
                 MorseSymbols m5 = new MorseSymbols("Q-U", "Chinese", R.raw.lettersqtouchinese);
-                MorseSymbols m6 = new MorseSymbols("V-Z", "Chinese", R.raw.lettersvtoz);
+                MorseSymbols m6 = new MorseSymbols("V-Z", "Chinese", R.raw.lettersvtozchinese);
                 MorseSymbols m7 = new MorseSymbols("Numbers", "Chinese", R.raw.numberschinese);
 
                 trail.add(m1);
@@ -127,6 +127,7 @@ public class Training extends AppCompatActivity {
 
                 String selectedItem = items[position];
 
+                if(Options.getEnabledVoice(Training.this))
                 playSound.playSymbol(Training.this, trail.get(position).getAudioResID());
 
 

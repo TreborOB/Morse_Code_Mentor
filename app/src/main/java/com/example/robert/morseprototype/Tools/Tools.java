@@ -67,7 +67,7 @@ public class Tools extends AppCompatActivity {
                     playSound.playSymbol(Tools.this, R.raw.englishtomorsespanish);
                     break;
 
-                default:
+                case "Chinese":
                     playSound.playSymbol(Tools.this, R.raw.englishtomorsechinese);
                     break;
             }
@@ -90,7 +90,7 @@ public class Tools extends AppCompatActivity {
                     playSound.playSymbol(Tools.this, R.raw.morsetoenglishspanish);
                     break;
 
-                default:
+                case "Chinese":
                     playSound.playSymbol(Tools.this, R.raw.morsetoenglishchinese);
                     break;
             }
@@ -110,10 +110,10 @@ public class Tools extends AppCompatActivity {
                     break;
 
                 case "Spanish":
-                    playSound.playSymbol(Tools.this, R.raw.morsetoenglishspanish);
+                    playSound.playSymbol(Tools.this, R.raw.morsepadspanish);
                     break;
 
-                default:
+                case "Chinese":
                     playSound.playSymbol(Tools.this, R.raw.morsepadchinese);
                     break;
             }

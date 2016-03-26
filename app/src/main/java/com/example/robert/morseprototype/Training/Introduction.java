@@ -63,6 +63,7 @@ public class Introduction extends BaseActivity implements OnEndOfInput, MorseInp
     @Bind(R.id.tickTwo)            ImageView            tickTwo;
     @Bind(R.id.tickThree)          ImageView            tickThree;
     @Bind(R.id.introSound)         Switch               introSound;
+    @Bind(R.id.introVibrate)       Switch               introVibrate;
 
     String language;
 
@@ -111,6 +112,15 @@ public class Introduction extends BaseActivity implements OnEndOfInput, MorseInp
                 mOutput.setSoundEnabled(isChecked);
             }
         });
+
+
+        introVibrate.setOncheckListener(new Switch.OnCheckListener() {
+            @Override
+            public void onCheck(Switch buttonView, boolean isChecked) {
+                mOutput.setVibratorEnabled(isChecked);
+            }
+        });
+
 
 
         morseInput.setOnPadChangeChangedCallback(this);
@@ -326,14 +336,17 @@ public class Introduction extends BaseActivity implements OnEndOfInput, MorseInp
 
                 switch(language) {
                     case "English":
+                        if(Options.getEnabledVoice(this))
                         playSound.playSymbol(Introduction.this, R.raw.help);
                         break;
 
                     case "Spanish":
+                        if(Options.getEnabledVoice(this))
                         playSound.playSymbol(Introduction.this, R.raw.helpspanish);
                         break;
 
                     default:
+                        if(Options.getEnabledVoice(this))
                         playSound.playSymbol(Introduction.this, R.raw.helpchinese);
                         break;
                 }

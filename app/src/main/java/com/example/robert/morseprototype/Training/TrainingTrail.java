@@ -356,14 +356,17 @@ public class TrainingTrail extends BaseActivity implements MorseInput.OnEndOfInp
 
                 switch(language) {
                     case "English":
+                        if(Options.getEnabledVoice(this))
                         playSound.playSymbol(TrainingTrail.this, R.raw.help);
                         break;
 
                     case "Spanish":
+                        if(Options.getEnabledVoice(this))
                         playSound.playSymbol(TrainingTrail.this, R.raw.helpspanish);
                         break;
 
                     default:
+                        if(Options.getEnabledVoice(this))
                         playSound.playSymbol(TrainingTrail.this, R.raw.helpchinese);
                         break;
                 }

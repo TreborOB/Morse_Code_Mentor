@@ -67,8 +67,8 @@ public class MorseToEnglish extends BaseActivity {
                     playSound.playSymbol(MorseToEnglish.this, R.raw.dotspanish);
                     break;
 
-                default:
-                    playSound.playSymbol(MorseToEnglish.this, R.raw.dashchinese);
+                case "Chinese":
+                    playSound.playSymbol(MorseToEnglish.this, R.raw.dotchinese);
                     break;
             }
     }
@@ -90,7 +90,7 @@ public class MorseToEnglish extends BaseActivity {
                 playSound.playSymbol(MorseToEnglish.this, R.raw.dashspanish);
                 break;
 
-            default:
+            case "Chinese":
                 playSound.playSymbol(MorseToEnglish.this, R.raw.dashchinese);
                 break;
         }
@@ -110,10 +110,10 @@ public class MorseToEnglish extends BaseActivity {
                     break;
 
                 case "Spanish":
-                    playSound.playSymbol(MorseToEnglish.this, R.raw.screenflashspanish);
+                    playSound.playSymbol(MorseToEnglish.this, R.raw.spacespanish);
                     break;
 
-                default:
+                case "Chinese":
                     playSound.playSymbol(MorseToEnglish.this, R.raw.spacechinese);
                     break;
             }
@@ -134,8 +134,8 @@ public class MorseToEnglish extends BaseActivity {
                     playSound.playSymbol(MorseToEnglish.this, R.raw.convertspanish);
                     break;
 
-                default:
-                    playSound.playSymbol(MorseToEnglish.this, R.raw.convertspanish);
+                case "Chinese":
+                    playSound.playSymbol(MorseToEnglish.this, R.raw.convertchinese);
                     break;
             }
 

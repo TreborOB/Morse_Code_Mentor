@@ -15,10 +15,15 @@ public class SnappyStrings {
 
 
     private static DB snappyDBStrings;
+
+
     private static Context context;
 
 
     static ArrayList<String> list;
+
+
+
 
     public SnappyStrings(Context context){
         SnappyStrings.context = context;
@@ -26,18 +31,18 @@ public class SnappyStrings {
     }
 
 
-
     public static void initSnappy(){
 
         try {
-            snappyDBStrings = DBFactory.open(context, "receiveStrings");
-
+            snappyDBStrings        = DBFactory.open(context, "receiveStrings");
 
 
             if (snappyStringsExist()) {
                 list = getSnappy();
+
             } else {
-               list = new ArrayList<>();
+
+                list = new ArrayList<>();
 
                 populateList();
 
@@ -89,6 +94,8 @@ public class SnappyStrings {
     }
 
 
+
+
     public static void closeSnappyStrings(){
         try {
             snappyDBStrings.close();
@@ -113,6 +120,31 @@ public class SnappyStrings {
         String s9  = "Land ahead";
         String s10 = "Signal";
 
+
+        String s11  = "Buenos dias";
+        String s12  = "Adios";
+        String s13  = "Gracías";
+        String s14  = "Si";
+        String s15  = "Yo no comprendo";
+        String s16  = "Bueno";
+        String s17  = "Hola";
+        String s18  = "Encontrar";
+        String s19  = "Primero";
+        String s20  = "Entre";
+
+
+
+        String s21  = "Xie";
+        String s22  = "Ni hao";
+        String s23  = "Ying yuv";
+        String s24  = "Ling";
+        String s25  = "Liu";
+        String s26  = "Shi";
+        String s27  = "Kai";
+        String s28  = "Guan";
+        String s29  = "Zuov";
+        String s30  = "Di tu";
+
         list.add(s1);
         list.add(s2);
         list.add(s3);
@@ -123,6 +155,28 @@ public class SnappyStrings {
         list.add(s8);
         list.add(s9);
         list.add(s10);
+
+        list.add(s11);
+        list.add(s12);
+        list.add(s13);
+        list.add(s14);
+        list.add(s15);
+        list.add(s16);
+        list.add(s17);
+        list.add(s18);
+        list.add(s19);
+        list.add(s20);
+
+        list.add(s21);
+        list.add(s22);
+        list.add(s23);
+        list.add(s24);
+        list.add(s25);
+        list.add(s26);
+        list.add(s27);
+        list.add(s28);
+        list.add(s29);
+        list.add(s30);
 
 
         saveSnappyStrings();

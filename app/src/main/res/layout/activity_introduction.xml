@@ -139,5 +139,22 @@
         android:layout_alignBottom="@+id/padIntro"
         android:layout_alignParentStart="true" />
 
+    <com.gc.materialdesign.views.Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/introVibrate"
+        android:background="#1E88E5"
+        android:layout_alignBottom="@+id/introSound"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/sos_vibrate"
+        android:id="@+id/sound"
+        android:layout_below="@+id/introVibrate"
+        android:layout_alignStart="@+id/introVibrate" />
+
 
 </RelativeLayout>

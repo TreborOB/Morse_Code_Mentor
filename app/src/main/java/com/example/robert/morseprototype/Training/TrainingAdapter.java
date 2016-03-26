@@ -30,6 +30,8 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
 
     HashMap<String, Boolean> map;
 
+    String language;
+
 
     @SuppressWarnings("unchecked")
     public TrainingAdapter(Activity context, List list) {
@@ -37,7 +39,7 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
         mInflater = LayoutInflater.from(context);
         this.context = context;
 
-
+        language = Options.getLanguage(context);
 
         SnappyDB snappy = new SnappyDB(context);
         SnappyDB.initSnappy();
@@ -99,8 +101,23 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
             test.setOnClickListener(new Button.OnClickListener() {
                 public void onClick(View v) {
 
-                    if(Options.getEnabledVoice(context))
-                        playSound.playSymbol(context, R.raw.test);
+                    switch(language) {
+                        case "English":
+                            if(Options.getEnabledVoice(context))
+                                playSound.playSymbol(context, R.raw.test);
+                            break;
+
+                        case "Spanish":
+                            if(Options.getEnabledVoice(context))
+                                playSound.playSymbol(context, R.raw.testspanish);
+                            break;
+
+                        case "Chinese":
+                            if(Options.getEnabledVoice(context))
+                                playSound.playSymbol(context, R.raw.testchinese);
+                            break;
+                    }
+
 
 
                     Intent intent = new Intent(context, Test.class);

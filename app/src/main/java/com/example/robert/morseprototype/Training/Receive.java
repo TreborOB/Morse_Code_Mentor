@@ -24,6 +24,7 @@ import com.gc.materialdesign.views.ButtonFlat;
 
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import butterknife.Bind;
@@ -60,8 +61,11 @@ public class Receive extends BaseActivity {
 
     };
 
-
     ArrayList<String> list = new ArrayList<>();
+
+    List<String> listEnglish = new ArrayList<>();
+    List<String> listSpanish = new ArrayList<>();
+    List<String> listChinese = new ArrayList<>();
 
     String language;
 
@@ -71,7 +75,8 @@ public class Receive extends BaseActivity {
         setContentView(R.layout.activity_receive);
         ButterKnife.bind(this);
 
-        language = Options.getLanguage(Receive.this);
+        language = Options.getLanguage(this);
+
 
         if(Options.getSosSpeed(this)) {
             Options.setSpeedFast();
@@ -80,6 +85,8 @@ public class Receive extends BaseActivity {
         }
 
         init();
+
+
 
         String difficulty = Options.getLevel(Receive.this);
 
@@ -105,6 +112,12 @@ public class Receive extends BaseActivity {
         list = SnappyStrings.getSnappy();
 
 
+        listEnglish = list.subList(0, 10);
+        listSpanish = list.subList(11, 20);
+        listChinese = list.subList(21, 30);
+
+
+        Logger.log(listChinese.get(2));
 
         wordFlashed.setOnClickListener(new View.OnClickListener() {
 
@@ -137,9 +150,21 @@ public class Receive extends BaseActivity {
 
 
         Random rand = new Random();
-        randomWord = list.get(rand.nextInt(list.size()));
 
-        Logger.log(randomWord);
+        switch (language) {
+            case "English":
+            case "language":
+                randomWord = listEnglish.get(rand.nextInt(listEnglish.size()));
+                break;
+            case "Spanish":
+                randomWord = listSpanish.get(rand.nextInt(listSpanish.size()));
+                break;
+            case "Chinese":
+                randomWord = listChinese.get(rand.nextInt(listChinese.size()));
+                break;
+        }
+
+
 
 
         final String st = morseTranslations.translatedText(randomWord);
@@ -185,7 +210,6 @@ public class Receive extends BaseActivity {
 
                 if(Options.getEnabledVoice(this))
 
-
                     switch(language) {
                         case "English":
                             playSound.playSymbol(Receive.this, R.raw.help);
@@ -195,7 +219,7 @@ public class Receive extends BaseActivity {
                             playSound.playSymbol(Receive.this, R.raw.helpspanish);
                             break;
 
-                        default:
+                        case "Chinese":
                             playSound.playSymbol(Receive.this, R.raw.helpchinese);
                             break;
                     }
@@ -204,24 +228,6 @@ public class Receive extends BaseActivity {
         }
         return true;
 
-    }
-
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        SnappyStrings.closeSnappyStrings();
-        mOutput.release();
-    }
-
-    public void release(){
-        mOutput.release();
-    }
-
-
-    public void onPause(){
-        super.onPause();
-        SnappyStrings.closeSnappyStrings();
     }
 
 
@@ -247,6 +253,27 @@ public class Receive extends BaseActivity {
             }
         });
     }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SnappyStrings.closeSnappyStrings();
+        mOutput.release();
+    }
+
+    public void release(){
+        mOutput.release();
+    }
+
+
+    public void onPause(){
+        super.onPause();
+        SnappyStrings.closeSnappyStrings();
+    }
+
+
+
 
 
 }

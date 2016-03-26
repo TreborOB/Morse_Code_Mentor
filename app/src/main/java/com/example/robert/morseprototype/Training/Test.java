@@ -73,7 +73,7 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
 
 
 
-        switch (data) {
+        switch (data != null ? data : null) {
             case "A-F":
                 mSteps = TestSteps.getAtoFSteps();
 

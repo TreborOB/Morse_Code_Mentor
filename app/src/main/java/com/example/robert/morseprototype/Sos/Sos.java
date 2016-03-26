@@ -112,7 +112,7 @@ public class Sos extends BaseActivity {
                                 break;
 
                             case "Spanish":
-                                playSound.playSymbol(Sos.this, R.raw.audioonspanish);
+                                playSound.playSymbol(Sos.this, R.raw.audiooffspanish);
                                 break;
 
                             default:
@@ -202,8 +202,8 @@ public class Sos extends BaseActivity {
                                 playSound.playSymbol(Sos.this, R.raw.flashoffspanish);
                                 break;
 
-                            default:
-                                playSound.playSymbol(Sos.this, R.raw.screenflashoffchinese);
+                            case "Chinese":
+                                playSound.playSymbol(Sos.this, R.raw.flashoffchinese);
                                 break;
                         }
                     }
@@ -230,8 +230,8 @@ public class Sos extends BaseActivity {
                                 playSound.playSymbol(Sos.this, R.raw.screenflashonspanish);
                                 break;
 
-                            default:
-                                playSound.playSymbol(Sos.this, R.raw.screenflashoffchinese);
+                            case "Chinese":
+                                playSound.playSymbol(Sos.this, R.raw.screenflashonchinese);
                                 break;
                         }
                     }
@@ -245,7 +245,7 @@ public class Sos extends BaseActivity {
                                 playSound.playSymbol(Sos.this, R.raw.screenflashoffspanish);
                                 break;
 
-                            default:
+                            case "Chinese":
                                 playSound.playSymbol(Sos.this, R.raw.screenflashoffchinese);
                                 break;
                         }
@@ -306,14 +306,17 @@ public class Sos extends BaseActivity {
 
                 switch(language) {
                     case "English":
+                        if(Options.getEnabledVoice(this))
                         playSound.playSymbol(Sos.this, R.raw.help);
                         break;
 
                     case "Spanish":
+                        if(Options.getEnabledVoice(this))
                         playSound.playSymbol(Sos.this, R.raw.helpspanish);
                         break;
 
                     default:
+                        if(Options.getEnabledVoice(this))
                         playSound.playSymbol(Sos.this, R.raw.helpchinese);
                         break;
                 }

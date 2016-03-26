@@ -3,8 +3,6 @@ package com.example.robert.morseprototype.Hardware;
 
 import android.os.Handler;
 
-import com.example.robert.morseprototype.Misc.Logger;
-
 
 public class ScreenFlash {
 
@@ -26,9 +24,9 @@ public class ScreenFlash {
         mImageHandler.sendEmptyMessage(0);
     }
 
+
     public void finished(){
         mImageHandler.sendEmptyMessage(4);
-        Logger.log("Finished ScreenFlash");
     }
 
     public void release() {
