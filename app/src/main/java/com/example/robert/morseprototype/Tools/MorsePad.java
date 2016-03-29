@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.example.robert.morseprototype.Hardware.Sound;
 import com.example.robert.morseprototype.Misc.BaseActivity;
+import com.example.robert.morseprototype.Misc.MainActivity;
 import com.github.siyamed.shapeimageview.CircularImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -157,16 +158,49 @@ public class MorsePad extends BaseActivity implements OnCharacterDecoded, OnPadS
         }
 
         public void onSwipeBottom() {
-            LettersDialog.showQCodes(MorsePad.this);
+
+            switch(language){
+
+                case "English":
+                    LettersDialog.showQCodes(MorsePad.this);
+
+                    break;
+
+                case "Spanish":
+                    LettersDialog.showQCodesSpanish(MorsePad.this);
+
+                    break;
+
+                case "Chinese":
+                    LettersDialog.showQCodesChinese(MorsePad.this);
+
+                    break;
+            }
+
+
         }
 
         public void onSwipeTop() {
-            LettersDialog.showZCodes(MorsePad.this);
+
+
+            switch(language){
+
+                case "English":
+                    LettersDialog.showZCodes(MorsePad.this);
+                    break;
+
+                case "Spanish":
+                    LettersDialog.showZCodesSpanish(MorsePad.this);
+
+                    break;
+
+                case "Chinese":
+                    LettersDialog.showZCodesChinese(MorsePad.this);
+
+                    break;
+            }
         }
     }
-
-
-
 
 
     private  void progressBarInvisible() {

@@ -13,6 +13,7 @@ import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.robert.morseprototype.Hardware.Sound;
 import com.example.robert.morseprototype.Misc.BaseActivity;
+import com.example.robert.morseprototype.Misc.MainActivity;
 import com.gc.materialdesign.views.ButtonFlat;
 import com.gc.materialdesign.views.Switch;
 import com.example.robert.morseprototype.Hardware.Output;
@@ -124,14 +125,49 @@ public class EnglishToMorse extends BaseActivity {
         }
 
         public void onSwipeBottom() {
-            LettersDialog.showQCodes(EnglishToMorse.this);
+
+            switch(language){
+
+                case "English":
+                    LettersDialog.showQCodes(EnglishToMorse.this);
+
+                    break;
+
+                case "Spanish":
+                    LettersDialog.showQCodesSpanish(EnglishToMorse.this);
+
+                    break;
+
+                case "Chinese":
+                    LettersDialog.showQCodesChinese(EnglishToMorse.this);
+
+                    break;
+            }
+
+
         }
 
         public void onSwipeTop() {
-            LettersDialog.showZCodes(EnglishToMorse.this);
+
+
+            switch(language){
+
+                case "English":
+                    LettersDialog.showZCodes(EnglishToMorse.this);
+                    break;
+
+                case "Spanish":
+                    LettersDialog.showZCodesSpanish(EnglishToMorse.this);
+
+                    break;
+
+                case "Chinese":
+                    LettersDialog.showZCodesChinese(EnglishToMorse.this);
+
+                    break;
+            }
         }
     }
-
 
 
     private void showCaseMainActivity(){

@@ -61,7 +61,7 @@ public class Sos extends BaseActivity {
 
         language = Options.getLanguage(Sos.this);
 
-        if(Options.getSosSpeed(this)) {
+        if(Options.getScreenFlashSpeed(this)) {
             Options.setSpeedFast();
         }else{
             Options.setSpeedSlow();

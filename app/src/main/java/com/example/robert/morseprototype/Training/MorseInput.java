@@ -232,6 +232,8 @@ public class MorseInput {
         }
     };
 
+
+
     Runnable endOfInputTask = new Runnable() {
         @Override
         public void run() {

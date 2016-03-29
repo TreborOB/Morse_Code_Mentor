@@ -8,13 +8,16 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
+
 import com.example.robert.morseprototype.Hardware.Sound;
+import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
 
 import java.util.ArrayList;
 
 
-public class LettersDialog {
+public class LettersDialog extends Activity{
+
 
     public static void showLetters(Activity activity) {
         new CustomListDialog("Morse Letters", activity, SwipeArrays.getLetters(), true);
@@ -28,18 +31,38 @@ public class LettersDialog {
         new CustomListDialog("Q Codes", activity, SwipeArrays.getQcodes(), false);
     }
 
+    public static void showQCodesSpanish(Activity activity) {
+        new CustomListDialog("Códigos Q", activity, SwipeArrays.getQcodesSpanish(), false);
+    }
+
+    public static void showQCodesChinese(Activity activity) {
+        new CustomListDialog("Q码", activity, SwipeArrays.getQcodesChinese(), false);
+    }
+
+
     public static void showZCodes(Activity activity) {
         new CustomListDialog("Z Codes", activity, SwipeArrays.getZcodes(), false);
+    }
+
+    public static void showZCodesSpanish(Activity activity) {
+        new CustomListDialog("Códigos Z", activity, SwipeArrays.getZcodesSpanish(), false);
+    }
+
+    public static void showZCodesChinese(Activity activity) {
+        new CustomListDialog("ž代码", activity, SwipeArrays.getZcodesChinese(), false);
     }
 
     private static class CustomListDialog {
         Sound sound = null;
 
         public CustomListDialog(String title, final Activity activity, final ArrayList<MorseSymbols> morseSymbols, boolean isGrid) {
-            Dialog dialog = new Dialog(activity);
+            final Dialog dialog = new Dialog(activity);
             dialog.setTitle(title);
 
+
+
             AbsListView listView;
+
             if (isGrid) {
                 dialog.setContentView(R.layout.dialog_grid);
                 listView = (GridView) dialog.findViewById(R.id.gridView1);
@@ -55,11 +78,15 @@ public class LettersDialog {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     MorseSymbols selectedSymbol = morseSymbols.get(position);
 
-                    if (sound == null) sound = new Sound();
+                        if (sound == null)
+                            sound = new Sound();
                     sound.playSymbol(activity, selectedSymbol.getAudioResID());
 
                 }
             });
+
+
+
 
             dialog.setCancelable(true);
             dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {

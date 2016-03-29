@@ -65,13 +65,13 @@ public class Training extends AppCompatActivity {
             }
             case "Spanish": {
 
-                MorseSymbols m1 = new MorseSymbols("Introduction", "Spanish", R.raw.morseintroductionspanish);
-                MorseSymbols m2 = new MorseSymbols("A-F", "Spanish", R.raw.lettersatofspanish);
-                MorseSymbols m3 = new MorseSymbols("G-K", "Spanish", R.raw.lettersgtokspanish);
-                MorseSymbols m4 = new MorseSymbols("L-P", "Spanish", R.raw.lettersltopspanish);
-                MorseSymbols m5 = new MorseSymbols("Q-U", "Spanish-U", R.raw.lettersqtouspanish);
-                MorseSymbols m6 = new MorseSymbols("V-Z", "Spanish", R.raw.lettersvtozspanish);
-                MorseSymbols m7 = new MorseSymbols("Numbers", "Spanish", R.raw.numbersspansih);
+                MorseSymbols m1 = new MorseSymbols("Introducción", "Morse Introducción", R.raw.morseintroductionspanish);
+                MorseSymbols m2 = new MorseSymbols("A-F", "Letras A-F", R.raw.lettersatofspanish);
+                MorseSymbols m3 = new MorseSymbols("G-K", "Letras G-K", R.raw.lettersgtokspanish);
+                MorseSymbols m4 = new MorseSymbols("L-P", "Letras L-P", R.raw.lettersltopspanish);
+                MorseSymbols m5 = new MorseSymbols("Q-U", "Letras Q-U", R.raw.lettersqtouspanish);
+                MorseSymbols m6 = new MorseSymbols("V-Z", "Letras V-K", R.raw.lettersvtozspanish);
+                MorseSymbols m7 = new MorseSymbols("Números", "Números de Morse", R.raw.numbersspanish);
 
                 trail.add(m1);
                 trail.add(m2);
@@ -85,13 +85,13 @@ public class Training extends AppCompatActivity {
             }
             default: {
 
-                MorseSymbols m1 = new MorseSymbols("Introduction", "Chinese", R.raw.morseintroductionchinese);
-                MorseSymbols m2 = new MorseSymbols("A-F", "Chinese", R.raw.lettersatofchinese);
-                MorseSymbols m3 = new MorseSymbols("G-K", "Chinese", R.raw.lettersgtokchinese);
-                MorseSymbols m4 = new MorseSymbols("L-P", "Chinese", R.raw.lettersltopchinese);
-                MorseSymbols m5 = new MorseSymbols("Q-U", "Chinese", R.raw.lettersqtouchinese);
-                MorseSymbols m6 = new MorseSymbols("V-Z", "Chinese", R.raw.lettersvtozchinese);
-                MorseSymbols m7 = new MorseSymbols("Numbers", "Chinese", R.raw.numberschinese);
+                MorseSymbols m1 = new MorseSymbols("介绍", "莫尔斯介绍", R.raw.morseintroductionchinese);
+                MorseSymbols m2 = new MorseSymbols("A-F", "字母A-F", R.raw.lettersatofchinese);
+                MorseSymbols m3 = new MorseSymbols("G-K", "字母g的-K", R.raw.lettersgtokchinese);
+                MorseSymbols m4 = new MorseSymbols("L-P", "字母L-P", R.raw.lettersltopchinese);
+                MorseSymbols m5 = new MorseSymbols("Q-U", "字母Q-ù", R.raw.lettersqtouchinese);
+                MorseSymbols m6 = new MorseSymbols("V-Z", "字母V-ž", R.raw.lettersvtozchinese);
+                MorseSymbols m7 = new MorseSymbols("数字", "莫尔斯号", R.raw.numberschinese);
 
                 trail.add(m1);
                 trail.add(m2);

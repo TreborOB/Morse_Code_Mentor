@@ -78,7 +78,7 @@ public class Receive extends BaseActivity {
         language = Options.getLanguage(this);
 
 
-        if(Options.getSosSpeed(this)) {
+        if(Options.getScreenFlashSpeed(this)) {
             Options.setSpeedFast();
         }else{
             Options.setSpeedSlow();
@@ -88,30 +88,13 @@ public class Receive extends BaseActivity {
 
 
 
-        String difficulty = Options.getLevel(Receive.this);
-
-        switch(difficulty){
-            case "Beginner":
-
-            break;
-
-            case "Standard":
-
-            break;
-
-            case "Expert":
-
-            break;
-        }
-
-
 
         SnappyStrings snappy = new SnappyStrings(Receive.this);
         SnappyStrings.initSnappy();
 
         list = SnappyStrings.getSnappy();
 
-
+        //Creates sub-lists from the retrieved Snappy list each containing language specific words
         listEnglish = list.subList(0, 10);
         listSpanish = list.subList(11, 20);
         listChinese = list.subList(21, 30);
@@ -208,18 +191,19 @@ public class Receive extends BaseActivity {
 
             case R.id.action_favorite:
 
-                if(Options.getEnabledVoice(this))
-
                     switch(language) {
                         case "English":
+                            if(Options.getEnabledVoice(this))
                             playSound.playSymbol(Receive.this, R.raw.help);
                             break;
 
                         case "Spanish":
+                            if(Options.getEnabledVoice(this))
                             playSound.playSymbol(Receive.this, R.raw.helpspanish);
                             break;
 
                         case "Chinese":
+                            if(Options.getEnabledVoice(this))
                             playSound.playSymbol(Receive.this, R.raw.helpchinese);
                             break;
                     }

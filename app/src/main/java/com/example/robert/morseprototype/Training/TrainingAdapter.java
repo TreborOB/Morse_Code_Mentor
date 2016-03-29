@@ -64,7 +64,9 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
 
 
 
-        if(!map.containsKey(textToDisplay.getLetter()) && !textToDisplay.getLetter().equals("A-F") && !textToDisplay.getLetter().equals("Introduction") ){
+        if(!map.containsKey(textToDisplay.getLetter()) && !textToDisplay.getLetter().equals("A-F") && !textToDisplay.getLetter().equals("Introduction")
+                            && !textToDisplay.getLetter().equals("Introducción") && !textToDisplay.getLetter().equals("介绍")){
+
            view = mInflater.inflate(R.layout.training_list_blank, parent, false);
 
 

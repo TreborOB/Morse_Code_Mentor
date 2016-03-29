@@ -159,7 +159,7 @@ public class Options extends AppCompatPreferenceActivity {
     }
 
 
-    public static boolean getSosSpeed(Context context) {
+    public static boolean getScreenFlashSpeed(Context context) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         return sharedPreferences.getBoolean(SWITCH_SOS_SPEED, false);
     }

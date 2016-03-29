@@ -3,12 +3,14 @@ package com.example.robert.morseprototype.SwipeDialogs;
 
 import android.app.Activity;
         import android.view.LayoutInflater;
-        import android.view.View;
+import android.view.MotionEvent;
+import android.view.View;
         import android.view.ViewGroup;
         import android.widget.ArrayAdapter;
         import android.widget.TextView;
 
-        import com.example.robert.morseprototype.R;
+import com.example.robert.morseprototype.Misc.Logger;
+import com.example.robert.morseprototype.R;
 
         import java.util.List;
 
@@ -32,10 +34,20 @@ class DialogAdapter extends ArrayAdapter<MorseSymbols> {
             view = convertView;
         }
 
+
         MorseSymbols m1 = getItem(position);
 
         TextView txtTitle = (TextView) view.findViewById(R.id.item);
         TextView extraTxt = (TextView) view.findViewById(R.id.textView1);
+
+        txtTitle.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                Logger.log("Hello");
+                return false;
+            }
+        });
 
         txtTitle.setText(m1.getLetter());
         extraTxt.setText(m1.getMorseSymbol());

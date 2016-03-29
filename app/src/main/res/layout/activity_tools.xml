@@ -15,7 +15,7 @@
         android:onClick="englishMorse"
         android:textColor="#FFFFFF"
         android:layout_below="@+id/button11"
-        android:layout_alignRight="@+id/morseTools"
+        android:layout_alignEnd="@+id/morseTools"
         android:layout_alignStart="@+id/button8" />
 
 

@@ -43,6 +43,7 @@
         <activity android:name=".Training.FinishedTrailSection" />
         <activity android:name=".Tools.TrainingType" />
         <activity android:name=".Training.Receive" />
+        <activity android:name=".SwipeDialogs.LettersDialog" />
     </application>
 
 </manifest>

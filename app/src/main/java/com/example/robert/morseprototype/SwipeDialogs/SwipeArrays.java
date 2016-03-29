@@ -89,4 +89,85 @@ public class SwipeArrays {
 
         return res;
     }
+
+
+
+
+    //Spanish Q codes
+    public static ArrayList<MorseSymbols> getQcodesSpanish() {
+        ArrayList<MorseSymbols> res = new ArrayList<>();
+
+        res.add(new MorseSymbols("QRA", "Cuál es el nombre de su estación?", R.raw.qra));
+        res.add(new MorseSymbols("QRB", "Qué tan lejos está de mi estación?", R.raw.qrb));
+        res.add(new MorseSymbols("QRD", "Dónde están obligados a?", R.raw.qrd));
+        res.add(new MorseSymbols("QRG", "Me dirá mi frecuencia exacta?", R.raw.qrg));
+        res.add(new MorseSymbols("QRH", "Varía mi frecuencia?", R.raw.qrh));
+        res.add(new MorseSymbols("QRI", "Cómo es el tono de mi transmisión?", R.raw.qri));
+        res.add(new MorseSymbols("QRJ", "Me estás recibiendo mal?", R.raw.qrj));
+        res.add(new MorseSymbols("QRK", "Cuál es la inteligibilidad de mi transmisión?", R.raw.qrk));
+        res.add(new MorseSymbols("QRL", "Estás ocupado?", R.raw.qrl));
+        res.add(new MorseSymbols("QRM", "Es mi transmisión interferido?", R.raw.qrm));
+
+        return res;
+    }
+
+
+    //Chinese Q codes
+    public static ArrayList<MorseSymbols> getQcodesChinese() {
+        ArrayList<MorseSymbols> res = new ArrayList<>();
+
+        res.add(new MorseSymbols("QRA", "什么是你的站的名字吗？", R.raw.qra));
+        res.add(new MorseSymbols("QRB", "有多远，你从我站的是谁？", R.raw.qrb));
+        res.add(new MorseSymbols("QRD", "你是哪里开往?", R.raw.qrd));
+        res.add(new MorseSymbols("QRG", "你能告诉我，我的准确频率?", R.raw.qrg));
+        res.add(new MorseSymbols("QRH", "请问我的频率而变化?", R.raw.qrh));
+        res.add(new MorseSymbols("QRI", "如何为我传递的基调?", R.raw.qri));
+        res.add(new MorseSymbols("QRJ", "你接受我不好?", R.raw.qrj));
+        res.add(new MorseSymbols("QRK", "W这是我的信号的可懂度?", R.raw.qrk));
+        res.add(new MorseSymbols("QRL", "你忙吗?", R.raw.qrl));
+        res.add(new MorseSymbols("QRM", "我正在传输干扰?", R.raw.qrm));
+
+        return res;
+    }
+
+
+
+
+
+    public static ArrayList<MorseSymbols> getZcodesSpanish() {
+        ArrayList<MorseSymbols> res = new ArrayList<>();
+
+        res.add(new MorseSymbols("ZAE", "Cuál es el nombre de su estación?", R.raw.zae));
+        res.add(new MorseSymbols("ZAL", "Estoy cerrando hacia abajo (hasta ...) debido a ....", R.raw.zal));
+        res.add(new MorseSymbols("ZAP", "Debo trabajar con ...", R.raw.zap));
+        res.add(new MorseSymbols("ZAX", "Usted está causando la interferencia", R.raw.zax));
+        res.add(new MorseSymbols("ZBA", "Cuál es la causa de la demora?", R.raw.zba));
+        res.add(new MorseSymbols("ZBK", "Está recibiendo el tráfico de mi clara?", R.raw.zbk));
+        res.add(new MorseSymbols("ZBO", "Por lo que prevalece es su mensaje??", R.raw.zbo));
+        res.add(new MorseSymbols("ZBQ", "Cuándo y en qué frecuencia se recibió el mensaje?", R.raw.zbq));
+        res.add(new MorseSymbols("ZBR", "Debo transmitir por ...?", R.raw.zbr));
+        res.add(new MorseSymbols("ZUJ", "Colocarse", R.raw.zuj));
+
+        return res;
+    }
+
+
+    public static ArrayList<MorseSymbols> getZcodesChinese() {
+        ArrayList<MorseSymbols> res = new ArrayList<>();
+
+        res.add(new MorseSymbols("ZAE", "什么是你的站名?", R.raw.zae));
+        res.add(new MorseSymbols("ZAL", "我关闭了（直到......），由于....", R.raw.zal));
+        res.add(new MorseSymbols("ZAP", "要我一起工作...", R.raw.zap));
+        res.add(new MorseSymbols("ZAX", "您正在造成干扰", R.raw.zax));
+        res.add(new MorseSymbols("ZBA", "是什么原因延误?", R.raw.zba));
+        res.add(new MorseSymbols("ZBK", "您是否收到我的流量清楚?", R.raw.zbk));
+        res.add(new MorseSymbols("ZBO", "什么是优先级的邮件？", R.raw.zbo));
+        res.add(new MorseSymbols("ZBQ", "当和收到什么频率的信息?", R.raw.zbq));
+        res.add(new MorseSymbols("ZBR", "要不要我送的...？", R.raw.zbr));
+        res.add(new MorseSymbols("ZUJ", "支持", R.raw.zuj));
+
+        return res;
+    }
+
+
 }

@@ -61,9 +61,6 @@ public class MainActivity extends BaseActivity {
         //noinspection ConstantConditions,ConstantConditions,ConstantConditions,ConstantConditions
         getSupportActionBar().setTitle(getResources().getString(R.string.app_name));
 
-
-
-
     }
 
 
@@ -158,7 +155,7 @@ public class MainActivity extends BaseActivity {
                 playSound.playSymbol(MainActivity.this, R.raw.sosspanish);
                 break;
 
-            default:
+            case "Chinese":
                 playSound.playSymbol(MainActivity.this, R.raw.soschinese);
                 break;
         }
@@ -170,21 +167,126 @@ public class MainActivity extends BaseActivity {
     private class mainMorseGestureDetector extends MorseGestureDetector {
 
         public void onSwipeRight() {
-            LettersDialog.showLetters(MainActivity.this);
+            switch (language) {
+
+                case "English":
+                    if (Options.getEnabledVoice(MainActivity.this)) {
+                        playSound.playSymbol(MainActivity.this, R.raw.morseletters);
+                    }
+                    LettersDialog.showLetters(MainActivity.this);
+
+                    break;
+
+                case "Spanish":
+                    if (Options.getEnabledVoice(MainActivity.this)) {
+                        playSound.playSymbol(MainActivity.this, R.raw.morseletterspanish);
+                    }
+                    LettersDialog.showLetters(MainActivity.this);
+
+                    break;
+
+                case "Chinese":
+                    if (Options.getEnabledVoice(MainActivity.this)) {
+                        playSound.playSymbol(MainActivity.this, R.raw.morseletterschinese);
+                    }
+                    LettersDialog.showLetters(MainActivity.this);
+
+            }
         }
 
+
+
+
         public void onSwipeLeft() {
-            LettersDialog.showNumbers(MainActivity.this);
+            switch(language) {
+
+                case "English":
+                    if (Options.getEnabledVoice(MainActivity.this)) {
+                        playSound.playSymbol(MainActivity.this, R.raw.numbers);
+                    }
+                    LettersDialog.showNumbers(MainActivity.this);
+
+                    break;
+
+                case "Spanish":
+                    if (Options.getEnabledVoice(MainActivity.this)) {
+                        playSound.playSymbol(MainActivity.this, R.raw.numbersspanish);
+                    }
+                    LettersDialog.showNumbers(MainActivity.this);
+
+                    break;
+
+                case "Chinese":
+                    if (Options.getEnabledVoice(MainActivity.this)) {
+                        playSound.playSymbol(MainActivity.this, R.raw.numberschinese);
+                    }
+                    LettersDialog.showNumbers(MainActivity.this);
+            }
+            }
+
+        public void onSwipeTop() {
+
+
+            switch(language){
+
+                case "English":
+                    if(Options.getEnabledVoice(MainActivity.this)) {
+                        playSound.playSymbol(MainActivity.this, R.raw.zcodes);
+                    }
+                    LettersDialog.showZCodes(MainActivity.this);
+                    break;
+
+                case "Spanish":
+                    if(Options.getEnabledVoice(MainActivity.this)) {
+                        playSound.playSymbol(MainActivity.this, R.raw.zcodespanish);
+                    }
+                    LettersDialog.showZCodesSpanish(MainActivity.this);
+
+                    break;
+
+                case "Chinese":
+                    if(Options.getEnabledVoice(MainActivity.this)) {
+                        playSound.playSymbol(MainActivity.this, R.raw.zcodeschinese);
+                    }
+                    LettersDialog.showZCodesChinese(MainActivity.this);
+
+                    break;
+            }
         }
 
         public void onSwipeBottom() {
-            LettersDialog.showQCodes(MainActivity.this);
+
+            switch(language){
+
+                case "English":
+                    if(Options.getEnabledVoice(MainActivity.this)) {
+                        playSound.playSymbol(MainActivity.this, R.raw.qcodes);
+                    }
+                    LettersDialog.showQCodes(MainActivity.this);
+
+                break;
+
+                case "Spanish":
+                    if(Options.getEnabledVoice(MainActivity.this)) {
+                        playSound.playSymbol(MainActivity.this, R.raw.qcodesspanish);
+                    }
+                    LettersDialog.showQCodesSpanish(MainActivity.this);
+
+                break;
+
+                case "Chinese":
+                    if(Options.getEnabledVoice(MainActivity.this)) {
+                        playSound.playSymbol(MainActivity.this, R.raw.qcodeschinese);
+                        LettersDialog.showQCodesChinese(MainActivity.this);
+                    }
+                        break;
+            }
+        }
         }
 
-        public void onSwipeTop() {
-            LettersDialog.showZCodes(MainActivity.this);
-        }
-    }
+
+
+
 
 
 
@@ -283,7 +385,4 @@ public class MainActivity extends BaseActivity {
         return true;
 
     }
-
-
-
 }

@@ -67,7 +67,7 @@ public class ScreenFlash extends BaseActivity {
         language = Options.getLanguage(ScreenFlash.this);
 
 
-        if(Options.getSosSpeed(this)) {
+        if(Options.getScreenFlashSpeed(this)) {
             Options.setSpeedFast();
         }else{
             Options.setSpeedSlow();
