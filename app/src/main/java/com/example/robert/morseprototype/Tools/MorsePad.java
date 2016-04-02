@@ -8,7 +8,6 @@ import android.view.View;
 
 import com.example.robert.morseprototype.Hardware.Sound;
 import com.example.robert.morseprototype.Misc.BaseActivity;
-import com.example.robert.morseprototype.Misc.MainActivity;
 import com.github.siyamed.shapeimageview.CircularImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -150,34 +149,61 @@ public class MorsePad extends BaseActivity implements OnCharacterDecoded, OnPadS
     private class mainMorseGestureDetector extends MorseGestureDetector {
 
         public void onSwipeRight() {
-            LettersDialog.showLetters(MorsePad.this);
-        }
-
-        public void onSwipeLeft() {
-            LettersDialog.showNumbers(MorsePad.this);
-        }
-
-        public void onSwipeBottom() {
-
-            switch(language){
+            switch (language) {
 
                 case "English":
-                    LettersDialog.showQCodes(MorsePad.this);
+                    if (Options.getEnabledVoice(MorsePad.this)) {
+                        playSound.playSymbol(MorsePad.this, R.raw.morseletters);
+                    }
+                    LettersDialog.showLetters(MorsePad.this);
 
                     break;
 
                 case "Spanish":
-                    LettersDialog.showQCodesSpanish(MorsePad.this);
+                    if (Options.getEnabledVoice(MorsePad.this)) {
+                        playSound.playSymbol(MorsePad.this, R.raw.morselettersspanish);
+                    }
+                    LettersDialog.showLettersSpanish(MorsePad.this);
 
                     break;
 
                 case "Chinese":
-                    LettersDialog.showQCodesChinese(MorsePad.this);
+                    if (Options.getEnabledVoice(MorsePad.this)) {
+                        playSound.playSymbol(MorsePad.this, R.raw.morseletterschinese);
+                    }
+                    LettersDialog.showLettersChinese(MorsePad.this);
+
+            }
+        }
+
+
+
+
+        public void onSwipeLeft() {
+            switch(language) {
+
+                case "English":
+                    if (Options.getEnabledVoice(MorsePad.this)) {
+                        playSound.playSymbol(MorsePad.this, R.raw.numbers);
+                    }
+                    LettersDialog.showNumbers(MorsePad.this);
 
                     break;
+
+                case "Spanish":
+                    if (Options.getEnabledVoice(MorsePad.this)) {
+                        playSound.playSymbol(MorsePad.this, R.raw.numbersspanish);
+                    }
+                    LettersDialog.showNumbersSpanish(MorsePad.this);
+
+                    break;
+
+                case "Chinese":
+                    if (Options.getEnabledVoice(MorsePad.this)) {
+                        playSound.playSymbol(MorsePad.this, R.raw.numberschinese);
+                    }
+                    LettersDialog.showNumbersChinese(MorsePad.this);
             }
-
-
         }
 
         public void onSwipeTop() {
@@ -186,21 +212,62 @@ public class MorsePad extends BaseActivity implements OnCharacterDecoded, OnPadS
             switch(language){
 
                 case "English":
+                    if(Options.getEnabledVoice(MorsePad.this)) {
+                        playSound.playSymbol(MorsePad.this, R.raw.zcodes);
+                    }
                     LettersDialog.showZCodes(MorsePad.this);
                     break;
 
                 case "Spanish":
+                    if(Options.getEnabledVoice(MorsePad.this)) {
+                        playSound.playSymbol(MorsePad.this, R.raw.zcodespanish);
+                    }
                     LettersDialog.showZCodesSpanish(MorsePad.this);
 
                     break;
 
                 case "Chinese":
+                    if(Options.getEnabledVoice(MorsePad.this)) {
+                        playSound.playSymbol(MorsePad.this, R.raw.zcodeschinese);
+                    }
                     LettersDialog.showZCodesChinese(MorsePad.this);
 
                     break;
             }
         }
+
+        public void onSwipeBottom() {
+
+            switch(language){
+
+                case "English":
+                    if(Options.getEnabledVoice(MorsePad.this)) {
+                        playSound.playSymbol(MorsePad.this, R.raw.qcodes);
+                    }
+                    LettersDialog.showQCodes(MorsePad.this);
+
+                    break;
+
+                case "Spanish":
+                    if(Options.getEnabledVoice(MorsePad.this)) {
+                        playSound.playSymbol(MorsePad.this, R.raw.qcodesspanish);
+                    }
+                    LettersDialog.showQCodesSpanish(MorsePad.this);
+
+                    break;
+
+                case "Chinese":
+                    if(Options.getEnabledVoice(MorsePad.this)) {
+                        playSound.playSymbol(MorsePad.this, R.raw.qcodeschinese);
+                    }
+                    LettersDialog.showQCodesChinese(MorsePad.this);
+                    break;
+            }
+        }
     }
+
+
+
 
 
     private  void progressBarInvisible() {

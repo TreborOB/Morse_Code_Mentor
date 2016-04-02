@@ -72,13 +72,13 @@ public class Options extends AppCompatPreferenceActivity {
         switch (typeSpeed) {
             case "Standard":
                 TIMER = 9000;
-                return new InputSpeeds(700, 200, 600, 1400, 800, 20, 10);
+                return new InputSpeeds(700, 200, 800, 1400, 800, 20, 10);
             case "Expert":
                 TIMER = 7000;
-                return new InputSpeeds(350, 100, 300, 700, 450, 10, 20);
+                return new InputSpeeds(350, 100, 500, 700, 450, 10, 20);
             default: //"Beginner"
                 TIMER = 12000;
-                return new InputSpeeds(1050, 300, 900, 2100, 1250, 30, 8);
+                return new InputSpeeds(1050, 300, 1200, 2100, 1250, 30, 8);
         }
 
     }

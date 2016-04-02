@@ -10,7 +10,6 @@ import android.widget.GridView;
 import android.widget.ListView;
 
 import com.example.robert.morseprototype.Hardware.Sound;
-import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
 
 import java.util.ArrayList;
@@ -23,9 +22,37 @@ public class LettersDialog extends Activity{
         new CustomListDialog("Morse Letters", activity, SwipeArrays.getLetters(), true);
     }
 
+    public static void showLettersSpanish(Activity activity) {
+        new CustomListDialog("Cartas Morse", activity, SwipeArrays.getLetters(), true);
+    }
+
+    public static void showLettersChinese(Activity activity) {
+        new CustomListDialog("莫尔斯字母", activity, SwipeArrays.getLetters(), true);
+    }
+
+
+
+
     public static void showNumbers(Activity activity) {
         new CustomListDialog("Morse Numbers", activity, SwipeArrays.getNumbers(), true);
     }
+
+    public static void showNumbersSpanish(Activity activity) {
+        new CustomListDialog("Números Morse", activity, SwipeArrays.getNumbers(), true);
+    }
+
+    public static void showNumbersChinese(Activity activity) {
+        new CustomListDialog("莫尔斯号", activity, SwipeArrays.getNumbers(), true);
+    }
+
+
+
+
+
+
+
+
+
 
     public static void showQCodes(Activity activity) {
         new CustomListDialog("Q Codes", activity, SwipeArrays.getQcodes(), false);

@@ -73,32 +73,96 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
 
 
 
-        switch (data != null ? data : null) {
-            case "A-F":
-                mSteps = TestSteps.getAtoFSteps();
+        String language = Options.getLanguage(Test.this);
 
-                break;
-            case "G-K":
-                mSteps = TestSteps.getGtoKSteps();
+        if(language.equals("English"))
+        {
 
-                break;
-            case "L-P":
-                mSteps = TestSteps.getLtoPSteps();
+            switch (data != null ? data : null) {
+                case "A-F":
+                    mSteps = TestSteps.getAtoFSteps();
 
-                break;
-            case "Q-U":
-                mSteps = TestSteps.getQtoUSteps();
+                    break;
+                case "G-K":
+                    mSteps = TestSteps.getGtoKSteps();
 
-                break;
-            case "V-Z":
-                mSteps = TestSteps.getVtoZSteps();
-                break;
-            case "Numbers":
-                mSteps = TestSteps.numberSteps();
+                    break;
+                case "L-P":
+                    mSteps = TestSteps.getLtoPSteps();
 
-                break;
+                    break;
+                case "Q-U":
+                    mSteps = TestSteps.getQtoUSteps();
+
+                    break;
+                case "V-Z":
+                    mSteps = TestSteps.getVtoZSteps();
+                    break;
+                case "Numbers":
+                    mSteps = TestSteps.numberSteps();
+
+                    break;
+            }
+
+
+        }else if(language.equals("Spanish"))
+        {
+
+            switch (data != null ? data : null) {
+                case "A-F":
+                    mSteps = TestSteps.getAtoFStepsSpanish();
+
+                    break;
+                case "G-K":
+                    mSteps = TestSteps.getGtoKStepsSpanish();
+
+                    break;
+                case "L-P":
+                    mSteps = TestSteps.getLtoPStepsSpanish();
+
+                    break;
+                case "Q-U":
+                    mSteps = TestSteps.getQtoUStepsSpanish();
+
+                    break;
+                case "V-Z":
+                    mSteps = TestSteps.getVtoZStepsSpanish();
+                    break;
+                case "Numbers":
+                    mSteps = TestSteps.numberStepsSpanish();
+
+                    break;
+            }
+
+        }else
+        {
+
+            switch (data != null ? data : null) {
+                case "A-F":
+                    mSteps = TestSteps.getAtoFStepsChinese();
+
+                    break;
+                case "G-K":
+                    mSteps = TestSteps.getGtoKStepsChinese();
+
+                    break;
+                case "L-P":
+                    mSteps = TestSteps.getLtoPStepsChinese();
+
+                    break;
+                case "Q-U":
+                    mSteps = TestSteps.getQtoUStepsChinese();
+
+                    break;
+                case "V-Z":
+                    mSteps = TestSteps.getVtoZStepsChinese();
+                    break;
+                case "Numbers":
+                    mSteps = TestSteps.numberStepsChinese();
+
+                    break;
+            }
         }
-
 
 
         morseInput = new MorseInput(this, testTextViewMorseChar, testTextViewTextChar, testPad, testProgressBar, null, null, null);
@@ -285,7 +349,6 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
         ButtonFlat results = dialog.getButtonAccept();
 
 
-
         if(mCurrentStep == 1)
         {
             results.setVisibility(4);
@@ -391,14 +454,17 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
 
                 switch(language) {
                     case "English":
+                        if(Options.getEnabledVoice(this))
                         playSound.playSymbol(Test.this, R.raw.help);
                         break;
 
                     case "Spanish":
+                        if(Options.getEnabledVoice(this))
                         playSound.playSymbol(Test.this, R.raw.helpspanish);
                         break;
 
-                    default:
+                    case "Chinese":
+                        if(Options.getEnabledVoice(this))
                         playSound.playSymbol(Test.this, R.raw.helpchinese);
                         break;
                 }

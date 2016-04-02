@@ -126,6 +126,7 @@ public class Output{
 
 
     private void finished(){
+
         Logger.log("Finished");
         mScreenFlash.finished();
     }

@@ -69,6 +69,9 @@ public class TrainingTrail extends BaseActivity implements MorseInput.OnEndOfInp
         language = Options.getLanguage(TrainingTrail.this);
 
 
+        Logger.log(language);
+
+
         switch (language) {
             case "English":
                 switch (data) {

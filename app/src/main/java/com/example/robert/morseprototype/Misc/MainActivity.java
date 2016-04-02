@@ -2,6 +2,7 @@ package com.example.robert.morseprototype.Misc;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.view.GestureDetectorCompat;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -53,7 +54,8 @@ public class MainActivity extends BaseActivity {
 
         language = Options.getLanguage(MainActivity.this);
 
-        Logger.log(language);
+        //Loads preferences (sets default language on first launch)
+        PreferenceManager.setDefaultValues(this, R.xml.pref_general, false);
 
         showStartUpTutorial();
 
@@ -179,9 +181,9 @@ public class MainActivity extends BaseActivity {
 
                 case "Spanish":
                     if (Options.getEnabledVoice(MainActivity.this)) {
-                        playSound.playSymbol(MainActivity.this, R.raw.morseletterspanish);
+                        playSound.playSymbol(MainActivity.this, R.raw.morselettersspanish);
                     }
-                    LettersDialog.showLetters(MainActivity.this);
+                    LettersDialog.showLettersSpanish(MainActivity.this);
 
                     break;
 
@@ -189,7 +191,7 @@ public class MainActivity extends BaseActivity {
                     if (Options.getEnabledVoice(MainActivity.this)) {
                         playSound.playSymbol(MainActivity.this, R.raw.morseletterschinese);
                     }
-                    LettersDialog.showLetters(MainActivity.this);
+                    LettersDialog.showLettersChinese(MainActivity.this);
 
             }
         }
@@ -212,7 +214,7 @@ public class MainActivity extends BaseActivity {
                     if (Options.getEnabledVoice(MainActivity.this)) {
                         playSound.playSymbol(MainActivity.this, R.raw.numbersspanish);
                     }
-                    LettersDialog.showNumbers(MainActivity.this);
+                    LettersDialog.showNumbersSpanish(MainActivity.this);
 
                     break;
 
@@ -220,7 +222,7 @@ public class MainActivity extends BaseActivity {
                     if (Options.getEnabledVoice(MainActivity.this)) {
                         playSound.playSymbol(MainActivity.this, R.raw.numberschinese);
                     }
-                    LettersDialog.showNumbers(MainActivity.this);
+                    LettersDialog.showNumbersChinese(MainActivity.this);
             }
             }
 
@@ -277,15 +279,12 @@ public class MainActivity extends BaseActivity {
                 case "Chinese":
                     if(Options.getEnabledVoice(MainActivity.this)) {
                         playSound.playSymbol(MainActivity.this, R.raw.qcodeschinese);
-                        LettersDialog.showQCodesChinese(MainActivity.this);
                     }
+                    LettersDialog.showQCodesChinese(MainActivity.this);
                         break;
             }
         }
         }
-
-
-
 
 
 

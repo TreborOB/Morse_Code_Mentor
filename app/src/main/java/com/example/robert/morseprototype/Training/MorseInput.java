@@ -214,10 +214,12 @@ public class MorseInput {
             mWords.append(mCharacterToAppend);
 
             //Morse letter that is appended!
-            textViewTextLetter.setText(mCharacterToAppend);
+            textViewTextLetter.setText(mWords.toString());
 
             mMorseStringBuilder.setLength(0);
             textViewMorseLetter.setText("");
+
+
 
 
             //Checks to see if it is correct

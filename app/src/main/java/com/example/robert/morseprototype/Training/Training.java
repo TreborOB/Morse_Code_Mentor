@@ -34,10 +34,7 @@ public class Training extends AppCompatActivity {
         setContentView(R.layout.training_list);
 
 
-
-        final String language = Options.getLanguage(Training.this);
-
-
+        String language = Options.getLanguage(Training.this);
 
 
         final ArrayList<MorseSymbols> trail = new ArrayList<>();

@@ -55,7 +55,7 @@ public class ResultsAdapter extends ArrayAdapter <String> {
 
             score.setText("" + i + "%");
 
-            if(i >0){
+            if(i >=80){
                 percentage.setText(context.getResources().getText(R.string.pass));
                 updateProgress(testLetters);
 
@@ -137,6 +137,8 @@ public class ResultsAdapter extends ArrayAdapter <String> {
                 break;
             case "V-Z":
                 SnappyDB.insertElement("Numbers");
+                SnappyDB.insertElement("Números");
+                SnappyDB.insertElement("数字");
                 break;
         }
 

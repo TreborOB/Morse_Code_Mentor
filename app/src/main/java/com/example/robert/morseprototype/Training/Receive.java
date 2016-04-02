@@ -15,7 +15,6 @@ import com.example.robert.morseprototype.Database.SnappyStrings;
 import com.example.robert.morseprototype.Hardware.Sound;
 import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.example.robert.morseprototype.Hardware.Output;
-import com.example.robert.morseprototype.Misc.Logger;
 import com.example.robert.morseprototype.Misc.MorseTranslations;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
@@ -99,8 +98,6 @@ public class Receive extends BaseActivity {
         listSpanish = list.subList(11, 20);
         listChinese = list.subList(21, 30);
 
-
-        Logger.log(listChinese.get(2));
 
         wordFlashed.setOnClickListener(new View.OnClickListener() {
 

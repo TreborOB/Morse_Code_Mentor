@@ -13,7 +13,6 @@ import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.robert.morseprototype.Hardware.Sound;
 import com.example.robert.morseprototype.Misc.BaseActivity;
-import com.example.robert.morseprototype.Misc.MainActivity;
 import com.gc.materialdesign.views.ButtonFlat;
 import com.gc.materialdesign.views.Switch;
 import com.example.robert.morseprototype.Hardware.Output;
@@ -117,34 +116,61 @@ public class EnglishToMorse extends BaseActivity {
     private class mainMorseGestureDetector extends MorseGestureDetector {
 
         public void onSwipeRight() {
-            LettersDialog.showLetters(EnglishToMorse.this);
-        }
-
-        public void onSwipeLeft() {
-            LettersDialog.showNumbers(EnglishToMorse.this);
-        }
-
-        public void onSwipeBottom() {
-
-            switch(language){
+            switch (language) {
 
                 case "English":
-                    LettersDialog.showQCodes(EnglishToMorse.this);
+                    if (Options.getEnabledVoice(EnglishToMorse.this)) {
+                        playSound.playSymbol(EnglishToMorse.this, R.raw.morseletters);
+                    }
+                    LettersDialog.showLetters(EnglishToMorse.this);
 
                     break;
 
                 case "Spanish":
-                    LettersDialog.showQCodesSpanish(EnglishToMorse.this);
+                    if (Options.getEnabledVoice(EnglishToMorse.this)) {
+                        playSound.playSymbol(EnglishToMorse.this, R.raw.morselettersspanish);
+                    }
+                    LettersDialog.showLettersSpanish(EnglishToMorse.this);
 
                     break;
 
                 case "Chinese":
-                    LettersDialog.showQCodesChinese(EnglishToMorse.this);
+                    if (Options.getEnabledVoice(EnglishToMorse.this)) {
+                        playSound.playSymbol(EnglishToMorse.this, R.raw.morseletterschinese);
+                    }
+                    LettersDialog.showLettersChinese(EnglishToMorse.this);
+
+            }
+        }
+
+
+
+
+        public void onSwipeLeft() {
+            switch(language) {
+
+                case "English":
+                    if (Options.getEnabledVoice(EnglishToMorse.this)) {
+                        playSound.playSymbol(EnglishToMorse.this, R.raw.numbers);
+                    }
+                    LettersDialog.showNumbers(EnglishToMorse.this);
 
                     break;
+
+                case "Spanish":
+                    if (Options.getEnabledVoice(EnglishToMorse.this)) {
+                        playSound.playSymbol(EnglishToMorse.this, R.raw.numbersspanish);
+                    }
+                    LettersDialog.showNumbersSpanish(EnglishToMorse.this);
+
+                    break;
+
+                case "Chinese":
+                    if (Options.getEnabledVoice(EnglishToMorse.this)) {
+                        playSound.playSymbol(EnglishToMorse.this, R.raw.numberschinese);
+                    }
+                    LettersDialog.showNumbersChinese(EnglishToMorse.this);
             }
-
-
         }
 
         public void onSwipeTop() {
@@ -153,21 +179,61 @@ public class EnglishToMorse extends BaseActivity {
             switch(language){
 
                 case "English":
+                    if(Options.getEnabledVoice(EnglishToMorse.this)) {
+                        playSound.playSymbol(EnglishToMorse.this, R.raw.zcodes);
+                    }
                     LettersDialog.showZCodes(EnglishToMorse.this);
                     break;
 
                 case "Spanish":
+                    if(Options.getEnabledVoice(EnglishToMorse.this)) {
+                        playSound.playSymbol(EnglishToMorse.this, R.raw.zcodespanish);
+                    }
                     LettersDialog.showZCodesSpanish(EnglishToMorse.this);
 
                     break;
 
                 case "Chinese":
+                    if(Options.getEnabledVoice(EnglishToMorse.this)) {
+                        playSound.playSymbol(EnglishToMorse.this, R.raw.zcodeschinese);
+                    }
                     LettersDialog.showZCodesChinese(EnglishToMorse.this);
 
                     break;
             }
         }
+
+        public void onSwipeBottom() {
+
+            switch(language){
+
+                case "English":
+                    if(Options.getEnabledVoice(EnglishToMorse.this)) {
+                        playSound.playSymbol(EnglishToMorse.this, R.raw.qcodes);
+                    }
+                    LettersDialog.showQCodes(EnglishToMorse.this);
+
+                    break;
+
+                case "Spanish":
+                    if(Options.getEnabledVoice(EnglishToMorse.this)) {
+                        playSound.playSymbol(EnglishToMorse.this, R.raw.qcodesspanish);
+                    }
+                    LettersDialog.showQCodesSpanish(EnglishToMorse.this);
+
+                    break;
+
+                case "Chinese":
+                    if(Options.getEnabledVoice(EnglishToMorse.this)) {
+                        playSound.playSymbol(EnglishToMorse.this, R.raw.qcodeschinese);
+                    }
+                    LettersDialog.showQCodesChinese(EnglishToMorse.this);
+                    break;
+            }
+        }
     }
+
+
 
 
     private void showCaseMainActivity(){

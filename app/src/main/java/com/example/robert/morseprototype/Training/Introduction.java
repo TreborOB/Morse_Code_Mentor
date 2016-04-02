@@ -270,7 +270,7 @@ public class Introduction extends BaseActivity implements OnEndOfInput, MorseInp
 
         if (inputSentence.equals(answer)) {
 
-            SuperToast.create(this, "Right Answer!", SuperToast.Duration.VERY_SHORT,
+            SuperToast.create(this, "Correct Answer!", SuperToast.Duration.VERY_SHORT,
             Style.getStyle(Style.BLUE, SuperToast.Animations.FLYIN)).show();
 
             playSuccessSound();
