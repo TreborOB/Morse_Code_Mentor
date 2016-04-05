@@ -20,6 +20,7 @@ import com.example.robert.morseprototype.Tools.Tools;
 import com.example.robert.morseprototype.Tools.TrainingType;
 
 
+import java.util.Locale;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -351,6 +352,8 @@ public class MainActivity extends BaseActivity {
                 .setDelay(200) // optional but starting animations immediately in onCreate can make them choppy
                 .singleUse(SHOWCASE_ID) // provide a unique ID used to ensure it is only shown once
                 .show();
+
+
     }
 
 
