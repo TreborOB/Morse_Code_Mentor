@@ -16,29 +16,23 @@ public class SnappyDB {
     private static DB snappyDB;
     private static Context context;
 
-
     static HashMap<String, Boolean> map;
 
 
-
-    public SnappyDB(Context context){
+    public static void SnappyDBInit(Context context){
         SnappyDB.context = context;
 
     }
-
 
     public static void initSnappy(){
 
         try {
             snappyDB = DBFactory.open(context, "testProgress");
 
-
-
             if (snappyExist()) {
                 map = getSnappy();
             } else {
                 map = new HashMap<>();
-
             }
 
         }catch(SnappydbException e){
@@ -68,7 +62,6 @@ public class SnappyDB {
         }
 
         return map;
-
     }
 
 
@@ -100,10 +93,4 @@ public class SnappyDB {
             Logger.log("SnappyDB close exception");
         }
     }
-
-
-
-
-
-
 }

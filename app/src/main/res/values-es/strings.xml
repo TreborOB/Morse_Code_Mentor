@@ -12,14 +12,9 @@
     <string name="sos">SOS</string>
     <string name="morseCode">Código Morse Mentor</string>
     <string name="reset">restablecer</string>
-
-
-
-
-
-
-
-
+    <string name="category">Requiere una conexión a Internet</string>
+    <string name="data_analytics">Analisis de data</string>
+    <string name="press_to_see_answer">Pulse para ver la respuesta</string>
 
 
 </resources>

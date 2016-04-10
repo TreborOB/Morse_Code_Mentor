@@ -27,8 +27,6 @@ public class Training extends AppCompatActivity {
 
     private TrainingAdapter adapter;
 
-
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.training_list);
@@ -103,17 +101,10 @@ public class Training extends AppCompatActivity {
             }
         }
 
-
-
-
-
         adapter = new TrainingAdapter(this, trail);
         ListView listView = (ListView) findViewById(R.id.list);
 
-
-
         listView.setAdapter(adapter);
-
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -143,9 +134,6 @@ public class Training extends AppCompatActivity {
         });
 
     }
-
-
-
 
 
     public void onPause(){

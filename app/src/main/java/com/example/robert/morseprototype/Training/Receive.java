@@ -76,7 +76,6 @@ public class Receive extends BaseActivity {
 
         language = Options.getLanguage(this);
 
-
         if(Options.getScreenFlashSpeed(this)) {
             Options.setSpeedFast();
         }else{
@@ -86,9 +85,7 @@ public class Receive extends BaseActivity {
         init();
 
 
-
-
-        SnappyStrings snappy = new SnappyStrings(Receive.this);
+        SnappyStrings.SnappyStringsInit(this);
         SnappyStrings.initSnappy();
 
         list = SnappyStrings.getSnappy();
@@ -144,16 +141,10 @@ public class Receive extends BaseActivity {
                 break;
         }
 
-
-
-
         final String st = morseTranslations.translatedText(randomWord);
         mOutput.outputString(st);
 
-
         setHint();
-
-
 
     }
 
@@ -161,7 +152,6 @@ public class Receive extends BaseActivity {
     public void setWordFlashed(){
         wordFlashed.setText(randomWord);
     }
-
 
     private void showCaseMainActivity(){
 
@@ -212,9 +202,19 @@ public class Receive extends BaseActivity {
     }
 
 
-
     public void setHint(){
-        wordFlashed.setText("Press here to see the answer");
+
+        switch (language) {
+            case "English":
+                wordFlashed.setText(R.string.press_to_see_answer);
+                break;
+            case "Spanish":
+                wordFlashed.setText(R.string.press_to_see_answer);
+                break;
+            case "Chinese":
+                wordFlashed.setText(R.string.press_to_see_answer);
+                break;
+        }
     }
 
 

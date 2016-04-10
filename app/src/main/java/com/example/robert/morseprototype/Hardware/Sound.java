@@ -24,7 +24,7 @@ public class Sound {
     private MediaPlayer mMediaPlayer;
 
     public Sound(Context context) {
-        Context mContext = context;
+
         soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
         sound = soundPool.load(context, DEFAULT_SOUND, 1);
         soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {

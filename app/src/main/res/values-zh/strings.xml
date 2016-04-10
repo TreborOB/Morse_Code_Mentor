@@ -13,27 +13,9 @@
     <string name="sos">SOS</string>
     <string name="morseCode">莫尔斯电码导师</string>
     <string name="reset">重置</string>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <string name="category">需要互联网连接</string>
+    <string name="data_analytics">数据分析</string>
+    <string name="press_to_see_answer">按参考答案</string>
 
 
 </resources>

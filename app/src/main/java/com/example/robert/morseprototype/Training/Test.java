@@ -75,93 +75,94 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
 
         String language = Options.getLanguage(Test.this);
 
-        if(language.equals("English"))
-        {
+        switch (language) {
+            case "English":
 
-            switch (data != null ? data : null) {
-                case "A-F":
-                    mSteps = TestSteps.getAtoFSteps();
+                switch (data != null ? data : null) {
+                    case "A-F":
+                        mSteps = TestSteps.getAtoFSteps();
 
-                    break;
-                case "G-K":
-                    mSteps = TestSteps.getGtoKSteps();
+                        break;
+                    case "G-K":
+                        mSteps = TestSteps.getGtoKSteps();
 
-                    break;
-                case "L-P":
-                    mSteps = TestSteps.getLtoPSteps();
+                        break;
+                    case "L-P":
+                        mSteps = TestSteps.getLtoPSteps();
 
-                    break;
-                case "Q-U":
-                    mSteps = TestSteps.getQtoUSteps();
+                        break;
+                    case "Q-U":
+                        mSteps = TestSteps.getQtoUSteps();
 
-                    break;
-                case "V-Z":
-                    mSteps = TestSteps.getVtoZSteps();
-                    break;
-                case "Numbers":
-                    mSteps = TestSteps.numberSteps();
+                        break;
+                    case "V-Z":
+                        mSteps = TestSteps.getVtoZSteps();
+                        break;
+                    case "Numbers":
+                        mSteps = TestSteps.numberSteps();
 
-                    break;
-            }
+                        break;
+                }
 
 
-        }else if(language.equals("Spanish"))
-        {
+                break;
+            case "Spanish":
 
-            switch (data != null ? data : null) {
-                case "A-F":
-                    mSteps = TestSteps.getAtoFStepsSpanish();
+                switch (data != null ? data : null) {
+                    case "A-F":
+                        mSteps = TestSteps.getAtoFStepsSpanish();
 
-                    break;
-                case "G-K":
-                    mSteps = TestSteps.getGtoKStepsSpanish();
+                        break;
+                    case "G-K":
+                        mSteps = TestSteps.getGtoKStepsSpanish();
 
-                    break;
-                case "L-P":
-                    mSteps = TestSteps.getLtoPStepsSpanish();
+                        break;
+                    case "L-P":
+                        mSteps = TestSteps.getLtoPStepsSpanish();
 
-                    break;
-                case "Q-U":
-                    mSteps = TestSteps.getQtoUStepsSpanish();
+                        break;
+                    case "Q-U":
+                        mSteps = TestSteps.getQtoUStepsSpanish();
 
-                    break;
-                case "V-Z":
-                    mSteps = TestSteps.getVtoZStepsSpanish();
-                    break;
-                case "Numbers":
-                    mSteps = TestSteps.numberStepsSpanish();
+                        break;
+                    case "V-Z":
+                        mSteps = TestSteps.getVtoZStepsSpanish();
+                        break;
+                    case "Numbers":
+                        mSteps = TestSteps.numberStepsSpanish();
 
-                    break;
-            }
+                        break;
+                }
 
-        }else
-        {
+                break;
+            default:
 
-            switch (data != null ? data : null) {
-                case "A-F":
-                    mSteps = TestSteps.getAtoFStepsChinese();
+                switch (data != null ? data : null) {
+                    case "A-F":
+                        mSteps = TestSteps.getAtoFStepsChinese();
 
-                    break;
-                case "G-K":
-                    mSteps = TestSteps.getGtoKStepsChinese();
+                        break;
+                    case "G-K":
+                        mSteps = TestSteps.getGtoKStepsChinese();
 
-                    break;
-                case "L-P":
-                    mSteps = TestSteps.getLtoPStepsChinese();
+                        break;
+                    case "L-P":
+                        mSteps = TestSteps.getLtoPStepsChinese();
 
-                    break;
-                case "Q-U":
-                    mSteps = TestSteps.getQtoUStepsChinese();
+                        break;
+                    case "Q-U":
+                        mSteps = TestSteps.getQtoUStepsChinese();
 
-                    break;
-                case "V-Z":
-                    mSteps = TestSteps.getVtoZStepsChinese();
-                    break;
-                case "Numbers":
-                    mSteps = TestSteps.numberStepsChinese();
+                        break;
+                    case "V-Z":
+                        mSteps = TestSteps.getVtoZStepsChinese();
+                        break;
+                    case "Numbers":
+                        mSteps = TestSteps.numberStepsChinese();
 
-                    break;
-            }
+                        break;
+                }
+                break;
         }
 
 
@@ -201,7 +202,6 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
             extras.putStringArray("question", question);
             extras.putString("testLetters", data);
             intent.putExtras(extras);
-
 
 
             //finishes the activity when the results page is opened

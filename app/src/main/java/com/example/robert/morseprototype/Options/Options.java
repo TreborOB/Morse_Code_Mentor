@@ -9,7 +9,9 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
+import android.view.View;
 
+import com.example.robert.morseprototype.Misc.Logger;
 import com.example.robert.morseprototype.Misc.MorseApplication;
 import com.example.robert.morseprototype.R;
 import java.util.Locale;
@@ -23,6 +25,7 @@ public class Options extends AppCompatPreferenceActivity {
     private static final String SWITCH_SOS_SPEED    = "switch_sos_speed";
     private static final String MORSE_LEVEL         = "morse_speed";
     private static final String MORSE_LANGUAGE      = "language";
+    private static final String DATA_ANALYTICS      = "data";
 
     public static int DOT_LENGTH             = 100;
     public static int DASH_LENGTH            = 500;
@@ -164,6 +167,10 @@ public class Options extends AppCompatPreferenceActivity {
         return sharedPreferences.getBoolean(SWITCH_SOS_SPEED, false);
     }
 
+    public static boolean getDataAnalytics(Context context) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        return sharedPreferences.getBoolean(DATA_ANALYTICS, false);
+    }
 
 
     public static String getLanguage(Context context) {
@@ -172,8 +179,7 @@ public class Options extends AppCompatPreferenceActivity {
     }
 
 
-   public static String getLevel(Context context){
-
+    public static String getLevel(Context context){
        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
        return sharedPreferences.getString(MORSE_LEVEL, MORSE_LEVEL);
    }
@@ -223,7 +229,10 @@ public class Options extends AppCompatPreferenceActivity {
     }
 
 
+    public void openDialog(View view) {
+        Logger.log("HELLO ROBERT!");
 
+    }
 
 }
 

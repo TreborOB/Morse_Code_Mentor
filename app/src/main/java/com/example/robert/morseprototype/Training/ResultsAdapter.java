@@ -2,14 +2,20 @@ package com.example.robert.morseprototype.Training;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import com.example.robert.morseprototype.Database.SnappyDB;
+import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
 import com.google.common.base.Strings;
+import com.mixpanel.android.mpmetrics.MixpanelAPI;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
 public class ResultsAdapter extends ArrayAdapter <String> {
@@ -21,6 +27,9 @@ public class ResultsAdapter extends ArrayAdapter <String> {
     private String testLetters;
     private Context context;
 
+    String projectToken;
+    MixpanelAPI mixPanelResultsAdapter;
+
 
     public ResultsAdapter(Activity context, String [] array, String testLetters, String [] question) {
         super(context, R.layout.activity_results_item, array);
@@ -30,6 +39,9 @@ public class ResultsAdapter extends ArrayAdapter <String> {
         this.testLetters = testLetters;
         this.context     = context;
 
+
+        projectToken = "a030a77c9710298b9cee4e20d7c2b814";
+        mixPanelResultsAdapter = MixpanelAPI.getInstance(context, projectToken);
 
         SnappyDB.initSnappy();
 
@@ -55,7 +67,7 @@ public class ResultsAdapter extends ArrayAdapter <String> {
 
             score.setText("" + i + "%");
 
-            if(i >=80){
+            if(i >=0){
                 percentage.setText(context.getResources().getText(R.string.pass));
                 updateProgress(testLetters);
 
@@ -117,9 +129,22 @@ public class ResultsAdapter extends ArrayAdapter <String> {
 
     private void updateProgress(String lettersProgress){
 
+
+        if (Options.getDataAnalytics(context)) {
+            try {
+                JSONObject itemSelected = new JSONObject();
+                itemSelected.put("Stage Completed", testLetters);
+                mixPanelResultsAdapter.track("Results", itemSelected);
+
+            } catch (JSONException e) {
+
+                Log.e("App started error", "ERROR", e);
+            }
+
+        }
+
+
         SnappyDB.insertElement(lettersProgress);
-
-
 
         //Opens up the next stage of the trail
         switch (lettersProgress) {
@@ -142,8 +167,5 @@ public class ResultsAdapter extends ArrayAdapter <String> {
                 break;
         }
 
-
-
     }
-
 }

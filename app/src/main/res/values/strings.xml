@@ -100,6 +100,8 @@
     <string name="fast_screen_flash">Fast screen flash</string>
     <string name="morse_code_level">Morse code level</string>
     <string name="language_selection">Language selection</string>
+    <string name="data_analytics">Data Analytics</string>
+    <string name="category">Requires an internet connection</string>
     <!--Options-->
 
 
@@ -117,6 +119,7 @@
 
     <!--Receive-->
     <string name="start_receive">Start Receiving</string>
+    <string name="press_to_see_answer">Press to see the answer</string>
     <!--Receive-->
 
 

@@ -20,14 +20,22 @@ import com.example.robert.morseprototype.Tools.Tools;
 import com.example.robert.morseprototype.Tools.TrainingType;
 
 
-import java.util.Locale;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 import uk.co.deanwild.materialshowcaseview.MaterialShowcaseSequence;
 import uk.co.deanwild.materialshowcaseview.MaterialShowcaseView;
 import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
+
+
+
+import com.mixpanel.android.mpmetrics.MixpanelAPI;
+
+import android.util.Log;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 
 
 public class MainActivity extends BaseActivity {
@@ -45,15 +53,47 @@ public class MainActivity extends BaseActivity {
     private final ShowcaseConfig config = new ShowcaseConfig();
 
 
+    MixpanelAPI mixPanel;
+    MixpanelAPI mixPanelTraining;
+    MixpanelAPI mixPanelSOS;
+    MixpanelAPI mixPanelTools;
+    MixpanelAPI mixPanelOptions;
+    String      projectToken;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mDetector = new GestureDetectorCompat(this, new mainMorseGestureDetector());
         ButterKnife.bind(this);
 
+        mDetector = new GestureDetectorCompat(this, new mainMorseGestureDetector());
+
+
+
+        projectToken     = "a030a77c9710298b9cee4e20d7c2b814";
+        mixPanel         = MixpanelAPI.getInstance(this, projectToken);
+        mixPanelTraining = MixpanelAPI.getInstance(this, projectToken);
+        mixPanelSOS      = MixpanelAPI.getInstance(this, projectToken);
+        mixPanelTools    = MixpanelAPI.getInstance(this, projectToken);
+        mixPanelOptions  = MixpanelAPI.getInstance(this, projectToken);
+
+
+
+        if(Options.getDataAnalytics(this)) {
+            try {
+                JSONObject props = new JSONObject();
+                props.put("App Started", "True");
+                mixPanel.track("MainActivity", props);
+
+            } catch (JSONException e) {
+
+                Log.e("App started error", "ERROR", e);
+            }
+        }
 
         language = Options.getLanguage(MainActivity.this);
+
+        Logger.log(language);
 
         //Loads preferences (sets default language on first launch)
         PreferenceManager.setDefaultValues(this, R.xml.pref_general, false);
@@ -81,6 +121,20 @@ public class MainActivity extends BaseActivity {
         startActivity(intent);
 
 
+        if(Options.getDataAnalytics(this)) {
+        try{
+            JSONObject training = new JSONObject();
+            training.put("Open Training", "True");
+            mixPanelTraining.track("Training", training);
+
+        }catch(JSONException e) {
+
+            Log.e("Open training error", "ERROR", e);
+        }
+        }
+
+
+
         if(Options.getEnabledVoice(this)) {
             switch (language) {
                 case "English":
@@ -102,6 +156,18 @@ public class MainActivity extends BaseActivity {
     public void openTools(View view) {
         Intent intent = new Intent(this, Tools.class);
         startActivity(intent);
+
+        if(Options.getDataAnalytics(this)) {
+        try{
+            JSONObject tools = new JSONObject();
+            tools.put("Open Tool", "True");
+            mixPanelTools.track("Tools", tools);
+
+        }catch(JSONException e) {
+
+            Log.e("Open tools error", "Error", e);
+        }
+        }
 
         if(Options.getEnabledVoice(this)) {
         switch(language){
@@ -126,6 +192,18 @@ public class MainActivity extends BaseActivity {
         Intent intent = new Intent(this, Options.class);
         startActivity(intent);
 
+        if(Options.getDataAnalytics(this)) {
+            try {
+                JSONObject options = new JSONObject();
+                options.put("Open Options", "True");
+                mixPanelOptions.track("Options", options);
+
+            } catch (JSONException e) {
+
+                Log.e("Open options error", "Error", e);
+            }
+        }
+
         if(Options.getEnabledVoice(this)) {
         switch(language){
             case "English":
@@ -147,6 +225,18 @@ public class MainActivity extends BaseActivity {
     public void openSOS(View view) {
         Intent intent = new Intent(this, Sos.class);
         startActivity(intent);
+
+        if(Options.getDataAnalytics(this)) {
+            try {
+                JSONObject sos = new JSONObject();
+                sos.put("Open SOS", "True");
+                mixPanelSOS.track("SOS", sos);
+
+            } catch (JSONException e) {
+
+                Log.e("Open SOS error", "Error", e);
+            }
+        }
 
         if(Options.getEnabledVoice(this)) {
         switch(language) {
@@ -171,6 +261,14 @@ public class MainActivity extends BaseActivity {
 
         public void onSwipeRight() {
             switch (language) {
+
+                case "language":
+                    if (Options.getEnabledVoice(MainActivity.this)) {
+                        playSound.playSymbol(MainActivity.this, R.raw.morseletters);
+                    }
+                    LettersDialog.showLetters(MainActivity.this);
+
+                    break;
 
                 case "English":
                     if (Options.getEnabledVoice(MainActivity.this)) {
@@ -198,10 +296,17 @@ public class MainActivity extends BaseActivity {
         }
 
 
-
-
         public void onSwipeLeft() {
             switch(language) {
+
+
+                case "language":
+                    if (Options.getEnabledVoice(MainActivity.this)) {
+                        playSound.playSymbol(MainActivity.this, R.raw.numbers);
+                    }
+                    LettersDialog.showNumbers(MainActivity.this);
+
+                    break;
 
                 case "English":
                     if (Options.getEnabledVoice(MainActivity.this)) {
@@ -232,6 +337,13 @@ public class MainActivity extends BaseActivity {
 
             switch(language){
 
+                case "language":
+                    if(Options.getEnabledVoice(MainActivity.this)) {
+                        playSound.playSymbol(MainActivity.this, R.raw.zcodes);
+                    }
+                    LettersDialog.showZCodes(MainActivity.this);
+                    break;
+
                 case "English":
                     if(Options.getEnabledVoice(MainActivity.this)) {
                         playSound.playSymbol(MainActivity.this, R.raw.zcodes);
@@ -261,6 +373,14 @@ public class MainActivity extends BaseActivity {
 
             switch(language){
 
+                case "language":
+                    if(Options.getEnabledVoice(MainActivity.this)) {
+                        playSound.playSymbol(MainActivity.this, R.raw.qcodes);
+                    }
+                    LettersDialog.showQCodes(MainActivity.this);
+
+                    break;
+
                 case "English":
                     if(Options.getEnabledVoice(MainActivity.this)) {
                         playSound.playSymbol(MainActivity.this, R.raw.qcodes);
@@ -288,10 +408,7 @@ public class MainActivity extends BaseActivity {
         }
 
 
-
-
     private void showCaseMainActivity(){
-
 
         String array[];
 
@@ -310,9 +427,6 @@ public class MainActivity extends BaseActivity {
                 array = ShowCaseViewArrays.mainActivityChinese();
                 break;
         }
-
-
-
 
 
         config.setDelay(300);
@@ -335,9 +449,7 @@ public class MainActivity extends BaseActivity {
 
 
         sequence.start();
-
     }
-
 
     public void showStartUpTutorial(){
 
@@ -352,8 +464,6 @@ public class MainActivity extends BaseActivity {
                 .setDelay(200) // optional but starting animations immediately in onCreate can make them choppy
                 .singleUse(SHOWCASE_ID) // provide a unique ID used to ensure it is only shown once
                 .show();
-
-
     }
 
 
@@ -381,10 +491,26 @@ public class MainActivity extends BaseActivity {
                         break;
                 }
 
-
                 showCaseMainActivity();
         }
         return true;
 
+    }
+
+
+//  Flushes any unsent events to Mix Panel
+    @Override
+    protected void onDestroy() {
+        mixPanel.flush();
+        mixPanelOptions.flush();
+        mixPanelSOS.flush();
+        mixPanelTools.flush();
+        mixPanelTraining.flush();
+        super.onDestroy();
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
     }
 }

@@ -1,5 +1,6 @@
 package com.example.robert.morseprototype.Training;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.GestureDetectorCompat;
 import android.view.MenuItem;
@@ -67,11 +68,15 @@ public class Introduction extends BaseActivity implements OnEndOfInput, MorseInp
 
     String language;
 
+    private String data;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introduction);
         ButterKnife.bind(this);
+
+        data = getIntent().getExtras().getString("keyName");
 
 
         mDetector = new GestureDetectorCompat(this, new mainMorseGestureDetector());
@@ -184,6 +189,19 @@ public class Introduction extends BaseActivity implements OnEndOfInput, MorseInp
 
 
     public void onNextClicked(View view) {
+
+
+        if (mCurrentStep >= mSteps.size() - 1) {
+
+            Intent intent = new Intent(this, FinishedTrailSection.class);
+            intent.putExtra("trailSection", data);
+
+            //finishes the activity when the results page is opened
+            finish();
+
+            startActivity(intent);
+
+        }else
 
         if (mCurrentStep == 1) morseInput.reset();
 

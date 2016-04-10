@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 import com.example.robert.morseprototype.R;
 
+
 public class Results extends AppCompatActivity {
 
 
@@ -18,21 +19,20 @@ public class Results extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         String[] scoresArray = extras.getStringArray("scores");
         String[] questionArray = extras.getStringArray("question");
-        String testLetters   = extras.getString("testLetters");
+        String testLetters = extras.getString("testLetters");
 
 
+       ResultsAdapter adapter = new ResultsAdapter(this, scoresArray, testLetters, questionArray);
+       ListView listView      = (ListView) findViewById(R.id.list);
+       listView.setAdapter(adapter);
 
-        ResultsAdapter adapter = new ResultsAdapter(this, scoresArray, testLetters, questionArray);
-        ListView listView = (ListView) findViewById(R.id.list);
-        listView.setAdapter(adapter);
+        }
 
 
-
-
+    @Override
+    public void onResume(){
+        super.onResume();
     }
-
-
-
-
 }
+
 

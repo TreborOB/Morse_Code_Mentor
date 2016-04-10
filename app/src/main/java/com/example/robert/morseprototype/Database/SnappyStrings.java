@@ -15,17 +15,10 @@ public class SnappyStrings {
 
 
     private static DB snappyDBStrings;
-
-
     private static Context context;
-
-
     static ArrayList<String> list;
 
-
-
-
-    public SnappyStrings(Context context){
+    public static void SnappyStringsInit(Context context){
         SnappyStrings.context = context;
 
     }
@@ -34,7 +27,7 @@ public class SnappyStrings {
     public static void initSnappy(){
 
         try {
-            snappyDBStrings        = DBFactory.open(context, "receiveStrings");
+            snappyDBStrings = DBFactory.open(context, "receiveStrings");
 
 
             if (snappyStringsExist()) {
@@ -53,7 +46,6 @@ public class SnappyStrings {
         }
 
     }
-
 
 
     @SuppressWarnings("unchecked")
@@ -78,7 +70,6 @@ public class SnappyStrings {
             Logger.log("Save snappy Strings exception");
         }
     }
-
 
 
     public static boolean snappyStringsExist(){
@@ -106,7 +97,6 @@ public class SnappyStrings {
     }
 
 
-
     private static void populateList(){
 
         String s1  = "Hello";
@@ -120,7 +110,6 @@ public class SnappyStrings {
         String s9  = "Land ahead";
         String s10 = "Signal";
 
-
         String s11  = "Buenos dias";
         String s12  = "Adios";
         String s13  = "Gracías";
@@ -131,7 +120,6 @@ public class SnappyStrings {
         String s18  = "Encontrar";
         String s19  = "Primero";
         String s20  = "Entre";
-
 
 
         String s21  = "Xie";
@@ -182,6 +170,5 @@ public class SnappyStrings {
         saveSnappyStrings();
 
     }
-
 
 }

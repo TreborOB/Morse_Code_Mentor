@@ -41,14 +41,12 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
 
         language = Options.getLanguage(context);
 
-        SnappyDB snappy = new SnappyDB(context);
+
+        SnappyDB.SnappyDBInit(context);
         SnappyDB.initSnappy();
 
 
         map = SnappyDB.getSnappy();
-
-
-
 
 
     }
@@ -64,7 +62,7 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
 
 
 
-        if(!map.containsKey(textToDisplay.getLetter()) && !textToDisplay.getLetter().equals("Introduction")
+        if(!map.containsKey(textToDisplay.getLetter()) && !textToDisplay.getLetter().equals("Introduction") && !textToDisplay.getLetter().equals("A-F")
                             && !textToDisplay.getLetter().equals("Introducción") && !textToDisplay.getLetter().equals("介绍")){
 
            view = mInflater.inflate(R.layout.training_list_blank, parent, false);
@@ -119,8 +117,6 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
                                 playSound.playSymbol(context, R.raw.testchinese);
                             break;
                     }
-
-
 
                     Intent intent = new Intent(context, Test.class);
                     String selectedItem = txtTitle.getText().toString();
