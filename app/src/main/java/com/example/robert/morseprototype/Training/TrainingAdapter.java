@@ -32,7 +32,6 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
 
     String language;
 
-
     @SuppressWarnings("unchecked")
     public TrainingAdapter(Activity context, List list) {
         super(context, R.layout.training_list_item, list);
@@ -41,13 +40,11 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
 
         language = Options.getLanguage(context);
 
-
         SnappyDB.SnappyDBInit(context);
         SnappyDB.initSnappy();
 
 
         map = SnappyDB.getSnappy();
-
 
     }
 
@@ -58,9 +55,6 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
 
 
         MorseSymbols textToDisplay = getItem(position);
-
-
-
 
         if(!map.containsKey(textToDisplay.getLetter()) && !textToDisplay.getLetter().equals("Introduction") && !textToDisplay.getLetter().equals("A-F")
                             && !textToDisplay.getLetter().equals("Introducción") && !textToDisplay.getLetter().equals("介绍")){
@@ -81,8 +75,6 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
         }else{
             view = mInflater.inflate(R.layout.training_list_item, parent, false);
 
-
-
             final TextView txtTitle = (TextView) view.findViewById(R.id.item);
             TextView extraTxt       = (TextView) view.findViewById(R.id.textView1);
             ButtonFlat test         = (ButtonFlat) view.findViewById(R.id.textView4);
@@ -92,7 +84,6 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
             if(position == 0){
                 test.setVisibility(View.INVISIBLE);
             }
-
 
             txtTitle.setText(textToDisplay.getLetter());
             extraTxt.setText(textToDisplay.getMorseSymbol());
@@ -126,8 +117,6 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
                 }
             });
         }
-
-
 
 
         return view;

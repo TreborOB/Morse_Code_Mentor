@@ -51,4 +51,6 @@ dependencies {
     compile 'com.uncopt:android.justified:1.0'
     compile 'com.mixpanel.android:mixpanel-android:4.+'
 
+
+
 }

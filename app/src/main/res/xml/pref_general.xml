@@ -31,11 +31,6 @@
         android:switchTextOn="@string/On"
         android:switchTextOff="@string/Off" />
 
-
-    <PreferenceCategory
-        android:title="@string/category">
-
-
     <SwitchPreference
         android:defaultValue="false"
         android:switchMinWidth="56dp"
@@ -47,8 +42,6 @@
         android:summaryOff="@string/Off"
         android:switchTextOn="@string/On"
         android:switchTextOff="@string/Off" />
-
- </PreferenceCategory>
 
 
     <ListPreference
@@ -67,6 +60,8 @@
         android:defaultValue="English"
         android:entries="@array/languages"
         android:entryValues="@array/listLanguages" />
+
+
 
 
 </PreferenceScreen>

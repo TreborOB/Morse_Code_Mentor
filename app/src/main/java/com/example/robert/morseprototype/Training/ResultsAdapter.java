@@ -67,7 +67,7 @@ public class ResultsAdapter extends ArrayAdapter <String> {
 
             score.setText("" + i + "%");
 
-            if(i >=0){
+            if(i >=80){
                 percentage.setText(context.getResources().getText(R.string.pass));
                 updateProgress(testLetters);
 

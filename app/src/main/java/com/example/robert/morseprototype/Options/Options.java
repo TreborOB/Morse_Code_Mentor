@@ -9,11 +9,13 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
+import android.preference.SwitchPreference;
 import android.view.View;
 
 import com.example.robert.morseprototype.Misc.Logger;
 import com.example.robert.morseprototype.Misc.MorseApplication;
 import com.example.robert.morseprototype.R;
+import com.gc.materialdesign.widgets.Dialog;
 import java.util.Locale;
 
 
@@ -31,7 +33,6 @@ public class Options extends AppCompatPreferenceActivity {
     public static int DASH_LENGTH            = 500;
     public static int INTER_DOT_LENGTH       = 100;
     public static int INTER_CHARACTER_LENGTH = 200;
-
     public static int TIMER                  = 10000;
 
 
@@ -65,6 +66,7 @@ public class Options extends AppCompatPreferenceActivity {
             this.PROGRESS_BAR_INCREASE = PROGRESS_BAR_INCREASE;
 
         }
+
     }
 
     public static InputSpeeds getInputSpeeds(Context context) {
@@ -89,9 +91,9 @@ public class Options extends AppCompatPreferenceActivity {
 
     public static class GeneralPreferenceFragment extends PreferenceFragment {
 
-        ListPreference listPreferenceSpeed;
-        ListPreference listPreferenceLanguage;
-
+        ListPreference   listPreferenceSpeed;
+        ListPreference   listPreferenceLanguage;
+        SwitchPreference listPreferenceData;
 
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -100,11 +102,13 @@ public class Options extends AppCompatPreferenceActivity {
 
             listPreferenceSpeed    = (ListPreference) findPreference("morse_speed");
             listPreferenceLanguage = (ListPreference) findPreference("language");
+            listPreferenceData     = (SwitchPreference) findPreference("data");
 
 
 
             listPreferenceSpeed.setSummary(listPreferenceSpeed.getEntry());
             listPreferenceLanguage.setSummary(listPreferenceLanguage.getEntry());
+
 
             if (listPreferenceSpeed.getValue() == null) {
                 // to ensure we don't get a null value
@@ -123,6 +127,38 @@ public class Options extends AppCompatPreferenceActivity {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
                     preference.setSummary(newValue.toString());
+                    return true;
+                }
+            });
+
+
+            listPreferenceData.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+                @Override
+                public boolean onPreferenceChange(Preference preference, Object newValue) {
+
+                    Context cxt       = listPreferenceData.getContext();
+                    boolean analytics = getDataAnalytics(cxt);
+
+                    if(!analytics){
+                        Logger.log("WORKS");
+
+                        Dialog dialog = new Dialog(cxt, "Internet Connection Required", "Enabling data analytics requires a working internet" +
+                                " connection. It allows us to monitor how each user interacts with the application thus allowing for improvements to be made where" +
+                                " necessary.");
+
+
+                        dialog.addCancelButton("Cancel");
+
+                        dialog.setOnCancelButtonClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                               listPreferenceData.setChecked(false);
+                            }
+                        });
+
+                        dialog.show();
+                    }
+
                     return true;
                 }
             });
@@ -167,7 +203,7 @@ public class Options extends AppCompatPreferenceActivity {
         return sharedPreferences.getBoolean(SWITCH_SOS_SPEED, false);
     }
 
-    public static boolean getDataAnalytics(Context context) {
+       public static boolean getDataAnalytics(Context context) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         return sharedPreferences.getBoolean(DATA_ANALYTICS, false);
     }
@@ -225,12 +261,6 @@ public class Options extends AppCompatPreferenceActivity {
         DASH_LENGTH = 500;
         INTER_DOT_LENGTH = 100;
         INTER_CHARACTER_LENGTH = 200;
-
-    }
-
-
-    public void openDialog(View view) {
-        Logger.log("HELLO ROBERT!");
 
     }
 

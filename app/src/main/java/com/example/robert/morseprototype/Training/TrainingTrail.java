@@ -64,13 +64,10 @@ public class TrainingTrail extends BaseActivity implements MorseInput.OnEndOfInp
 
         data = getIntent().getExtras().getString("keyName");
 
-
         //Gets the current language
         language = Options.getLanguage(TrainingTrail.this);
 
-
         Logger.log(language);
-
 
         switch (language) {
             case "English":
@@ -211,9 +208,7 @@ public class TrainingTrail extends BaseActivity implements MorseInput.OnEndOfInp
     }
 
 
-
     public void onNextClicked(View view) {
-
 
         if (mCurrentStep >= mSteps.size() - 1) {
 

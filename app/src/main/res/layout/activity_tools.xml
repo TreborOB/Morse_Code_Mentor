@@ -13,10 +13,10 @@
         android:text="@string/englishToMorse"
         android:id="@+id/english_to_morse_button"
         android:onClick="englishMorse"
-        android:textColor="#FFFFFF"
+
         android:layout_below="@+id/button11"
-        android:layout_alignEnd="@+id/morseTools"
-        android:layout_alignStart="@+id/button8" />
+        android:layout_alignStart="@+id/button8"
+        android:layout_alignEnd="@+id/button11" />
 
 
     <com.gc.materialdesign.views.ButtonRectangle
@@ -25,7 +25,6 @@
         android:text="@string/morse_pad"
         android:id="@+id/morsePad"
         android:onClick="morsePad"
-        android:textColor="#FFFFFF"
         android:layout_below="@+id/morseTools"
         android:layout_marginTop="59dp"
         android:layout_alignStart="@+id/morseTools"
@@ -39,7 +38,8 @@
         android:minWidth="100dp"
         android:onClick="convertMorse"
         android:layout_below="@+id/morsePad"
-        android:layout_alignStart="@+id/morsePad" />
+        android:layout_alignStart="@+id/morsePad"
+        android:layout_alignEnd="@+id/morsePad" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -50,7 +50,8 @@
         android:textStyle="bold"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="66dp" />
+        android:layout_marginTop="66dp"
+        android:textSize="23dp" />
 
     <com.gc.materialdesign.views.ButtonRectangle
         android:layout_width="wrap_content"
@@ -60,6 +61,6 @@
         android:id="@+id/button11"
         android:layout_below="@+id/button8"
         android:layout_alignStart="@+id/button8"
-        android:layout_alignEnd="@+id/english_to_morse_button" />
+        android:layout_alignEnd="@+id/button8" />
 
 </RelativeLayout>

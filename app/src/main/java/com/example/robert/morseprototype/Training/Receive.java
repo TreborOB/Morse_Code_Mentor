@@ -60,6 +60,7 @@ public class Receive extends BaseActivity {
 
     };
 
+    //Creates arrays to hold the words to be flashed
     ArrayList<String> list = new ArrayList<>();
 
     List<String> listEnglish = new ArrayList<>();
@@ -76,6 +77,8 @@ public class Receive extends BaseActivity {
 
         language = Options.getLanguage(this);
 
+
+        //Sets screen flash speed
         if(Options.getScreenFlashSpeed(this)) {
             Options.setSpeedFast();
         }else{
@@ -107,7 +110,6 @@ public class Receive extends BaseActivity {
     }
 
 
-
     private void bindInterface() {
 
         mOutput.setScreenEnabled(true, mImageHandler);
@@ -115,9 +117,7 @@ public class Receive extends BaseActivity {
     }
 
 
-
     private void startScreenFlash(){
-
 
         release();
 
@@ -151,6 +151,8 @@ public class Receive extends BaseActivity {
 
     public void setWordFlashed(){
         wordFlashed.setText(randomWord);
+
+        mOutput.cancel();
     }
 
     private void showCaseMainActivity(){

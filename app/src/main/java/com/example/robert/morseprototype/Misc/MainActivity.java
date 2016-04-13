@@ -373,13 +373,6 @@ public class MainActivity extends BaseActivity {
 
             switch(language){
 
-                case "language":
-                    if(Options.getEnabledVoice(MainActivity.this)) {
-                        playSound.playSymbol(MainActivity.this, R.raw.qcodes);
-                    }
-                    LettersDialog.showQCodes(MainActivity.this);
-
-                    break;
 
                 case "English":
                     if(Options.getEnabledVoice(MainActivity.this)) {
