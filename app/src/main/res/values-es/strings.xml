@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Código Morse Mentor</string>
+    <string name="app_name">Código  Mentor</string>
     <string name="training">Formación</string>
     <string name="tools">Instrumentos</string>
     <string name="options">Opciones</string>

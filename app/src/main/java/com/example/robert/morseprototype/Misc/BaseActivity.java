@@ -16,10 +16,8 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
         mCurrentLocale = getResources().getConfiguration().locale;
     }
-
 
 
     @Override

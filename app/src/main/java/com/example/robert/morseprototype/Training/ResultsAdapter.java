@@ -2,6 +2,7 @@ package com.example.robert.morseprototype.Training;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,7 +54,7 @@ public class ResultsAdapter extends ArrayAdapter <String> {
 
         View view;
 
-
+        //The first element is used to display either a pass or fail
         if(position == 0){
 
             view = mInflater.inflate(R.layout.result_calculation_item, parent, false);
@@ -67,12 +68,25 @@ public class ResultsAdapter extends ArrayAdapter <String> {
 
             score.setText("" + i + "%");
 
+
+            //Sets the pass rate for each test
             if(i >=80){
+
                 percentage.setText(context.getResources().getText(R.string.pass));
+                percentage.setTextColor(Color.GREEN);
+
+                score.setText("" + i + "%");
+                score.setTextColor(Color.GREEN);
+
                 updateProgress(testLetters);
 
             }else{
+
                 percentage.setText(context.getResources().getText(R.string.fail));
+                percentage.setTextColor(Color.RED);
+
+                score.setText("" + i + "%");
+                score.setTextColor(Color.RED);
             }
 
 
@@ -86,6 +100,7 @@ public class ResultsAdapter extends ArrayAdapter <String> {
             TextView questionNumber = (TextView) view.findViewById(R.id.questionNumber);
             TextView answer         = (TextView) view.findViewById(R.id.answer);
 
+            //Test to see if any of the array elements are empty/null
             if(Strings.isNullOrEmpty(textToDisplay)){
                 textToDisplay = "Not answered";
                 questionNumber.setText("");
@@ -103,18 +118,19 @@ public class ResultsAdapter extends ArrayAdapter <String> {
 
     }
 
-
-
+    
     private int calculateResult() {
 
         int score = 0;
 
         for (int i = 1; i < results.length-1; i++) {
 
-             if (results[i].equals("Correct")) {
-                score++;
 
-            } else {
+
+             if (results[i].equals("Correct")) {
+                 score++;
+             }
+             else {
 
                 if (score > 0) {
                  score--;
@@ -126,9 +142,8 @@ public class ResultsAdapter extends ArrayAdapter <String> {
     }
 
 
-
+    //Updates the progress to the DB is test successfully passed
     private void updateProgress(String lettersProgress){
-
 
         if (Options.getDataAnalytics(context)) {
             try {

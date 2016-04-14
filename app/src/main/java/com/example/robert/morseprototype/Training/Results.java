@@ -15,16 +15,16 @@ public class Results extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.training_list);
 
-
         Bundle extras = getIntent().getExtras();
-        String[] scoresArray = extras.getStringArray("scores");
+        String[] scoresArray   = extras.getStringArray("scores");
         String[] questionArray = extras.getStringArray("question");
-        String testLetters = extras.getString("testLetters");
+        String testLetters     = extras.getString("testLetters");
 
 
        ResultsAdapter adapter = new ResultsAdapter(this, scoresArray, testLetters, questionArray);
        ListView listView      = (ListView) findViewById(R.id.list);
-       listView.setAdapter(adapter);
+        assert listView != null;
+        listView.setAdapter(adapter);
 
         }
 

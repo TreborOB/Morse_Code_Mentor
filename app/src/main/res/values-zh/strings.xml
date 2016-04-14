@@ -2,7 +2,7 @@
 <resources>
 
 
-    <string name="app_name">莫尔斯电码导师</string>
+    <string name="app_name">莫尔斯导师</string>
     <string name="training">训练</string>
     <string name="tools">工具</string>
     <string name="options">选项</string>

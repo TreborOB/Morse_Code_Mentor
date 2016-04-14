@@ -71,13 +71,12 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
 
         data = getIntent().getExtras().getString("keyName");
 
-
-
         String language = Options.getLanguage(Test.this);
 
         switch (language) {
             case "English":
 
+                assert (data != null ? data : null) != null;
                 switch (data != null ? data : null) {
                     case "A-F":
                         mSteps = TestSteps.getAtoFSteps();
@@ -108,6 +107,7 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
                 break;
             case "Spanish":
 
+                assert (data != null ? data : null) != null;
                 switch (data != null ? data : null) {
                     case "A-F":
                         mSteps = TestSteps.getAtoFStepsSpanish();
@@ -137,6 +137,7 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
                 break;
             default:
 
+                assert (data != null ? data : null) != null;
                 switch (data != null ? data : null) {
                     case "A-F":
                         mSteps = TestSteps.getAtoFStepsChinese();
@@ -262,7 +263,7 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
 
         if (inputSentence.equals(answer)) {
 
-            scores[mCurrentStep] = "Correct";
+            scores[mCurrentStep]   = "Correct";
             question[mCurrentStep] = mSteps.get(mCurrentStep).getAnswer();
 
             displayToast("Correct!");
@@ -276,12 +277,12 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
 
         } else {
 
-            scores[mCurrentStep] = "Incorrect";
+            displayToast("Wrong Answer");
 
-          displayToast("Wrong Answer");
+            scores[mCurrentStep] = "Incorrect";
+            question[mCurrentStep] = mSteps.get(mCurrentStep).getAnswer();
 
             mCurrentStep++;
-
             cancelCountDown();
             updateCurrentStep();
             playFailureSound();
@@ -291,18 +292,15 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
 
     }
 
-
     private  void resetText() {
         testTextViewTextChar.setText("");
         testTextViewMorseChar.setText("");
     }
 
-
     private void displayToast(String textToDisplay){
         SuperToast.create(this, textToDisplay, SuperToast.Duration.VERY_SHORT,
         Style.getStyle(Style.BLUE, SuperToast.Animations.FLYIN)).show();
     }
-
 
 
 
@@ -316,6 +314,7 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
             }
 
             public void onFinish() {
+
                 timer.setText(getResources().getText(R.string.time_up));
                 isTimerRunning = false;
                 showDialog();
@@ -324,7 +323,6 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
             }
         }.start();
     }
-
 
 
     private void playSuccessSound() {
@@ -345,7 +343,7 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
         dialog.addCancelButton("Try Again");
         dialog.show();
 
-        
+
         ButtonFlat results = dialog.getButtonAccept();
 
 
@@ -358,14 +356,12 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
         }
 
 
-
-
-
         dialog.setOnAcceptButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
+                scores[mCurrentStep] = "Incorrect";
 
                 Intent intent = new Intent(Test.this, Results.class);
 

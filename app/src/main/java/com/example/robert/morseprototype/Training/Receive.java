@@ -94,9 +94,9 @@ public class Receive extends BaseActivity {
         list = SnappyStrings.getSnappy();
 
         //Creates sub-lists from the retrieved Snappy list each containing language specific words
-        listEnglish = list.subList(0, 10);
-        listSpanish = list.subList(11, 20);
-        listChinese = list.subList(21, 30);
+        listEnglish = list.subList(0, 30);
+        listSpanish = list.subList(31, 40);
+        listChinese = list.subList(41, 50);
 
 
         wordFlashed.setOnClickListener(new View.OnClickListener() {

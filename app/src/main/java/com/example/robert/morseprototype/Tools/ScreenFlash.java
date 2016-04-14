@@ -5,7 +5,9 @@ import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.view.GestureDetectorCompat;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -18,6 +20,8 @@ import com.example.robert.morseprototype.Hardware.Output;
 import com.example.robert.morseprototype.Misc.MorseTranslations;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
+import com.example.robert.morseprototype.SwipeDialogs.LettersDialog;
+import com.example.robert.morseprototype.SwipeDialogs.MorseGestureDetector;
 import com.gc.materialdesign.views.Button;
 import com.gc.materialdesign.views.ButtonFlat;
 import com.google.common.base.Strings;
@@ -31,13 +35,12 @@ import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 public class ScreenFlash extends BaseActivity {
 
 
-
-
     @Bind(R.id.imageViewQuiz) ImageView imageViewQuiz;
     @Bind(R.id.button12) ButtonFlat     startButton;
     @Bind(R.id.editText4)EditText       textToFlash;
 
     private ShowcaseConfig config = new ShowcaseConfig();
+    private GestureDetectorCompat mDetector;
 
     private Sound playSound = new Sound();
 
@@ -45,6 +48,7 @@ public class ScreenFlash extends BaseActivity {
 
     String language;
 
+    //Changes the imageviews colour to correspond to the screen flash
     @SuppressLint("HandlerLeak")
     Handler mImageHandler = new Handler() {
         public void handleMessage(android.os.Message msg) {
@@ -65,7 +69,7 @@ public class ScreenFlash extends BaseActivity {
         ButterKnife.bind(this);
 
         language = Options.getLanguage(ScreenFlash.this);
-
+        mDetector = new GestureDetectorCompat(this, new mainMorseGestureDetector());
 
         if(Options.getScreenFlashSpeed(this)) {
             Options.setSpeedFast();
@@ -89,11 +93,8 @@ public class ScreenFlash extends BaseActivity {
     }
 
 
-
     private void bindInterface() {
-
                 mOutput.setScreenEnabled(true, mImageHandler);
-
     }
 
 
@@ -101,7 +102,6 @@ public class ScreenFlash extends BaseActivity {
     private void startScreenFlash(){
 
        final MorseTranslations morseTranslations = new MorseTranslations();
-
 
        String str = textToFlash.getText().toString().trim();
 
@@ -114,14 +114,10 @@ public class ScreenFlash extends BaseActivity {
 
        }
 
-
-
    }
 
 
-
     private void showCaseMainActivity(){
-
 
         config.setDelay(300);
 
@@ -134,7 +130,6 @@ public class ScreenFlash extends BaseActivity {
 
         sequence.addSequenceItem(startButton,
                 "The button starts the flash process", "GOT IT");
-
 
         sequence.start();
     }
@@ -160,8 +155,6 @@ public class ScreenFlash extends BaseActivity {
                             playSound.playSymbol(ScreenFlash.this, R.raw.helpchinese);
                             break;
                     }
-
-
                 showCaseMainActivity();
         }
         return true;
@@ -170,14 +163,51 @@ public class ScreenFlash extends BaseActivity {
 
 
 
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+
+        if(Options.getEnabledDialogs(this))
+            this.mDetector.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }
+
+    private class mainMorseGestureDetector extends MorseGestureDetector {
+
+        public void onSwipeRight() {
+            switch (language) {
+
+                case "English":
+                    if (Options.getEnabledVoice(ScreenFlash.this)) {
+                        playSound.playSymbol(ScreenFlash.this, R.raw.morseletters);
+                    }
+                    LettersDialog.showLetters(ScreenFlash.this);
+
+                    break;
+
+                case "Spanish":
+                    if (Options.getEnabledVoice(ScreenFlash.this)) {
+                        playSound.playSymbol(ScreenFlash.this, R.raw.morselettersspanish);
+                    }
+                    LettersDialog.showLettersSpanish(ScreenFlash.this);
+
+                    break;
+
+                case "Chinese":
+                    if (Options.getEnabledVoice(ScreenFlash.this)) {
+                        playSound.playSymbol(ScreenFlash.this, R.raw.morseletterschinese);
+                    }
+                    LettersDialog.showLettersChinese(ScreenFlash.this);
+
+            }
+        }
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
 
         mOutput.release();
     }
-
-
-
 
 }

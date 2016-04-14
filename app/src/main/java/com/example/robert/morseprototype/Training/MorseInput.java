@@ -1,5 +1,6 @@
 package com.example.robert.morseprototype.Training;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -89,6 +90,7 @@ public class MorseInput {
         init();
     }
 
+    @SuppressLint("HandlerLeak")
     Handler handler = new Handler() {
         public void handleMessage(Message msg) {
             //Increments the progress bar

@@ -66,7 +66,7 @@
         android:textStyle="bold"
         android:text="@string/morseCode"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="23dp" />
+        android:textSize="23sp" />
 
     <TextView
         android:layout_width="wrap_content"

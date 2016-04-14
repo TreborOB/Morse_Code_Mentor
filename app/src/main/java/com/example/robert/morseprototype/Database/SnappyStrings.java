@@ -108,30 +108,52 @@ public class SnappyStrings {
         String s7  = "Iceberg";
         String s8  = "Captain";
         String s9  = "Land ahead";
-        String s10 = "Signal";
+        String s10 = "Morse is fun";
+        String s11 = "Resend";
+        String s12 = "Flag";
+        String s13 = "Please send again";
+        String s14 = "Transmit";
+        String s15 = "Fire on board";
+        String s16 = "Water on board";
+        String s17 = "Need a tow";
+        String s18 = "Light house";
+        String s19 = "Trawler";
+        String s20 = "Port";
+        String s21 = "Break";
+        String s22 = "Lands end";
+        String s23 = "Unreadable";
+        String s24 = "Weak Signal";
+        String s25 = "Flagstaff ";
+        String s26 = "Mainstay ";
+        String s27 = "Ahoy";
+        String s28 = "Astern";
+        String s29 = "Signal";
+        String s30 = "Starboard ";
 
-        String s11  = "Buenos dias";
-        String s12  = "Adios";
-        String s13  = "Gracías";
-        String s14  = "Si";
-        String s15  = "Yo no comprendo";
-        String s16  = "Bueno";
-        String s17  = "Hola";
-        String s18  = "Encontrar";
-        String s19  = "Primero";
-        String s20  = "Entre";
 
 
-        String s21  = "Xie";
-        String s22  = "Ni hao";
-        String s23  = "Ying yuv";
-        String s24  = "Ling";
-        String s25  = "Liu";
-        String s26  = "Shi";
-        String s27  = "Kai";
-        String s28  = "Guan";
-        String s29  = "Zuov";
-        String s30  = "Di tu";
+        String s31  = "Buenos dias";
+        String s32  = "Adios";
+        String s33  = "Gracías";
+        String s34  = "Si";
+        String s35  = "Yo no comprendo";
+        String s36  = "Bueno";
+        String s37  = "Hola";
+        String s38  = "Encontrar";
+        String s39  = "Primero";
+        String s40  = "Entre";
+
+
+        String s41  = "Xie";
+        String s42  = "Ni hao";
+        String s43  = "Ying yuv";
+        String s44  = "Ling";
+        String s45  = "Liu";
+        String s46  = "Shi";
+        String s47  = "Kai";
+        String s48  = "Guan";
+        String s49  = "Zuov";
+        String s50  = "Di tu";
 
         list.add(s1);
         list.add(s2);

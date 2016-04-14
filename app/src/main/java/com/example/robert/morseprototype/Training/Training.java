@@ -104,6 +104,7 @@ public class Training extends AppCompatActivity {
         adapter = new TrainingAdapter(this, trail);
         ListView listView = (ListView) findViewById(R.id.list);
 
+        assert listView != null;
         listView.setAdapter(adapter);
 
 

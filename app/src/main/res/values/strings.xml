@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Morse Code Mentor</string>
+    <string name="app_name">Morse Mentor</string>
     <string name="training">Training</string>
     <string name="tools">Tools</string>
     <string name="options">Options</string>

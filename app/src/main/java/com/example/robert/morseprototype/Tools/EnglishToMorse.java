@@ -83,8 +83,6 @@ public class EnglishToMorse extends BaseActivity {
     }
 
 
-
-
     public void translate(View view) {
 
         String str = textViewSource.getText().toString().trim();

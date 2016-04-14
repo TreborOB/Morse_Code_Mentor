@@ -3,7 +3,6 @@ package com.example.robert.morseprototype.Training;
 import java.util.ArrayList;
 
 
-
 public class TestSteps {
 
     public static ArrayList<MorseTutorial> getAtoFSteps() {
@@ -36,14 +35,14 @@ public class TestSteps {
         gToKSteps.add(new MorseTutorial("This test will consist of the letters G to K. There will be 10 questions in total. The pass rate is 80%", "", false, true, false, "Start", false, false, false));
         gToKSteps.add(new MorseTutorial("G", "G", true, false, false, "Start", false, false, false));
         gToKSteps.add(new MorseTutorial("H", "H", true, false, false, "Start", false, false, false));
-        //gToKSteps.add(new MorseTutorial("I", "I", true, false, false, "Start", false, false, false));
-        //gToKSteps.add(new MorseTutorial("J", "J", true, false, false, "Start", false, false, false));
-        //gToKSteps.add(new MorseTutorial("K", "K", true, false, false, "Start", false, false, false));
-        //gToKSteps.add(new MorseTutorial("GH", "GH", true, false, false, "Start", false, false, false));
-        //gToKSteps.add(new MorseTutorial("H I", "H I", true, false, false, "Start", false, false, false));
-        //gToKSteps.add(new MorseTutorial("IJ", "IJ", true, false, false, "Start", false, false, false));
-        //gToKSteps.add(new MorseTutorial("H K", "H K", true, false, false, "Start", false, false, false));
-        //gToKSteps.add(new MorseTutorial("G H I", "G H I", true, false, false, "Start", false, false, false));
+        gToKSteps.add(new MorseTutorial("I", "I", true, false, false, "Start", false, false, false));
+        gToKSteps.add(new MorseTutorial("J", "J", true, false, false, "Start", false, false, false));
+        gToKSteps.add(new MorseTutorial("K", "K", true, false, false, "Start", false, false, false));
+        gToKSteps.add(new MorseTutorial("GH", "GH", true, false, false, "Start", false, false, false));
+        gToKSteps.add(new MorseTutorial("H I", "H I", true, false, false, "Start", false, false, false));
+        gToKSteps.add(new MorseTutorial("IJ", "IJ", true, false, false, "Start", false, false, false));
+        gToKSteps.add(new MorseTutorial("H K", "H K", true, false, false, "Start", false, false, false));
+        gToKSteps.add(new MorseTutorial("G H I", "G H I", true, false, false, "Start", false, false, false));
 
         return gToKSteps;
     }

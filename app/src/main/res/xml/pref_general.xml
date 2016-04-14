@@ -62,6 +62,4 @@
         android:entryValues="@array/listLanguages" />
 
 
-
-
 </PreferenceScreen>

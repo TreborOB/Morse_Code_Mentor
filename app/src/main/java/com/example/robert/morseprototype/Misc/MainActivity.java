@@ -416,8 +416,11 @@ public class MainActivity extends BaseActivity {
             case "Spanish":
                 array = ShowCaseViewArrays.mainActivitySpanish();
                 break;
-            default:
+            case "Chinese":
                 array = ShowCaseViewArrays.mainActivityChinese();
+                break;
+            default:
+                array = ShowCaseViewArrays.mainActivity();
                 break;
         }
 
@@ -439,24 +442,27 @@ public class MainActivity extends BaseActivity {
 
         sequence.addSequenceItem(leftSwipe,
                 array[3], array[4]);
-
+    
 
         sequence.start();
     }
 
+
+
     public void showStartUpTutorial(){
 
         String SHOWCASE_ID = "showcase_id";
+
+
         new MaterialShowcaseView.Builder(this)
                 .setTarget(topSwipe)
                 .setDismissText("GOT IT")
                 .setContentText("Welcome to Morse code mentor! In the top right hand corner of the screen is" +
-                                " a question mark - pressing this will help you guide you on how to use some of" +
-                                " the features of app!")
+                                " the help icon - pressing this will help guide you on how to use the apps features")
                 .withoutShape()
-                .setDelay(200) // optional but starting animations immediately in onCreate can make them choppy
-                .singleUse(SHOWCASE_ID) // provide a unique ID used to ensure it is only shown once
+                .setDelay(200).singleUse(SHOWCASE_ID) // provide a unique ID used to ensure it is only shown once
                 .show();
+
     }
 
 
@@ -464,7 +470,6 @@ public class MainActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_favorite:
-
 
                 switch(language) {
 

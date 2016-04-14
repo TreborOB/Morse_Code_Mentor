@@ -1,7 +1,9 @@
 package com.example.robert.morseprototype.Tools;
 
 import android.os.Bundle;
+import android.support.v4.view.GestureDetectorCompat;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -12,6 +14,8 @@ import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.example.robert.morseprototype.Misc.MorseTranslations;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
+import com.example.robert.morseprototype.SwipeDialogs.LettersDialog;
+import com.example.robert.morseprototype.SwipeDialogs.MorseGestureDetector;
 import com.google.common.base.Strings;
 
 
@@ -27,7 +31,7 @@ public class MorseToEnglish extends BaseActivity {
 
 
     private ShowcaseConfig config = new ShowcaseConfig();
-
+    private GestureDetectorCompat mDetector;
 
     private StringBuilder morseToConvert = new StringBuilder();
     private MorseTranslations mt = new MorseTranslations();
@@ -47,7 +51,7 @@ public class MorseToEnglish extends BaseActivity {
         ButterKnife.bind(this);
 
         language = Options.getLanguage(MorseToEnglish.this);
-
+        mDetector = new GestureDetectorCompat(this, new mainMorseGestureDetector());
     }
 
     public void dot(View view) {
@@ -211,11 +215,49 @@ public class MorseToEnglish extends BaseActivity {
 
     }
 
-
-
     private void reset(){
         enterMorse.setText("");
         morseToConvert.setLength(0);
+    }
 
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+
+        if(Options.getEnabledDialogs(this))
+            this.mDetector.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }
+
+
+    private class mainMorseGestureDetector extends MorseGestureDetector {
+
+        public void onSwipeRight() {
+            switch (language) {
+
+                case "English":
+                    if (Options.getEnabledVoice(MorseToEnglish.this)) {
+                        playSound.playSymbol(MorseToEnglish.this, R.raw.morseletters);
+                    }
+                    LettersDialog.showLetters(MorseToEnglish.this);
+
+                    break;
+
+                case "Spanish":
+                    if (Options.getEnabledVoice(MorseToEnglish.this)) {
+                        playSound.playSymbol(MorseToEnglish.this, R.raw.morselettersspanish);
+                    }
+                    LettersDialog.showLettersSpanish(MorseToEnglish.this);
+
+                    break;
+
+                case "Chinese":
+                    if (Options.getEnabledVoice(MorseToEnglish.this)) {
+                        playSound.playSymbol(MorseToEnglish.this, R.raw.morseletterschinese);
+                    }
+                    LettersDialog.showLettersChinese(MorseToEnglish.this);
+
+            }
+        }
     }
 }
