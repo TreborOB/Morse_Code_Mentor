@@ -28,7 +28,7 @@
     <!--Results-->
 
     <!--Results Adapter-->
-    <string name="question_number">Question Number</string>
+    <string name="question_number">Question</string>
     <!--Results Adapter-->
 
     <!--Introduction-->
@@ -94,7 +94,7 @@
     <string name="pref_title_progress_bar">Enable progress bar</string>
     <string name="On">ON</string>
     <string name="Off">OFF</string>
-    <string name="pref_description_voice">Voice</string>
+    <string name="pref_description_voice">Voice Assist</string>
     <string name="pref_description_Dialogs">Dialogs</string>
     <string name="pref_description_ProgressBar">Progress Bar</string>
     <string name="fast_screen_flash">Fast screen flash</string>
@@ -106,7 +106,7 @@
 
     <!--Finished Trail-->
     <string name="finished_section">Congratulations! You completed the</string>
-    <string name="section">Section</string>
+    <string name="section">Section, the next section is not unlocked.</string>
     <!--Finished Trail-->
 
 

@@ -23,6 +23,7 @@ public class TutorialSteps {
     }
 
 
+
     public static ArrayList<MorseTutorial> getListAtoF() {
 
         ArrayList<MorseTutorial> aTof = new ArrayList<>();
@@ -31,8 +32,9 @@ public class TutorialSteps {
         aTof.add(new MorseTutorial("Press on the pad to send the letter A: dot dash", "A", true, true, true, "Next", true, true, true));
         aTof.add(new MorseTutorial("Press on the pad to send the letter B: dash dot dot dot", "B", true, true, true, "Next", true, true, true));
         aTof.add(new MorseTutorial("Press on the pad to send the letter C: dash dot dash dot", "C", true, true, true, "Next", true, true, true));
-        aTof.add(new MorseTutorial("Press on the pad to send the letter D: dash dot dot", "D", true, true, true, "Next", true, true, true));aTof.add(new MorseTutorial("Press on the pad to send the letter E: dot", "E", true, false, true, "Next", true, true, true));
-        aTof.add(new MorseTutorial("Press on the pad to send the letter F: dot", "F", true, false, true, "Next", true, true, true));
+        aTof.add(new MorseTutorial("Press on the pad to send the letter D: dash dot dot", "D", true, true, true, "Next", true, true, true));
+        aTof.add(new MorseTutorial("Press on the pad to send the letter E: dot", "E", true, true, true, "Next", true, true, true));
+        aTof.add(new MorseTutorial("Press on the pad to send the letter F: dot", "F", true, true, true, "Next", true, true, true));
 
         return aTof;
 
@@ -47,7 +49,7 @@ public class TutorialSteps {
         gTok.add(new MorseTutorial("Press on the pad to send the letter H: dot dot dot dot", "H", true, true, true, "Next", true, true, true));
         gTok.add(new MorseTutorial("Press on the pad to send the letter I: dash dot dot", "I", true, true, true, "Next", true, true, true));
         gTok.add(new MorseTutorial("Press on the pad to send the letter J: dot dash dash dash", "J", true, true, true, "Next", true, true, true));
-        gTok.add(new MorseTutorial("Press on the pad to send the letter K: dash dot dash", "K", true, false, true, "Next", true, true, true));
+        gTok.add(new MorseTutorial("Press on the pad to send the letter K: dash dot dash", "K", true, true, true, "Next", true, true, true));
 
         return gTok;
 
@@ -62,7 +64,7 @@ public class TutorialSteps {
         lTop.add(new MorseTutorial("Press on the pad to send the letter M: dash dash", "M", true, true, true, "Next", true, true, true));
         lTop.add(new MorseTutorial("Press on the pad to send the letter N: dash dot", "I", true, true, true, "Next", true, true, true));
         lTop.add(new MorseTutorial("Press on the pad to send the letter O: dash dash dash", "O", true, true, true, "Next", true, true, true));
-        lTop.add(new MorseTutorial("Press on the pad to send the letter P: dot dash dash dot", "O", true, false, true, "Next", true, true, true));
+        lTop.add(new MorseTutorial("Press on the pad to send the letter P: dot dash dash dot", "O", true, true, true, "Next", true, true, true));
 
         return lTop;
 
@@ -77,7 +79,7 @@ public class TutorialSteps {
         qTou.add(new MorseTutorial("Press on the pad to send the letter R: dot dash dot", "R", true, true, true, "Next", true, true, true));
         qTou.add(new MorseTutorial("Press on the pad to send the letter S: dot dot dot", "S", true, true, true, "Next", true, true, true));
         qTou.add(new MorseTutorial("Press on the pad to send the letter T: dash", "T", true, true, true, "Next", true, true, true));
-        qTou.add(new MorseTutorial("Press on the pad to send the letter U: dash", "U", true, false, true, "Next", true, true, true));
+        qTou.add(new MorseTutorial("Press on the pad to send the letter U: dash", "U", true, true, true, "Next", true, true, true));
 
         return qTou;
 
@@ -93,7 +95,7 @@ public class TutorialSteps {
         vToz.add(new MorseTutorial("Press on the pad to send the letter W: dot dash dash", "W", true, true, true, "Next", true, true, true));
         vToz.add(new MorseTutorial("Press on the pad to send the letter X: dash dot dot dash", "X", true, true, true, "Next", true, true, true));
         vToz.add(new MorseTutorial("Press on the pad to send the letter Y: dash dot dash dash", "Y", true, true, true, "Next", true, true, true));
-        vToz.add(new MorseTutorial("Press on the pad to send the letter Z: dash dash dot dot", "Z", true, false, true, "Next", true, true, true));
+        vToz.add(new MorseTutorial("Press on the pad to send the letter Z: dash dash dot dot", "Z", true, true, true, "Next", true, true, true));
 
         return vToz;
 
@@ -105,12 +107,17 @@ public class TutorialSteps {
 
         ArrayList<MorseTutorial> numbers = new ArrayList<>();
 
-        numbers.add(new MorseTutorial("This section will comprise of the numbers 1 to 9", "", false, true, false, "Start", false, false, false));
+        numbers.add(new MorseTutorial("This section will comprise of the numbers 0 to 9", "", false, true, false, "Start", false, false, false));
+        numbers.add(new MorseTutorial("Press on the pad to send the number 0: dot dot dot dot dot", "5", true, true, true, "Next", true, true, true));
         numbers.add(new MorseTutorial("Press on the pad to send the number 1: dot dash dash dash dash", "1", true, true, true, "Next", true, true, true));
         numbers.add(new MorseTutorial("Press on the pad to send the number 2: dot dot dash dash dash", "2", true, true, true, "Next", true, true, true));
         numbers.add(new MorseTutorial("Press on the pad to send the number 3: dot dot dot dash dash", "3", true, true, true, "Next", true, true, true));
         numbers.add(new MorseTutorial("Press on the pad to send the number 4: dot dot dot dot dash", "4", true, true, true, "Next", true, true, true));
-        numbers.add(new MorseTutorial("Press on the pad to send the number 5: dot dot dot dot dot", "5", true, false, true, "Next", true, true, true));
+        numbers.add(new MorseTutorial("Press on the pad to send the number 5: dot dot dot dot dot", "5", true, true, true, "Next", true, true, true));
+        numbers.add(new MorseTutorial("Press on the pad to send the number 6: dash dot dot dot dot", "5", true, true, true, "Next", true, true, true));
+        numbers.add(new MorseTutorial("Press on the pad to send the number 7: dash dash dot dot dot", "5", true, true, true, "Next", true, true, true));
+        numbers.add(new MorseTutorial("Press on the pad to send the number 8: dash dash dash dot dot", "5", true, true, true, "Next", true, true, true));
+        numbers.add(new MorseTutorial("Press on the pad to send the number 9: dash dash dash dash dot", "5", true, true, true, "Next", true, true, true));
 
         return numbers;
 

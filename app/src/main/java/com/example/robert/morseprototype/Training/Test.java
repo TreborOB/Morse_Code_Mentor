@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.example.robert.morseprototype.Hardware.Sound;
+import com.example.robert.morseprototype.Misc.Logger;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
 import com.gc.materialdesign.views.ButtonFlat;
@@ -77,7 +78,7 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
             case "English":
 
                 assert (data != null ? data : null) != null;
-                switch (data != null ? data : null) {
+                switch (data) {
                     case "A-F":
                         mSteps = TestSteps.getAtoFSteps();
 
@@ -108,7 +109,7 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
             case "Spanish":
 
                 assert (data != null ? data : null) != null;
-                switch (data != null ? data : null) {
+                switch (data) {
                     case "A-F":
                         mSteps = TestSteps.getAtoFStepsSpanish();
 
@@ -138,7 +139,7 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
             default:
 
                 assert (data != null ? data : null) != null;
-                switch (data != null ? data : null) {
+                switch (data) {
                     case "A-F":
                         mSteps = TestSteps.getAtoFStepsChinese();
 
@@ -196,6 +197,8 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
 
         if(mCurrentStep == mSteps.size()){
 
+            Logger.log("Test: " + scores.length);
+
             Intent intent = new Intent(this, Results.class);
 
             Bundle extras = new Bundle();
@@ -227,14 +230,13 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
             }
 
         }
-
-
         progressBarInvisible();
     }
 
-
+    //Begins the test
     public void startTest(View view) {
 
+        scores[mCurrentStep]="First Element";
         mCurrentStep++;
         updateCurrentStep();
         setNextButtonInvisible();
@@ -253,7 +255,7 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
         startTest.setVisibility(4);
     }
 
-
+    //InputEnded checks for a correct otr incorrect answer and progresses the test to the next question
     @Override
     public void onInputEnded() {
 
@@ -266,7 +268,7 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
             scores[mCurrentStep]   = "Correct";
             question[mCurrentStep] = mSteps.get(mCurrentStep).getAnswer();
 
-            displayToast("Correct!");
+            //displayToast("Correct!");
 
 
             mCurrentStep++;
@@ -277,7 +279,7 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
 
         } else {
 
-            displayToast("Wrong Answer");
+            //displayToast("Wrong Answer");
 
             scores[mCurrentStep] = "Incorrect";
             question[mCurrentStep] = mSteps.get(mCurrentStep).getAnswer();

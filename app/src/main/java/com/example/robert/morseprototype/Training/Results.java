@@ -4,6 +4,7 @@ package com.example.robert.morseprototype.Training;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
+
 import com.example.robert.morseprototype.R;
 
 
@@ -23,10 +24,10 @@ public class Results extends AppCompatActivity {
 
        ResultsAdapter adapter = new ResultsAdapter(this, scoresArray, testLetters, questionArray);
        ListView listView      = (ListView) findViewById(R.id.list);
-        assert listView != null;
-        listView.setAdapter(adapter);
+       assert listView != null;
+       listView.setAdapter(adapter);
 
-        }
+    }
 
 
     @Override

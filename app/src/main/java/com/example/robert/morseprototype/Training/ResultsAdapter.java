@@ -1,5 +1,6 @@
 package com.example.robert.morseprototype.Training;
 
+
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
@@ -10,11 +11,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import com.example.robert.morseprototype.Database.SnappyDB;
+import com.example.robert.morseprototype.Misc.Logger;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
-import com.google.common.base.Strings;
 import com.mixpanel.android.mpmetrics.MixpanelAPI;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -49,7 +49,6 @@ public class ResultsAdapter extends ArrayAdapter <String> {
     }
 
 
-
     public View getView(int position, View convertView, ViewGroup parent) {
 
         View view;
@@ -65,12 +64,10 @@ public class ResultsAdapter extends ArrayAdapter <String> {
 
             int i = calculateResult()*10;
 
-
             score.setText("" + i + "%");
 
-
             //Sets the pass rate for each test
-            if(i >=80){
+            if(i >=70){
 
                 percentage.setText(context.getResources().getText(R.string.pass));
                 percentage.setTextColor(Color.GREEN);
@@ -89,33 +86,21 @@ public class ResultsAdapter extends ArrayAdapter <String> {
                 score.setTextColor(Color.RED);
             }
 
-
         }else {
 
             view = mInflater.inflate(R.layout.activity_results_item, parent, false);
-
 
             String textToDisplay = getItem(position);
 
             TextView questionNumber = (TextView) view.findViewById(R.id.questionNumber);
             TextView answer         = (TextView) view.findViewById(R.id.answer);
 
-            //Test to see if any of the array elements are empty/null
-            if(Strings.isNullOrEmpty(textToDisplay)){
-                textToDisplay = "Not answered";
-                questionNumber.setText("");
+            questionNumber.setText(context.getResources().getText(R.string.question_number) + " " + position + ": " + question[position]);
 
-            }else{
-                questionNumber.setText(context.getResources().getText(R.string.question_number) + " " + position + ": " + question[position]);
-            }
-                answer.setText(textToDisplay);
-
-
+            answer.setText(textToDisplay);
         }
 
             return view;
-
-
     }
 
     
@@ -123,21 +108,18 @@ public class ResultsAdapter extends ArrayAdapter <String> {
 
         int score = 0;
 
-        for (int i = 1; i < results.length-1; i++) {
+        for (int i = 0; i < results.length; i++) {
 
 
+            Logger.log("Loop:" + i);
 
              if (results[i].equals("Correct")) {
                  score++;
              }
-             else {
 
-                if (score > 0) {
-                 score--;
-
-                }
-            }
         }
+
+        Logger.log("" + score);
         return score;
     }
 

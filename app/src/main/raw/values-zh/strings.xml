@@ -4,7 +4,7 @@
     <string name="morse_code_level">莫尔斯电码等级</string>
     <string name="pref_description_Dialogs">对话框</string>
     <string name="pref_description_ProgressBar">进度条</string>
-    <string name="pref_description_voice">语音</string>
+    <string name="pref_description_voice">语音助理</string>
     <string name="pref_title_dialogs">启用对话框</string>
     <string name="pref_title_progress_bar">启用进度条</string>
     <string name="pref_title_voice">启用语音</string>
@@ -39,12 +39,12 @@
     <string name="q_name">Q号</string>
     <string name="dash">短跑</string>
     <string name="finished_section">恭喜！你完成了</string>
-    <string name="section">部分</string>
+    <string name="section">节，下一节是不是解锁</string>
     <string name="seconds_remaining">剩余秒数:</string>
     <string name="time_up"> 时间到</string>
     <string name="fail">失败</string>
     <string name="pass">通过</string>
-    <string name="question_number">问题编号</string>
+    <string name="question_number">题</string>
     <string name="q">Q</string>
     <string name="transmit">发送</string>
     <string name="receive">接收</string>

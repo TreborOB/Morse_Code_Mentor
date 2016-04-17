@@ -60,7 +60,6 @@ public class MorsePad extends BaseActivity implements OnCharacterDecoded, OnPadS
 
         language = Options.getLanguage(MorsePad.this);
 
-
         mDetector = new GestureDetectorCompat(this, new mainMorseGestureDetector());
 
         mOutput = new Output(this, false, false, false, false);
@@ -86,9 +85,7 @@ public class MorsePad extends BaseActivity implements OnCharacterDecoded, OnPadS
 
     private void bindInterface() {
 
-
         switchLight.setClickable(mOutput.getHasCamera());
-
 
 
         switchLight.setOncheckListener(new Switch.OnCheckListener() {
@@ -120,8 +117,6 @@ public class MorsePad extends BaseActivity implements OnCharacterDecoded, OnPadS
     @Override
     public void onCharacterDecoded(String character) {
         sentence.setText(morseInput.getWord());
-
-
     }
 
     @Override
@@ -268,8 +263,6 @@ public class MorsePad extends BaseActivity implements OnCharacterDecoded, OnPadS
 
 
 
-
-
     private  void progressBarInvisible() {
         if(Options.getEnabledProgressBar(MorsePad.this)){
             progressBar.setVisibility(View.INVISIBLE);
@@ -288,8 +281,6 @@ public class MorsePad extends BaseActivity implements OnCharacterDecoded, OnPadS
 
         sequence.addSequenceItem(introPad,
                 "Here you can use your newly learnt Morse skills anyway you choose", "GOT IT");
-
-
 
         sequence.start();
     }
@@ -320,7 +311,4 @@ public class MorsePad extends BaseActivity implements OnCharacterDecoded, OnPadS
         return true;
 
     }
-
-
-
 }

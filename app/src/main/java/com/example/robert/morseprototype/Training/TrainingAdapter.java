@@ -45,14 +45,12 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
 
 
         map = SnappyDB.getSnappy();
-
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
 
 
         View view;
-
 
         MorseSymbols textToDisplay = getItem(position);
 
@@ -66,7 +64,6 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
            blackLetters.setText(textToDisplay.getLetter());
 
             view.setBackgroundColor(Color.parseColor("#f2f2f2"));
-
 
             view.setEnabled(false);
             view.setOnClickListener(null);
@@ -117,7 +114,6 @@ public class TrainingAdapter extends ArrayAdapter<MorseSymbols> {
                 }
             });
         }
-
 
         return view;
 

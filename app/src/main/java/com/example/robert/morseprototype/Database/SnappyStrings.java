@@ -165,7 +165,6 @@ public class SnappyStrings {
         list.add(s8);
         list.add(s9);
         list.add(s10);
-
         list.add(s11);
         list.add(s12);
         list.add(s13);
@@ -176,7 +175,6 @@ public class SnappyStrings {
         list.add(s18);
         list.add(s19);
         list.add(s20);
-
         list.add(s21);
         list.add(s22);
         list.add(s23);
@@ -187,6 +185,26 @@ public class SnappyStrings {
         list.add(s28);
         list.add(s29);
         list.add(s30);
+        list.add(s31);
+        list.add(s32);
+        list.add(s33);
+        list.add(s34);
+        list.add(s35);
+        list.add(s36);
+        list.add(s37);
+        list.add(s38);
+        list.add(s39);
+        list.add(s40);
+        list.add(s41);
+        list.add(s42);
+        list.add(s43);
+        list.add(s44);
+        list.add(s45);
+        list.add(s46);
+        list.add(s47);
+        list.add(s48);
+        list.add(s49);
+        list.add(s50);
 
 
         saveSnappyStrings();

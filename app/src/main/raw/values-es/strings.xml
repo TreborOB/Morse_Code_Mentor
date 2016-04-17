@@ -2,7 +2,7 @@
 <resources>
     <string name="pref_description_Dialogs">Diálogos</string>
     <string name="pref_description_ProgressBar">Barra de progreso</string>
-    <string name="pref_description_voice">Voz</string>
+    <string name="pref_description_voice">Voz Assist</string>
     <string name="pref_title_dialogs">Activar cuadros de diálogo</string>
     <string name="pref_title_progress_bar">Habilitar progess bar</string>
     <string name="morse_code_level">Nivel de código Morse</string>
@@ -39,7 +39,7 @@
     <string name="q_name">Número Q</string>
     <string name="dash">Guión</string>
     <string name="finished_section">Felicidades! Has completado el</string>
-    <string name="section">Sección</string>
+    <string name="section">Sección, la siguiente sección no está desbloqueado</string>
     <string name="seconds_remaining">Segundos restantes:</string>
     <string name="time_up">Tiempo hasta</string>
     <string name="fail">Fallar</string>

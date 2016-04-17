@@ -54,7 +54,6 @@ public class MorseInput {
     private TextView          textViewTextLetter;
     private ProgressBar       progressBar;
 
-
     private StringBuilder mMorseStringBuilder = new StringBuilder();
     private StringBuilder mWords              = new StringBuilder();
 

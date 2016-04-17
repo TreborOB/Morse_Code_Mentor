@@ -34,7 +34,6 @@ import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 public class Receive extends BaseActivity {
 
 
-
     @Bind(R.id.imageViewReceive) ImageView imageViewReceive;
     @Bind(R.id.startReceive) ButtonFlat    startReceive;
     @Bind(R.id.wordFlashed) TextView       wordFlashed;
@@ -56,8 +55,6 @@ public class Receive extends BaseActivity {
             else
                 imageViewReceive.setBackgroundColor(Color.rgb(30, 136, 229));
         }
-
-
     };
 
     //Creates arrays to hold the words to be flashed
@@ -94,9 +91,9 @@ public class Receive extends BaseActivity {
         list = SnappyStrings.getSnappy();
 
         //Creates sub-lists from the retrieved Snappy list each containing language specific words
-        listEnglish = list.subList(0, 30);
-        listSpanish = list.subList(31, 40);
-        listChinese = list.subList(41, 50);
+        listEnglish = list.subList(0, 10);
+        listSpanish = list.subList(11, 20);
+        listChinese = list.subList(21, 30);
 
 
         wordFlashed.setOnClickListener(new View.OnClickListener() {
@@ -111,9 +108,7 @@ public class Receive extends BaseActivity {
 
 
     private void bindInterface() {
-
         mOutput.setScreenEnabled(true, mImageHandler);
-
     }
 
 
@@ -124,7 +119,6 @@ public class Receive extends BaseActivity {
         init();
 
         final MorseTranslations morseTranslations = new MorseTranslations();
-
 
         Random rand = new Random();
 
@@ -145,7 +139,6 @@ public class Receive extends BaseActivity {
         mOutput.outputString(st);
 
         setHint();
-
     }
 
 
@@ -200,7 +193,6 @@ public class Receive extends BaseActivity {
                 showCaseMainActivity();
         }
         return true;
-
     }
 
 

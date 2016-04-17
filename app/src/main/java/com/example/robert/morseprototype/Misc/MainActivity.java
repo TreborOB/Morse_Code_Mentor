@@ -49,9 +49,7 @@ public class MainActivity extends BaseActivity {
     @Bind(R.id.swipeBottom) TextView bottomSwipe;
     @Bind(R.id.swipeLeft) TextView   leftSwipe;
 
-
     private final ShowcaseConfig config = new ShowcaseConfig();
-
 
     MixpanelAPI mixPanel;
     MixpanelAPI mixPanelTraining;
@@ -68,15 +66,12 @@ public class MainActivity extends BaseActivity {
 
         mDetector = new GestureDetectorCompat(this, new mainMorseGestureDetector());
 
-
-
         projectToken     = "a030a77c9710298b9cee4e20d7c2b814";
         mixPanel         = MixpanelAPI.getInstance(this, projectToken);
         mixPanelTraining = MixpanelAPI.getInstance(this, projectToken);
         mixPanelSOS      = MixpanelAPI.getInstance(this, projectToken);
         mixPanelTools    = MixpanelAPI.getInstance(this, projectToken);
         mixPanelOptions  = MixpanelAPI.getInstance(this, projectToken);
-
 
 
         if(Options.getDataAnalytics(this)) {
@@ -92,8 +87,6 @@ public class MainActivity extends BaseActivity {
         }
 
         language = Options.getLanguage(MainActivity.this);
-
-        Logger.log(language);
 
         //Loads preferences (sets default language on first launch)
         PreferenceManager.setDefaultValues(this, R.xml.pref_general, false);
@@ -114,7 +107,6 @@ public class MainActivity extends BaseActivity {
         this.mDetector.onTouchEvent(event);
         return super.onTouchEvent(event);
     }
-
 
     public void openTraining(View view) {
         Intent intent = new Intent(this, TrainingType.class);
@@ -218,7 +210,6 @@ public class MainActivity extends BaseActivity {
                 playSound.playSymbol(MainActivity.this, R.raw.optionschinese);
                 break;
         }}
-
     }
 
 
@@ -291,7 +282,6 @@ public class MainActivity extends BaseActivity {
                         playSound.playSymbol(MainActivity.this, R.raw.morseletterschinese);
                     }
                     LettersDialog.showLettersChinese(MainActivity.this);
-
             }
         }
 
@@ -458,7 +448,7 @@ public class MainActivity extends BaseActivity {
                 .setTarget(topSwipe)
                 .setDismissText("GOT IT")
                 .setContentText("Welcome to Morse code mentor! In the top right hand corner of the screen is" +
-                                " the help icon - pressing this will help guide you on how to use the apps features")
+                                " the help icon - pressing this will help guide you on how to use features on each screen, try it out!")
                 .withoutShape()
                 .setDelay(200).singleUse(SHOWCASE_ID) // provide a unique ID used to ensure it is only shown once
                 .show();

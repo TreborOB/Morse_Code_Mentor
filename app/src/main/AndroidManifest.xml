@@ -12,7 +12,7 @@
         android:name=".Misc.MorseApplication"
         android:allowBackup="true"
         android:configChanges="locale|orientation"
-        android:icon="@mipmap/icon"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"

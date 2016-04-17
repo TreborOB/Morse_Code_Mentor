@@ -10,7 +10,6 @@ import android.widget.ListView;
 
 import com.example.robert.morseprototype.Database.SnappyDB;
 import com.example.robert.morseprototype.Hardware.Sound;
-import com.example.robert.morseprototype.Misc.Logger;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
 import com.example.robert.morseprototype.SwipeDialogs.MorseSymbols;
@@ -27,15 +26,14 @@ public class Training extends AppCompatActivity {
 
     private TrainingAdapter adapter;
 
+    final ArrayList<MorseSymbols> trail = new ArrayList<>();
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.training_list);
 
 
         String language = Options.getLanguage(Training.this);
-
-
-        final ArrayList<MorseSymbols> trail = new ArrayList<>();
 
 
         switch (language) {
@@ -145,7 +143,11 @@ public class Training extends AppCompatActivity {
     public void onResume(){
         super.onResume();
 
-        Logger.log("Training: Resume()");
+        adapter = new TrainingAdapter(this, trail);
+        ListView listView = (ListView) findViewById(R.id.list);
+
+        assert listView != null;
+        listView.setAdapter(adapter);
 
     }
 }
