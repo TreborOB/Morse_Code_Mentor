@@ -51,7 +51,6 @@ public class CallVibration extends AppCompatActivity {
                     enableDisable.setText("Enabled");
                     tinyDB.putBoolean("vibrate", true);
 
-
                     PackageManager pm  = CallVibration.this.getPackageManager();
                     ComponentName componentName = new ComponentName(CallVibration.this, CallReceiver.class);
                     pm.setComponentEnabledSetting(componentName,PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
@@ -63,18 +62,14 @@ public class CallVibration extends AppCompatActivity {
                     enableDisable.setText("Disabled");
                     tinyDB.putBoolean("vibrate", false);
 
-
                     PackageManager pm  = CallVibration.this.getPackageManager();
                     ComponentName componentName = new ComponentName(CallVibration.this, CallReceiver.class);
                     pm.setComponentEnabledSetting(componentName,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
                             PackageManager.DONT_KILL_APP);
                     Toast.makeText(getApplicationContext(), "cancelled", Toast.LENGTH_LONG).show();
 
-
                 }
             }
         });
-
     }
-
 }
