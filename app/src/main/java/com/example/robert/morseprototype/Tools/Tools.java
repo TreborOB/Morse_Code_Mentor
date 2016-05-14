@@ -23,7 +23,6 @@ public class Tools extends AppCompatActivity {
         setContentView(R.layout.activity_tools);
 
         language = Options.getLanguage(Tools.this);
-
     }
 
 
@@ -118,5 +117,32 @@ public class Tools extends AppCompatActivity {
                     break;
             }
 
+    }
+
+
+
+
+
+    public void openCallVibration(View view) {
+
+        Intent intent = new Intent(this, CallVibration.class);
+        startActivity(intent);
+
+
+        if(Options.getEnabledVoice(this))
+
+            switch(language) {
+                case "English":
+                    playSound.playSymbol(Tools.this, R.raw.callvibration);
+                    break;
+
+                case "Spanish":
+                    playSound.playSymbol(Tools.this, R.raw.callvibrationspanish);
+                    break;
+
+                default:
+                    playSound.playSymbol(Tools.this, R.raw.callvibrationchinese);
+                    break;
+            }
     }
 }

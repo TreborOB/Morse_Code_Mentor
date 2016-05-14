@@ -101,7 +101,6 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/sos_flash"
-        android:id="@+id/textView8"
         android:layout_alignTop="@+id/textView7"
         android:layout_alignStart="@+id/switchFlash" />
 

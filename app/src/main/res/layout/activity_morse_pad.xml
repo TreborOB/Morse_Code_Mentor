@@ -111,7 +111,6 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/light_morse_pad"
-        android:id="@+id/textView10"
         android:layout_below="@+id/vibrateSwitch"
         android:layout_alignStart="@+id/vibrateSwitch" />
 
@@ -120,7 +119,6 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/sound_morse_pad"
-        android:id="@+id/textView11"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/audioSwitch" />
 

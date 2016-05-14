@@ -8,7 +8,6 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/training_unlock"
-        android:id="@+id/textView13"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:layout_below="@+id/textView14"

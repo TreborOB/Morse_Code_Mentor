@@ -15,6 +15,10 @@
     <string name="reset">重置</string>
     <string name="data_analytics">数据分析</string>
     <string name="press_to_see_answer">按参考答案</string>
+    <string name="tools_vibrate"> 振动电话</string>
+    <string name="vibrate_incoming">来电者振动</string>
+    <string name="vibrate_instructions">此功能允许设备振动的名称或来电的电话号码。      如果来电者是您的联系人之一，那么名称将振动，如果不是则拨入的电话号码将被振动。</string>
+    <string name="enable_vibration">启用</string>
 
 
 </resources>

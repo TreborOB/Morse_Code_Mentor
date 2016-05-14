@@ -111,11 +111,15 @@ public class ResultsAdapter extends ArrayAdapter <String> {
         for (int i = 0; i < results.length; i++) {
 
 
-            Logger.log("Loop:" + i);
+            Logger.log("Loop: " + results[i]);
 
-             if (results[i].equals("Correct")) {
-                 score++;
-             }
+            try {
+                if (results[i].equals("Correct")) {
+                    score++;
+                }
+            }catch(NullPointerException e){
+                Logger.log("Null Pointer!");
+            }
 
         }
 

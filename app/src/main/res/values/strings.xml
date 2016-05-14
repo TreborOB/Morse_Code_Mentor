@@ -44,6 +44,12 @@
     <string name="vibrate_morse_pad">Vibrate</string>
     <!--Morse Pad-->
 
+    <!--Call Vibration-->
+    <string name="vibrate_incoming">Incoming Caller Vibration</string>
+    <string name="vibrate_instructions">This feature allows the device to vibrate the name or number of incoming phone calls.
+     If the caller is one of your contacts then the name will be vibrated, if not then the incoming phone number will be vibrated.</string>
+    <string name="enable_vibration">Enabled</string>
+    <!--Call Vibration-->
 
     <!--Morse_to_English-->
     <string name="morse_to_be_converted">Add Morse to be converted</string>
@@ -76,6 +82,7 @@
     <!--tools-->
     <string name="tools_morse_tools">Morse Tools</string>
     <string name="tools_open_screen_flash">Screen Flash</string>
+    <string name="tools_vibrate">Caller Vibration</string>
     <!--tools-->
 
     <!--training-->
@@ -111,7 +118,7 @@
 
 
     <!--Training Type-->
-    <string name="transmit">Transmit</string>
+    <string name="transmit">Training Trail</string>
     <string name="receive">Receive</string>
     <string name="morse_code_training">Morse Training</string>
     <!--Training Type-->
@@ -120,7 +127,6 @@
     <string name="start_receive">Start Receiving</string>
     <string name="press_to_see_answer">Press to see the answer</string>
     <!--Receive-->
-
 
 
 </resources>

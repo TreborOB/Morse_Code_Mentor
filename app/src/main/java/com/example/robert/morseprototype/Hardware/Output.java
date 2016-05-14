@@ -56,6 +56,7 @@ public class Output{
         if (useScreen) mScreenFlash = new ScreenFlash();
     }
 
+    //Checks to see if the device has a camera
     public boolean getHasCamera() {
         return mHasCamera;
     }
@@ -71,7 +72,6 @@ public class Output{
 
     public void outputString(final String outputString) {
 
-
         cancel();
 
         mCancel = false;
@@ -85,12 +85,26 @@ public class Output{
                         case '.':
 
                             if(!threadRunning)
-                            turnOn();
+
+                                try{
+                                    turnOn();
+                                }catch(Exception e)
+                                {
+                                   //This catches a null pointer exception (i understand fully that this is bad practice) and will be fixed in the next iteration
+                                   Logger.log("Light Exception");
+                                }
 
                             sleep(Options.DOT_LENGTH);
 
                             if(!threadRunning)
-                            turnOff();
+
+                                try{
+                                    turnOff();
+                                }catch(Exception e)
+                                {
+                                    Logger.log("Light Exception");
+                                }
+
 
                             sleep(Options.INTER_DOT_LENGTH);
 
@@ -101,12 +115,23 @@ public class Output{
                         default:
 
                             if(!threadRunning)
-                            turnOn();
+
+                                try{
+                                    turnOn();
+                                }catch(Exception e)
+                                {
+                                    Logger.log("Light Exception");
+                                }
 
                             sleep(Options.DASH_LENGTH);
 
                             if(!threadRunning)
-                            turnOff();
+                                try{
+                                    turnOff();
+                                }catch(Exception e)
+                                {
+                                    Logger.log("Light Exception");
+                                }
 
                             sleep(Options.INTER_DOT_LENGTH);
                     }

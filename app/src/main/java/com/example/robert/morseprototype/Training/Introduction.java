@@ -51,8 +51,6 @@ public class Introduction extends BaseActivity implements OnEndOfInput, MorseInp
     private int                      mCurrentStep;
     private int                      tickProgress;
 
-
-
     @Bind(R.id.padIntro)           CircularImageView    introPad;
     @Bind(R.id.introMorseChar)     TextView             introTextViewMorseChar;
     @Bind(R.id.introTextChar)      TextView             introTextViewTextChar;
@@ -101,8 +99,6 @@ public class Introduction extends BaseActivity implements OnEndOfInput, MorseInp
                 break;
         }
 
-
-
         mCurrentStep = 0;
 
         updateCurrentStep();
@@ -126,12 +122,8 @@ public class Introduction extends BaseActivity implements OnEndOfInput, MorseInp
             }
         });
 
-
-
         morseInput.setOnPadChangeChangedCallback(this);
     }
-
-
 
 
 
@@ -152,8 +144,6 @@ public class Introduction extends BaseActivity implements OnEndOfInput, MorseInp
         mOutput.release();
     }
 
-
-
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
@@ -161,8 +151,6 @@ public class Introduction extends BaseActivity implements OnEndOfInput, MorseInp
             this.mDetector.onTouchEvent(event);
         return super.onTouchEvent(event);
     }
-
-
 
 
     @SuppressWarnings("WrongConstant")
@@ -187,9 +175,7 @@ public class Introduction extends BaseActivity implements OnEndOfInput, MorseInp
     }
 
 
-
     public void onNextClicked(View view) {
-
 
         if (mCurrentStep >= mSteps.size() - 1) {
 
@@ -223,7 +209,6 @@ public class Introduction extends BaseActivity implements OnEndOfInput, MorseInp
         resetText();
         setNextButtonVisible();
     }
-
 
 
     private void resetText() {
@@ -306,8 +291,6 @@ public class Introduction extends BaseActivity implements OnEndOfInput, MorseInp
         morseInput.reset();
         resetText();
     }
-
-
 
 
     private void showCaseMainActivity(){
