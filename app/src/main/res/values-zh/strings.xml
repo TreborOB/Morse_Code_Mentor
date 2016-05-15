@@ -17,7 +17,7 @@
     <string name="press_to_see_answer">按参考答案</string>
     <string name="tools_vibrate"> 振动电话</string>
     <string name="vibrate_incoming">来电者振动</string>
-    <string name="vibrate_instructions">此功能允许设备振动的名称或来电的电话号码。      如果来电者是您的联系人之一，那么名称将振动，如果不是则拨入的电话号码将被振动。</string>
+    <string name="vibrate_instructions">此功能允许设备振动的名称或来电的电话号码。 如果来电者是那么的名字将被振动，如果不是那么来电号码将vibrated.Whenever呼叫接收设备将实际的名称或来电者的号码前振动振动3次您的联系人之一。这让你知道下面的震动将是莫尔斯电码。</string>
     <string name="enable_vibration">启用</string>
 
 

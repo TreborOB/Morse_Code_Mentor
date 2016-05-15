@@ -50,11 +50,11 @@
 
         <receiver android:name=".Misc.CallReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.PHONE_STATE"></action>
+                <action android:name="android.intent.action.PHONE_STATE"/>
             </intent-filter>
         </receiver>
 
-        <activity android:name=".Tools.CallVibration"></activity>
+        <activity android:name=".Tools.CallVibration"/>
     </application>
 
 </manifest>

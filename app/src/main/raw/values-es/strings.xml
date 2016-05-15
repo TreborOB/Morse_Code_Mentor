@@ -39,7 +39,7 @@
     <string name="q_name">Número Q</string>
     <string name="dash">Guión</string>
     <string name="finished_section">Felicidades! Has completado el</string>
-    <string name="section">Sección, la siguiente sección no está desbloqueado</string>
+    <string name="section">sección. Con el fin de desbloquear la siguiente sección se debe completar con éxito la prueba , por qué no darle hace ?!</string>
     <string name="seconds_remaining">Segundos restantes:</string>
     <string name="time_up">Tiempo hasta</string>
     <string name="fail">Fallar</string>

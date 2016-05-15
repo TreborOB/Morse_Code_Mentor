@@ -47,7 +47,10 @@
     <!--Call Vibration-->
     <string name="vibrate_incoming">Incoming Caller Vibration</string>
     <string name="vibrate_instructions">This feature allows the device to vibrate the name or number of incoming phone calls.
-     If the caller is one of your contacts then the name will be vibrated, if not then the incoming phone number will be vibrated.</string>
+     If the caller is one of your contacts then the name will be vibrated, if not then the incoming phone number will be vibrated.
+
+    Whenever a call is received the device will vibrate 3 times before the actual name or number of the caller is vibrated. This lets you know that the following
+    vibrations are going to be Morse code.</string>
     <string name="enable_vibration">Enabled</string>
     <!--Call Vibration-->
 
@@ -113,7 +116,7 @@
 
     <!--Finished Trail-->
     <string name="finished_section">Congratulations! You completed the</string>
-    <string name="section">Section, the next section is not unlocked.</string>
+    <string name="section">section. In order to unlock the next section you must successfully complete the test, why not give it ago?!</string>
     <!--Finished Trail-->
 
 

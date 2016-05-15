@@ -108,16 +108,16 @@ public class ResultsAdapter extends ArrayAdapter <String> {
 
         int score = 0;
 
-        for (int i = 0; i < results.length; i++) {
+        for (String result : results) {
 
 
-            Logger.log("Loop: " + results[i]);
+            Logger.log("Loop: " + result);
 
             try {
-                if (results[i].equals("Correct")) {
+                if (result.equals("Correct")) {
                     score++;
                 }
-            }catch(NullPointerException e){
+            } catch (NullPointerException e) {
                 Logger.log("Null Pointer!");
             }
 

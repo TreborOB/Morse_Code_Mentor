@@ -39,7 +39,7 @@
     <string name="q_name">Q号</string>
     <string name="dash">短跑</string>
     <string name="finished_section">恭喜！你完成了</string>
-    <string name="section">节，下一节是不是解锁</string>
+    <string name="section">部分。为了解开下一节中，您必须成功完成测试，为什么不给它以前？</string>
     <string name="seconds_remaining">剩余秒数:</string>
     <string name="time_up"> 时间到</string>
     <string name="fail">失败</string>

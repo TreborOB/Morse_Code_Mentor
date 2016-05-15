@@ -55,7 +55,7 @@ public class CallVibration extends AppCompatActivity {
                     ComponentName componentName = new ComponentName(CallVibration.this, CallReceiver.class);
                     pm.setComponentEnabledSetting(componentName,PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
                             PackageManager.DONT_KILL_APP);
-                    Toast.makeText(getApplicationContext(), "activated", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Enabled", Toast.LENGTH_LONG).show();
 
 
                 }else{
@@ -66,7 +66,7 @@ public class CallVibration extends AppCompatActivity {
                     ComponentName componentName = new ComponentName(CallVibration.this, CallReceiver.class);
                     pm.setComponentEnabledSetting(componentName,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
                             PackageManager.DONT_KILL_APP);
-                    Toast.makeText(getApplicationContext(), "cancelled", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Disabled", Toast.LENGTH_LONG).show();
 
                 }
             }

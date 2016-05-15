@@ -64,6 +64,7 @@ public class MorseTranslations {
         Morse.put('=', "-...-");
         Morse.put('@', ".--.-.");
         Morse.put(null, "|");
+        Morse.put(' ', " ");
     }
 
 
