@@ -34,6 +34,7 @@ public class TrainingType extends AppCompatActivity {
     }
 
 
+
     public void openTransmit(View view){
         Intent intent = new Intent(this, Training.class);
         startActivity(intent);

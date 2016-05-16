@@ -55,7 +55,7 @@ public class SnappyStrings {
             if(snappyStringsExist()){
                 list = snappyDBStrings.getObject("receiveStrings", ArrayList.class);}
         }catch(SnappydbException e){
-               Logger.log("Get snappy String exception");
+            Logger.log("Get snappy String exception");
         }
 
         return list;

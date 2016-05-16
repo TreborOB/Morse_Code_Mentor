@@ -34,9 +34,12 @@ import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 public class Receive extends BaseActivity {
 
 
-    @Bind(R.id.imageViewReceive) ImageView imageViewReceive;
-    @Bind(R.id.startReceive) ButtonFlat    startReceive;
-    @Bind(R.id.wordFlashed) TextView       wordFlashed;
+    @Bind(R.id.imageViewReceive)
+    ImageView imageViewReceive;
+    @Bind(R.id.startReceive)
+    ButtonFlat startReceive;
+    @Bind(R.id.wordFlashed)
+    TextView wordFlashed;
 
     private ShowcaseConfig config = new ShowcaseConfig();
 
@@ -76,9 +79,9 @@ public class Receive extends BaseActivity {
 
 
         //Sets screen flash speed
-        if(Options.getScreenFlashSpeed(this)) {
+        if (Options.getScreenFlashSpeed(this)) {
             Options.setSpeedFast();
-        }else{
+        } else {
             Options.setSpeedSlow();
         }
 
@@ -112,7 +115,7 @@ public class Receive extends BaseActivity {
     }
 
 
-    private void startScreenFlash(){
+    private void startScreenFlash() {
 
         release();
 
@@ -125,13 +128,17 @@ public class Receive extends BaseActivity {
         switch (language) {
             case "English":
             case "language":
-                randomWord = listEnglish.get(rand.nextInt(listEnglish.size()));
+
+                int random = rand.nextInt(listEnglish.size());
+                randomWord = listEnglish.get(random);
                 break;
             case "Spanish":
-                randomWord = listSpanish.get(rand.nextInt(listSpanish.size()));
+                int randomSpanish = rand.nextInt(listSpanish.size());
+                randomWord = listSpanish.get(randomSpanish);
                 break;
             case "Chinese":
-                randomWord = listChinese.get(rand.nextInt(listChinese.size()));
+                int randomChinese = rand.nextInt(listChinese.size());
+                randomWord = listChinese.get(randomChinese);
                 break;
         }
 
@@ -142,13 +149,13 @@ public class Receive extends BaseActivity {
     }
 
 
-    public void setWordFlashed(){
+    public void setWordFlashed() {
         wordFlashed.setText(randomWord);
 
         mOutput.cancel();
     }
 
-    private void showCaseMainActivity(){
+    private void showCaseMainActivity() {
 
 
         config.setDelay(300);
@@ -173,22 +180,22 @@ public class Receive extends BaseActivity {
 
             case R.id.action_favorite:
 
-                    switch(language) {
-                        case "English":
-                            if(Options.getEnabledVoice(this))
+                switch (language) {
+                    case "English":
+                        if (Options.getEnabledVoice(this))
                             playSound.playSymbol(Receive.this, R.raw.help);
-                            break;
+                        break;
 
-                        case "Spanish":
-                            if(Options.getEnabledVoice(this))
+                    case "Spanish":
+                        if (Options.getEnabledVoice(this))
                             playSound.playSymbol(Receive.this, R.raw.helpspanish);
-                            break;
+                        break;
 
-                        case "Chinese":
-                            if(Options.getEnabledVoice(this))
+                    case "Chinese":
+                        if (Options.getEnabledVoice(this))
                             playSound.playSymbol(Receive.this, R.raw.helpchinese);
-                            break;
-                    }
+                        break;
+                }
 
                 showCaseMainActivity();
         }
@@ -196,7 +203,7 @@ public class Receive extends BaseActivity {
     }
 
 
-    public void setHint(){
+    public void setHint() {
 
         switch (language) {
             case "English":
@@ -212,7 +219,7 @@ public class Receive extends BaseActivity {
     }
 
 
-    public void init(){
+    public void init() {
 
         mOutput = new Output(this, false, false, false, false);
 
@@ -237,18 +244,15 @@ public class Receive extends BaseActivity {
         mOutput.release();
     }
 
-    public void release(){
+    public void release() {
         mOutput.release();
     }
 
 
-    public void onPause(){
+    public void onPause() {
         super.onPause();
         SnappyStrings.closeSnappyStrings();
     }
-
-
-
 
 
 }

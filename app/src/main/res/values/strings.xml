@@ -123,6 +123,8 @@
     <!--Training Type-->
     <string name="transmit">Training Trail</string>
     <string name="receive">Receive</string>
+    <string name="audio">Audio</string>
+
     <string name="morse_code_training">Morse Training</string>
     <!--Training Type-->
 
