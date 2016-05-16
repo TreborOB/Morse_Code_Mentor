@@ -10,12 +10,17 @@ import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.SwitchPreference;
+import android.util.Log;
 import android.view.View;
 
-import com.example.robert.morseprototype.Misc.Logger;
 import com.example.robert.morseprototype.Misc.MorseApplication;
 import com.example.robert.morseprototype.R;
 import com.gc.materialdesign.widgets.Dialog;
+import com.mixpanel.android.mpmetrics.MixpanelAPI;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.Locale;
 
 
@@ -36,12 +41,19 @@ public class Options extends AppCompatPreferenceActivity {
     public static int TIMER                  = 10000;
 
 
+    static MixpanelAPI mixPanel;
+    String      projectToken;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Options");
         getFragmentManager().beginTransaction().replace(android.R.id.content, new GeneralPreferenceFragment()).commit();
+
+
+        projectToken = "a030a77c9710298b9cee4e20d7c2b814";
+        mixPanel     = MixpanelAPI.getInstance(this, projectToken);
     }
 
     public static class InputSpeeds {
@@ -140,7 +152,6 @@ public class Options extends AppCompatPreferenceActivity {
                     boolean analytics = getDataAnalytics(cxt);
 
                     if(!analytics){
-                        Logger.log("WORKS");
 
                         Dialog dialog = new Dialog(cxt, "Internet Connection Required", "Enabling data analytics requires a working internet" +
                                 " connection. It allows us to monitor how each user interacts with the application thus allowing for improvements to be made where" +
@@ -170,6 +181,20 @@ public class Options extends AppCompatPreferenceActivity {
 
                     preference.setSummary(newValue.toString());
                     //setLanguage(newValue.toString());
+
+                    if(Options.getDataAnalytics(getActivity())) {
+                        try {
+                            JSONObject props = new JSONObject();
+                            props.put("Language Change", newValue);
+                            mixPanel.track("Language", props);
+
+                        } catch (JSONException e) {
+
+                            Log.e("App started error", "ERROR", e);
+                        }
+                    }
+
+
 
                     //Recreates the activity
                     MorseApplication app = (MorseApplication)getActivity().getApplication();
