@@ -111,7 +111,6 @@ public class Training extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-
                 String selectedItem = items[position];
 
                 if(Options.getEnabledVoice(Training.this))

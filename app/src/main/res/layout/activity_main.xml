@@ -39,7 +39,8 @@
         android:onClick="openOptions"
         android:padding="10dp"
         android:text="@string/options"
-        android:layout_toEndOf="@+id/swipeBottom" />
+        android:layout_toEndOf="@+id/swipeBottom"
+        android:id="@+id/view3" />
 
     <com.gc.materialdesign.views.ButtonRectangle
         android:id="@+id/button4"
@@ -52,6 +53,7 @@
         android:onClick="openSOS"
         android:padding="15dp"
         android:text="@string/sos" />
+
 
     <TextView
         android:id="@+id/textView5"

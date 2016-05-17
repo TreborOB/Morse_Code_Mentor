@@ -13,9 +13,6 @@ import com.example.robert.morseprototype.Training.Training;
 
 
 
-
-
-
 public class TrainingType extends AppCompatActivity {
 
 

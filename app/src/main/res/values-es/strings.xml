@@ -8,7 +8,7 @@
     <string name="englishToMorse">Inglés a Morse</string>
     <string name="MorseToEnglish">Morse a Inglés</string>
     <string name="translate">Traducir</string>
-    <string name="translateText">Por favor, introduzca el texto que le gustaría traducida</string>
+    <string name="translateText">Por favor introduzca el texto que desea traducir</string>
     <string name="sos">SOS</string>
     <string name="morseCode">Código Morse Mentor</string>
     <string name="reset">restablecer</string>

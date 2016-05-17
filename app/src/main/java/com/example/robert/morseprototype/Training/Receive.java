@@ -34,12 +34,9 @@ import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 public class Receive extends BaseActivity {
 
 
-    @Bind(R.id.imageViewReceive)
-    ImageView imageViewReceive;
-    @Bind(R.id.startReceive)
-    ButtonFlat startReceive;
-    @Bind(R.id.wordFlashed)
-    TextView wordFlashed;
+    @Bind(R.id.imageViewReceive) ImageView imageViewReceive;
+    @Bind(R.id.startReceive) ButtonFlat startReceive;
+    @Bind(R.id.wordFlashed) TextView wordFlashed;
 
     private ShowcaseConfig config = new ShowcaseConfig();
 

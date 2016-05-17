@@ -37,6 +37,7 @@ public class EnglishToMorse extends BaseActivity {
     @Bind(R.id.editText) EditText    textViewSource;
     @Bind(R.id.textView2) TextView   textViewResult;
     @Bind(R.id.switch1) Switch       switchLight;
+    @Bind(R.id.switchAudio) Switch   switchAudio;
     @Bind(R.id.translate) ButtonFlat translate;
     @Bind(R.id.reset) ButtonFlat     reset;
 
@@ -72,6 +73,15 @@ public class EnglishToMorse extends BaseActivity {
                 mOutput.setLightEnabled(isChecked);
             }
         });
+
+
+        switchAudio.setOncheckListener(new Switch.OnCheckListener() {
+            @Override
+            public void onCheck(Switch buttonView, boolean isChecked) {
+                mOutput.setSoundEnabled(isChecked);
+            }
+        });
+
     }
 
     @Override
@@ -95,7 +105,13 @@ public class EnglishToMorse extends BaseActivity {
 
             if(switchLight.isCheck())
             mOutput.outputString(translatedText);
+
+            if(switchAudio.isCheck())
+                mOutput.outputString(translatedText);
         }
+
+
+
     }
 
     public void reset(View view) {
@@ -253,7 +269,10 @@ public class EnglishToMorse extends BaseActivity {
                 "Use reset to clear the text so you can enter a new word", "GOT IT");
 
         sequence.addSequenceItem(switchLight,
-                "This switch toggles the flash on or off, easy!", "GOT IT");
+                "This switch turns the flash on or off", "GOT IT");
+
+        sequence.addSequenceItem(switchAudio,
+                "This switch turns the sound on or off, easy!", "GOT IT");
 
 
         sequence.start();

@@ -6,7 +6,7 @@
     <string name="englishToMorse">English to Morse</string>
     <string name="MorseToEnglish">Morse to English</string>
     <string name="translate">Translate</string>
-    <string name="translateText">Please enter the text you would like translated</string>
+    <string name="translateText">Please enter the text you would like to translate</string>
     <string name="sos">SOS</string>
     <string name="morseCode">Morse Code Mentor</string>
     <string name="reset">Reset</string>
@@ -123,7 +123,6 @@
     <!--Training Type-->
     <string name="transmit">Training Trail</string>
     <string name="receive">Receive</string>
-    <string name="audio">Audio</string>
 
     <string name="morse_code_training">Morse Training</string>
     <!--Training Type-->

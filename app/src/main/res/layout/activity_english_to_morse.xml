@@ -46,8 +46,7 @@
         android:id="@+id/reset"
         android:onClick="reset"
         android:layout_above="@+id/switch1"
-        android:layout_alignStart="@+id/editText"
-        android:layout_toStartOf="@+id/textView12" />
+        android:layout_alignStart="@+id/editText" />
 
     <com.gc.materialdesign.views.Switch
         android:layout_width="wrap_content"
@@ -55,7 +54,16 @@
         android:id="@+id/switch1"
         android:background="#1E88E5"
         android:layout_above="@+id/textView12"
-        android:layout_toEndOf="@+id/reset" />
+        android:layout_alignStart="@+id/textView12" />
+
+
+    <com.gc.materialdesign.views.Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switchAudio"
+        android:background="#1E88E5"
+        android:layout_below="@+id/translate"
+        android:layout_toEndOf="@+id/switch1" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -64,7 +72,8 @@
         android:id="@+id/textView2"
         android:layout_marginTop="61dp"
         android:layout_below="@+id/textView"
-        android:textSize="26sp"
+        android:textSize="30sp"
+        android:textColor="#1E88E5"
         android:textStyle="bold"
         android:layout_alignEnd="@+id/editText"
         android:layout_alignStart="@+id/editText" />
@@ -75,8 +84,18 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/english_to_morse_light"
         android:id="@+id/textView12"
+        android:layout_marginStart="31dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignStart="@+id/editText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Sound"
+        android:id="@+id/textView8"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/switch1" />
 
 
 </RelativeLayout>

@@ -343,7 +343,10 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
         final Dialog dialog = new Dialog(this, "You ran out of time", "");
 
         dialog.addCancelButton("Try Again");
-        dialog.show();
+
+        if(isTimerRunning) {
+            dialog.show();
+        }
 
 
         ButtonFlat results = dialog.getButtonAccept();
@@ -406,9 +409,29 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
 
         if(isTimerRunning) {
             countDownTimer.cancel();
+            isTimerRunning = false;
         }
     }
 
+
+    public void onStop(){
+        super.onStop();
+
+        if(isTimerRunning) {
+            countDownTimer.cancel();
+            isTimerRunning = false;
+        }
+    }
+
+
+    public void onDestroy(){
+        super.onDestroy();
+
+        if(isTimerRunning) {
+            countDownTimer.cancel();
+            isTimerRunning = false;
+        }
+    }
 
 
     private void cancelCountDown(){

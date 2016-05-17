@@ -27,12 +27,8 @@ import uk.co.deanwild.materialshowcaseview.MaterialShowcaseSequence;
 import uk.co.deanwild.materialshowcaseview.MaterialShowcaseView;
 import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 
-
-
 import com.mixpanel.android.mpmetrics.MixpanelAPI;
-
 import android.util.Log;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -63,6 +59,8 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+
 
         mDetector = new GestureDetectorCompat(this, new mainMorseGestureDetector());
 
@@ -213,6 +211,7 @@ public class MainActivity extends BaseActivity {
     }
 
 
+
     public void openSOS(View view) {
         Intent intent = new Intent(this, Sos.class);
         startActivity(intent);
@@ -230,23 +229,22 @@ public class MainActivity extends BaseActivity {
         }
 
         if(Options.getEnabledVoice(this)) {
-        switch(language) {
-            case "English":
-                playSound.playSymbol(MainActivity.this, R.raw.sos);
-                break;
+            switch(language) {
+                case "English":
+                    playSound.playSymbol(MainActivity.this, R.raw.sos);
+                    break;
 
-            case "Spanish":
-                playSound.playSymbol(MainActivity.this, R.raw.sosspanish);
-                break;
+                case "Spanish":
+                    playSound.playSymbol(MainActivity.this, R.raw.sosspanish);
+                    break;
 
-            case "Chinese":
-                playSound.playSymbol(MainActivity.this, R.raw.soschinese);
-                break;
-        }
+                case "Chinese":
+                    playSound.playSymbol(MainActivity.this, R.raw.soschinese);
+                    break;
+            }
         }
 
     }
-
 
     private class mainMorseGestureDetector extends MorseGestureDetector {
 

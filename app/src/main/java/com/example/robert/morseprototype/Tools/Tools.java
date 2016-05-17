@@ -10,6 +10,7 @@ import com.example.robert.morseprototype.Hardware.Sound;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
 
+
 public class Tools extends AppCompatActivity {
 
 
@@ -120,9 +121,6 @@ public class Tools extends AppCompatActivity {
     }
 
 
-
-
-
     public void openCallVibration(View view) {
 
         Intent intent = new Intent(this, CallVibration.class);
@@ -145,4 +143,7 @@ public class Tools extends AppCompatActivity {
                     break;
             }
     }
+
+
+
 }

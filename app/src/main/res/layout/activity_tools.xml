@@ -69,6 +69,8 @@
         android:onClick="openCallVibration"
         android:layout_below="@+id/english_to_morse_button"
         android:layout_alignStart="@+id/english_to_morse_button"
-        android:layout_alignEnd="@+id/english_to_morse_button" />
+        android:layout_alignEnd="@+id/english_to_morse_button"
+        android:id="@+id/view" />
+
 
 </RelativeLayout>
