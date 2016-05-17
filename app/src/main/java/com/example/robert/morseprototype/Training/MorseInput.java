@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.robert.morseprototype.Misc.MorseTranslations;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
+import com.gc.materialdesign.views.ProgressBarDeterminate;
 import com.github.siyamed.shapeimageview.CircularImageView;
 
 public class MorseInput {
@@ -52,7 +53,7 @@ public class MorseInput {
     private CircularImageView introPad;
     private TextView          textViewMorseLetter;
     private TextView          textViewTextLetter;
-    private ProgressBar       progressBar;
+    private ProgressBarDeterminate progressBar;
 
     private StringBuilder mMorseStringBuilder = new StringBuilder();
     private StringBuilder mWords              = new StringBuilder();
@@ -68,7 +69,7 @@ public class MorseInput {
     private OnPadStateChanged  mOnStateChangedBack;
 
 
-    public MorseInput(Activity activity, TextView textViewTextLetter, TextView textViewMorseLetter, CircularImageView introPad, ProgressBar progressBar, ImageView tickOne, ImageView tickTwo, ImageView tickThree) {
+    public MorseInput(Activity activity, TextView textViewTextLetter, TextView textViewMorseLetter, CircularImageView introPad, ProgressBarDeterminate progressBar, ImageView tickOne, ImageView tickTwo, ImageView tickThree) {
         this.textViewTextLetter     = textViewTextLetter;
         this.textViewMorseLetter    = textViewMorseLetter;
         this.introPad               = introPad;
@@ -97,7 +98,8 @@ public class MorseInput {
 
             if (progressBarValue > PROGRESS_BAR) {
                 //Changes the progress bar to blue once it reaches over 200ms (dash)
-                progressBar.getProgressDrawable().setColorFilter(Color.rgb(30,136,229), PorterDuff.Mode.SRC_IN);
+                //progressBar.getProgressDrawable().setColorFilter(Color.rgb(30,136,229), PorterDuff.Mode.SRC_IN);
+                progressBar.setBackgroundColor(Color.rgb(30,136,229));
             }
 
             progressBar.setProgress(progressBarValue);
@@ -122,7 +124,8 @@ public class MorseInput {
         mTranslator = new MorseTranslations();
 
         progressBar.setScaleY(3f);
-        progressBar.getProgressDrawable().setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_IN);
+        //progressBar.getProgressDrawable().setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_IN);
+        progressBar.setBackgroundColor(Color.BLUE);
 
         introPad.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -182,7 +185,8 @@ public class MorseInput {
 
         handler.removeMessages(0);
         progressBar.setProgress(0);
-        progressBar.getProgressDrawable().setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_IN);
+        //progressBar.getProgressDrawable().setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_IN);
+        progressBar.setBackgroundColor(Color.BLUE);
 
 
 

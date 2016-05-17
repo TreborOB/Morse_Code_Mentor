@@ -13,6 +13,7 @@ import com.example.robert.morseprototype.Misc.Logger;
 import com.example.robert.morseprototype.Misc.ShowCaseViewArrays;
 import com.example.robert.morseprototype.Options.Options;
 import com.gc.materialdesign.views.ButtonFlat;
+import com.gc.materialdesign.views.ProgressBarDeterminate;
 import com.github.johnpersano.supertoasts.SuperToast;
 import com.github.johnpersano.supertoasts.util.Style;
 import com.github.siyamed.shapeimageview.CircularImageView;
@@ -45,7 +46,8 @@ public class TrainingTrail extends BaseActivity implements MorseInput.OnEndOfInp
     @Bind(R.id.tickThreeTraining) ImageView             tickThree;
     @Bind(R.id.trainingButtonNext)ButtonFlat            trainingNext;
     @Bind(R.id.trainingButtonPrev) ButtonFlat           trainingPrevious;
-    @Bind(R.id.trainingProgressBar) ProgressBar         trainingProgressBar;
+    @Bind(R.id.trainingProgressBar)
+    ProgressBarDeterminate trainingProgressBar;
 
     private ShowcaseConfig config = new ShowcaseConfig();
 

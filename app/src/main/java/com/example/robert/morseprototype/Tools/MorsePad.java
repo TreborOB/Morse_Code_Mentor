@@ -8,8 +8,8 @@ import android.view.View;
 
 import com.example.robert.morseprototype.Hardware.Sound;
 import com.example.robert.morseprototype.Misc.BaseActivity;
+import com.gc.materialdesign.views.ProgressBarDeterminate;
 import com.github.siyamed.shapeimageview.CircularImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.example.robert.morseprototype.Hardware.Output;
 import com.example.robert.morseprototype.Options.Options;
@@ -46,7 +46,7 @@ public class MorsePad extends BaseActivity implements OnCharacterDecoded, OnPadS
     @Bind(R.id.textViewMorseChar) TextView   textViewMorseChar;
     @Bind(R.id.textViewTextChar) TextView    textViewTextChar;
     @Bind(R.id.textViewResult) TextView      sentence;
-    @Bind(R.id.progressBar) ProgressBar      progressBar;
+    @Bind(R.id.progressBar) ProgressBarDeterminate progressBar;
     @Bind(R.id.audioSwitch) Switch           switchAudio;
     @Bind(R.id.lightSwitch) Switch           switchLight;
     @Bind(R.id.vibrateSwitch) Switch         switchVibrate;
@@ -137,7 +137,6 @@ public class MorsePad extends BaseActivity implements OnCharacterDecoded, OnPadS
 
         mOutput.release();
     }
-
 
 
 

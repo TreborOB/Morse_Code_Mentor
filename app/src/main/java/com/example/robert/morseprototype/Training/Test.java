@@ -15,6 +15,7 @@ import com.example.robert.morseprototype.Misc.Logger;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
 import com.gc.materialdesign.views.ButtonFlat;
+import com.gc.materialdesign.views.ProgressBarDeterminate;
 import com.gc.materialdesign.widgets.Dialog;
 import com.github.johnpersano.supertoasts.SuperToast;
 import com.github.johnpersano.supertoasts.util.Style;
@@ -39,7 +40,8 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
     @Bind(R.id.testMorseChar) TextView      testTextViewMorseChar;
     @Bind(R.id.testTextObjective) TextView  testObjective;
     @Bind(R.id.timer) TextView              timer;
-    @Bind(R.id.testProgressBar) ProgressBar testProgressBar;
+    @Bind(R.id.testProgressBar)
+    ProgressBarDeterminate testProgressBar;
     @Bind(R.id.testStart) ButtonFlat        startTest;
     @Bind(R.id.questionNumber) TextView     questionNumber;
 

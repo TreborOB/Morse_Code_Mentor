@@ -23,9 +23,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <ProgressBar
+    <com.gc.materialdesign.views.ProgressBarDeterminate
         android:id="@+id/introProgressBar"
-        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"

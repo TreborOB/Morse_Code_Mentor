@@ -20,6 +20,7 @@ import com.example.robert.morseprototype.SwipeDialogs.LettersDialog;
 import com.example.robert.morseprototype.SwipeDialogs.MorseGestureDetector;
 import com.example.robert.morseprototype.Training.MorseInput.OnEndOfInput;
 import com.gc.materialdesign.views.ButtonFlat;
+import com.gc.materialdesign.views.ProgressBarDeterminate;
 import com.gc.materialdesign.views.Switch;
 import com.github.johnpersano.supertoasts.SuperToast;
 import com.github.johnpersano.supertoasts.util.Style;
@@ -54,7 +55,7 @@ public class Introduction extends BaseActivity implements OnEndOfInput, MorseInp
     @Bind(R.id.padIntro)           CircularImageView    introPad;
     @Bind(R.id.introMorseChar)     TextView             introTextViewMorseChar;
     @Bind(R.id.introTextChar)      TextView             introTextViewTextChar;
-    @Bind(R.id.introProgressBar)   ProgressBar          introProgressBar;
+    @Bind(R.id.introProgressBar)   ProgressBarDeterminate introProgressBar;
     @Bind(R.id.introTextObjective) JustifiedTextView    introObjective;
     @Bind(R.id.introButtonNext)    ButtonFlat           introNext;
     @Bind(R.id.introButtonPrev)    ButtonFlat           introPrevious;
