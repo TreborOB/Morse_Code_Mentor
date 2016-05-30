@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.robert.morseprototype.Tools.CallVibration">
+    tools:context=".Tools.CallerAlerts">
 
 
     <com.uncopt.android.widget.text.justify.JustifiedTextView

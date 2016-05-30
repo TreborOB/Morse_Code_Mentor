@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.example.robert.morseprototype.Hardware.Sound;
@@ -46,8 +45,7 @@ public class TrainingTrail extends BaseActivity implements MorseInput.OnEndOfInp
     @Bind(R.id.tickThreeTraining) ImageView             tickThree;
     @Bind(R.id.trainingButtonNext)ButtonFlat            trainingNext;
     @Bind(R.id.trainingButtonPrev) ButtonFlat           trainingPrevious;
-    @Bind(R.id.trainingProgressBar)
-    ProgressBarDeterminate trainingProgressBar;
+    @Bind(R.id.trainingProgressBar) ProgressBarDeterminate trainingProgressBar;
 
     private ShowcaseConfig config = new ShowcaseConfig();
 

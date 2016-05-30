@@ -15,9 +15,9 @@
     <string name="reset">重置</string>
     <string name="data_analytics">数据分析</string>
     <string name="press_to_see_answer">按参考答案</string>
-    <string name="tools_vibrate"> 振动电话</string>
-    <string name="vibrate_incoming">来电者振动</string>
-    <string name="vibrate_instructions">此功能允许设备振动的名称或来电的电话号码。 如果来电者是那么的名字将被振动，如果不是那么来电号码将vibrated.Whenever呼叫接收设备将实际的名称或来电者的号码前振动振动3次您的联系人之一。这让你知道下面的震动将是莫尔斯电码。</string>
+    <string name="tools_vibrate">来电者提醒</string>
+    <string name="vibrate_incoming">来电通知</string>
+    <string name="vibrate_instructions">该功能使用振动和设备的闪存中，以通知您的来电。如果呼叫者的名称已知那么这将被闪蒸/振捣否则数量将被使用。当检测到设备将振动/闪3次来电 - 这让你知道以下顺序将是莫尔斯电码。</string>
     <string name="enable_vibration">启用</string>
 
 

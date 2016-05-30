@@ -123,7 +123,7 @@ public class Tools extends AppCompatActivity {
 
     public void openCallVibration(View view) {
 
-        Intent intent = new Intent(this, CallVibration.class);
+        Intent intent = new Intent(this, CallerAlerts.class);
         startActivity(intent);
 
 

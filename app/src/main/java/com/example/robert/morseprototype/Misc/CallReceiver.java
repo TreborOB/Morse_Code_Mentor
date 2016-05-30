@@ -36,7 +36,7 @@ public class CallReceiver extends BroadcastReceiver {
                 System.out.println("incomingNumber : "+incomingNumber);
                 System.out.println("incoming caller name : "+name);
 
-                mOutput = new Output(context, false, false, true, false);
+                mOutput = new Output(context, false, true, true, false);
 
                 final MorseTranslations morseTranslations = new MorseTranslations();
 

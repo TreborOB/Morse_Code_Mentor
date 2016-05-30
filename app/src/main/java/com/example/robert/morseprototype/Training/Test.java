@@ -3,11 +3,11 @@ package com.example.robert.morseprototype.Training;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.example.robert.morseprototype.Misc.BaseActivity;
 import com.example.robert.morseprototype.Hardware.Sound;
@@ -17,8 +17,6 @@ import com.example.robert.morseprototype.R;
 import com.gc.materialdesign.views.ButtonFlat;
 import com.gc.materialdesign.views.ProgressBarDeterminate;
 import com.gc.materialdesign.widgets.Dialog;
-import com.github.johnpersano.supertoasts.SuperToast;
-import com.github.johnpersano.supertoasts.util.Style;
 import com.github.siyamed.shapeimageview.CircularImageView;
 import java.util.ArrayList;
 
@@ -301,12 +299,6 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
         testTextViewMorseChar.setText("");
     }
 
-    private void displayToast(String textToDisplay){
-        SuperToast.create(this, textToDisplay, SuperToast.Duration.VERY_SHORT,
-        Style.getStyle(Style.BLUE, SuperToast.Animations.FLYIN)).show();
-    }
-
-
 
     private void countDown() {
 
@@ -314,6 +306,10 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
 
             public void onTick(long millisUntilFinished) {
                 timer.setText(getResources().getText(R.string.seconds_remaining) + " " + millisUntilFinished / 1000);
+                if(millisUntilFinished/1000 < 5)
+                {
+                    timer.setTextColor(Color.RED);
+                }
                 isTimerRunning = true;
             }
 
@@ -339,7 +335,6 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
 
 
 
-
     public void showDialog() {
 
         final Dialog dialog = new Dialog(this, "You ran out of time", "");
@@ -348,18 +343,8 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
 
         if(isTimerRunning) {
             dialog.show();
-        }
-
-
-        ButtonFlat results = dialog.getButtonAccept();
-
-
-        if(mCurrentStep == 1)
-        {
-            results.setVisibility(4);
-        }
-        else{
-            results.setText("Results");
+        }else{
+            dialog.show();
         }
 
 
@@ -453,7 +438,7 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
 
         sequence.addSequenceItem(testObjective,
                 "The objective will for each question will be displayed in the center of the screen. In order to correctly" +
-                "answer the question you must key in the Morse code for the objective", "GOT IT");
+                        "answer the question you must key in the Morse code for the objective", "GOT IT");
 
         sequence.addSequenceItem(timer,
                 "You must answer the question before the timer counts down!", "GOT IT");
@@ -478,17 +463,17 @@ public class Test extends BaseActivity implements MorseInput.OnEndOfInput {
                 switch(language) {
                     case "English":
                         if(Options.getEnabledVoice(this))
-                        playSound.playSymbol(Test.this, R.raw.help);
+                            playSound.playSymbol(Test.this, R.raw.help);
                         break;
 
                     case "Spanish":
                         if(Options.getEnabledVoice(this))
-                        playSound.playSymbol(Test.this, R.raw.helpspanish);
+                            playSound.playSymbol(Test.this, R.raw.helpspanish);
                         break;
 
                     case "Chinese":
                         if(Options.getEnabledVoice(this))
-                        playSound.playSymbol(Test.this, R.raw.helpchinese);
+                            playSound.playSymbol(Test.this, R.raw.helpchinese);
                         break;
                 }
 

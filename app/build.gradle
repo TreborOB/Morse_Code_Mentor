@@ -50,4 +50,5 @@ dependencies {
     compile 'com.daimajia.androidanimations:library:1.1.3@aar'
     compile 'com.uncopt:android.justified:1.0'
     compile 'com.mixpanel.android:mixpanel-android:4.+'
+    compile 'com.twotoasters.jazzylistview:library:1.2.1'
 }

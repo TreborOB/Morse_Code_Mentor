@@ -6,7 +6,7 @@ import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.hardware.Camera.Parameters;
 
-
+import com.example.robert.morseprototype.Misc.Logger;
 
 
 @SuppressWarnings("deprecation")
@@ -17,8 +17,16 @@ public class Light {
     private boolean           mHasCamera;
 
     public Light(Context context) {
-        mCamera = Camera.open();
-        mParameters = mCamera.getParameters();
+
+        try {
+            mCamera = Camera.open();
+            mParameters = mCamera.getParameters();
+            mParameters.setRecordingHint(true);
+        }catch(Exception e){
+            Logger.log("Camera Exception");
+        }
+
+
         mHasCamera = hasCamera(context);
     }
 

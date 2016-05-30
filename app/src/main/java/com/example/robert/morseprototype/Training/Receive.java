@@ -109,6 +109,7 @@ public class Receive extends BaseActivity {
 
     private void bindInterface() {
         mOutput.setScreenEnabled(true, mImageHandler);
+        mOutput.setSoundEnabled(true);
     }
 
 

@@ -56,7 +56,7 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".Tools.CallVibration" />
+        <activity android:name=".Tools.CallerAlerts" />
     </application>
 
 </manifest>

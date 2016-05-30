@@ -14,9 +14,9 @@
     <string name="reset">restablecer</string>
     <string name="data_analytics">Analisis de data</string>
     <string name="press_to_see_answer">Pulse para ver la respuesta</string>
-    <string name="tools_vibrate">Vibración de llamada</string>
-    <string name="vibrate_incoming">Vibración de llamada entrante</string>
-    <string name="vibrate_instructions">Esta característica permite que el dispositivo vibre el nombre o el número de llamadas telefónicas entrantes. Si la persona que llama es uno de sus contactos a continuación, el nombre se hace vibrar, si no, entonces el número de teléfono entrante será vibrated.Whenever recibir una llamada, el dispositivo vibrará 3 veces antes de que el nombre real o el número de la persona que llama se hace vibrar. Esto le permite saber que las siguientes vibraciones van a ser el código Morse.</string>
+    <string name="tools_vibrate">Avisos de llamada</string>
+    <string name="vibrate_incoming">Alertas de llamadas entrantes</string>
+    <string name="vibrate_instructions"> Esta función utiliza la vibración y el flash del dispositivo con el fin de notificarle las llamadas entrantes. Si el nombre de la persona que llama es conocido entonces esto será indicado / vibrado contrario, se utilizará el número. Cuando se detecta una llamada entrante al dispositivo vibrará / FLASH 3 veces - esto le permite saber que la siguiente secuencia será el código Morse.</string>
     <string name="enable_vibration">Habilitado</string>
 
 

@@ -17,7 +17,7 @@ public class TutorialSteps {
         intro.add(new MorseTutorial("Well done! Now we will send a dash, remember a dash is 3 times the length of a dot. The progress bar will turn light blue when you are sending a dash", "T", true, true, true, "Next", true, true, true));
         intro.add(new MorseTutorial("The time between dots and dashes are important in Morse code. Large spaces mean a new word while small spaces represent a new letter. The gaps between dots and dashes of the same letter are very small. Try and send a dot then a dash with a small gap in between. This tells Morse that it is the same letter", "A", true, true, true, "Next", true, true, true));
         intro.add(new MorseTutorial("Now send a dot then a dash with a space in between, this represents a new word in Morse", "E T", true, true, true, "Next", true, true, true));
-        intro.add(new MorseTutorial("We will now send 2 dots then a space to represent a new word and then a dash", "I T", true, false, true, "Next", true, true, true));
+        intro.add(new MorseTutorial("We will now send 2 dots then a space to represent a new word and then a dash", "I T", true, true, true, "Next", true, true, true));
 
         return intro;
     }
@@ -34,7 +34,7 @@ public class TutorialSteps {
         aTof.add(new MorseTutorial("Press on the pad to send the letter C: dash dot dash dot", "C", true, true, true, "Next", true, true, true));
         aTof.add(new MorseTutorial("Press on the pad to send the letter D: dash dot dot", "D", true, true, true, "Next", true, true, true));
         aTof.add(new MorseTutorial("Press on the pad to send the letter E: dot", "E", true, true, true, "Next", true, true, true));
-        aTof.add(new MorseTutorial("Press on the pad to send the letter F: dot", "F", true, true, true, "Next", true, true, true));
+        aTof.add(new MorseTutorial("Press on the pad to send the letter F: dot dash dot dot", "F", true, true, true, "Next", true, true, true));
 
         return aTof;
 
@@ -47,7 +47,7 @@ public class TutorialSteps {
         gTok.add(new MorseTutorial("This section will comprise of the letters G to K", "", false, true, false, "Start", false, false, false));
         gTok.add(new MorseTutorial("Press on the pad to send the letter G: dash dash dot", "G", true, true, true, "Next", true, true, true));
         gTok.add(new MorseTutorial("Press on the pad to send the letter H: dot dot dot dot", "H", true, true, true, "Next", true, true, true));
-        gTok.add(new MorseTutorial("Press on the pad to send the letter I: dash dot dot", "I", true, true, true, "Next", true, true, true));
+        gTok.add(new MorseTutorial("Press on the pad to send the letter I: dot dot", "I", true, true, true, "Next", true, true, true));
         gTok.add(new MorseTutorial("Press on the pad to send the letter J: dot dash dash dash", "J", true, true, true, "Next", true, true, true));
         gTok.add(new MorseTutorial("Press on the pad to send the letter K: dash dot dash", "K", true, true, true, "Next", true, true, true));
 
@@ -137,7 +137,7 @@ public class TutorialSteps {
         intro.add(new MorseTutorial("¡Bien hecho! Ahora vamos a enviar un guión, un guión recordamos es 3 veces la longitud de un punto. La barra de progreso se encenderá la luz azul cuando está enviando un guión", "T", true, true, true, "Siguiente", true, true, true));
         intro.add(new MorseTutorial("El tiempo entre puntos y rayas son importantes en el código Morse. Grandes espacios significan una nueva palabra, mientras que los espacios pequeños representan una nueva carta. Los espacios entre los puntos y rayas de la misma letra son muy pequeñas. Tratar de enviar un punto a continuación, un tablero con un pequeño hueco en el medio. Esto le dice Morse que es la misma letra", "A", true, true, true, "Siguiente", true, true, true));
         intro.add(new MorseTutorial("Ahora envía un punto a continuación, un tablero con un espacio en el medio, esto representa una nueva palabra en Morse", "E T", true, true, true, "Siguiente", true, true, true));
-        intro.add(new MorseTutorial("Ahora vamos a enviar 2 puntos y luego un espacio para representar una nueva palabra y luego un guión", "I T", true, false, true, "Siguiente", true, true, true));
+        intro.add(new MorseTutorial("Ahora vamos a enviar 2 puntos y luego un espacio para representar una nueva palabra y luego un guión", "I T", true, true, true, "Siguiente", true, true, true));
 
         return intro;
     }
@@ -153,6 +153,7 @@ public class TutorialSteps {
         aTof.add(new MorseTutorial("Presione en el disco para enviar la letra C: punto y raya punto y raya", "C", true, true, true, "Siguiente", true, true, true));
         aTof.add(new MorseTutorial("Presione en el disco para enviar la letra D: dot al tablero", "D", true, true, true, "Siguiente", true, true, true));
         aTof.add(new MorseTutorial("Presione en el disco para enviar la letra E: dot", "E", true, false, true, "Siguiente", true, true, true));
+        aTof.add(new MorseTutorial("Presione en el disco para enviar la letra F: dot dash dot dot", "F", true, true, true, "Siguiente", true, true, true));
 
         return aTof;
 
@@ -167,7 +168,7 @@ public class TutorialSteps {
         gTok.add(new MorseTutorial("Presione en el disco para enviar la letra H: dot dot dot dot", "H", true, true, true, "Siguiente", true, true, true));
         gTok.add(new MorseTutorial("Press en el párrafo discoteca enviar la letra I: Tablero punto punto", "I", true, true, true, "Siguiente", true, true, true));
         gTok.add(new MorseTutorial("Presione en el disco para enviar la letra J: tablero de puntos raya raya", "J", true, true, true, "Siguiente", true, true, true));
-        gTok.add(new MorseTutorial("Presione en el disco para enviar la letra K: tablero de punto y raya", "K", true, false, true, "Siguiente", true, true, true));
+        gTok.add(new MorseTutorial("Presione en el disco para enviar la letra K: tablero de punto y raya", "K", true, true, true, "Siguiente", true, true, true));
 
         return gTok;
 
@@ -182,7 +183,7 @@ public class TutorialSteps {
         lTop.add(new MorseTutorial("Presione en el disco para enviar la letra M: el tablero de instrumentos", "M", true, true, true, "Siguiente", true, true, true));
         lTop.add(new MorseTutorial("Presione en el disco para enviar la letra N: punto y raya", "I", true, true, true, "Siguiente", true, true, true));
         lTop.add(new MorseTutorial("Presione en el disco para enviar la letra O: tablero tablero de instrumentos", "O", true, true, true, "Siguiente", true, true, true));
-        lTop.add(new MorseTutorial("Presione en el disco para enviar la letra P: punto y raya el tablero de puntos", "O", true, false, true, "Siguiente", true, true, true));
+        lTop.add(new MorseTutorial("Presione en el disco para enviar la letra P: punto y raya el tablero de puntos", "O", true, true, true, "Siguiente", true, true, true));
 
         return lTop;
 
@@ -197,7 +198,7 @@ public class TutorialSteps {
         qTou.add(new MorseTutorial("Presione en el disco para enviar la letra R: punto y raya de puntos", "R", true, true, true, "Siguiente", true, true, true));
         qTou.add(new MorseTutorial("Press en el párrafo discoteca enviar la letra S: dot dot dot", "S", true, true, true, "Siguiente", true, true, true));
         qTou.add(new MorseTutorial("Presione en el disco para enviar la letra T: tablero", "T", true, true, true, "Siguiente", true, true, true));
-        qTou.add(new MorseTutorial("Presione en el disco para enviar la letra U: tablero", "U", true, false, true, "Siguiente", true, true, true));
+        qTou.add(new MorseTutorial("Presione en el disco para enviar la letra U: tablero", "U", true, true, true, "Siguiente", true, true, true));
 
         return qTou;
 
@@ -213,7 +214,7 @@ public class TutorialSteps {
         vToz.add(new MorseTutorial("Presione en el disco para enviar la letra W: raya raya del punto", "W", true, true, true, "Siguiente", true, true, true));
         vToz.add(new MorseTutorial("Presione en el disco para enviar la letra X: tablero de punto y raya de puntos", "X", true, true, true, "Siguiente", true, true, true));
         vToz.add(new MorseTutorial("Presione en el disco para enviar la letra Y: raya raya punto y raya", "Y", true, true, true, "Siguiente", true, true, true));
-        vToz.add(new MorseTutorial("Presione en el disco para enviar la letra Z: punto punto raya raya", "Z", true, false, true, "Siguiente", true, true, true));
+        vToz.add(new MorseTutorial("Presione en el disco para enviar la letra Z: punto punto raya raya", "Z", true, true, true, "Siguiente", true, true, true));
 
         return vToz;
 
@@ -234,7 +235,7 @@ public class TutorialSteps {
         numbers.add(new MorseTutorial("Presione en el disco para enviar el número 6: punto y raya dot dot dot", "6", true, false, true, "Siguiente", true, true, true));
         numbers.add(new MorseTutorial("Presione en el disco para enviar el número 7: tablero de instrumentos dot dot dot", "7", true, false, true, "Siguiente", true, true, true));
         numbers.add(new MorseTutorial("Presione en el disco para enviar el número 8: tablero punto punto raya raya", "8", true, false, true, "Siguiente", true, true, true));
-        numbers.add(new MorseTutorial("Presione en el disco para enviar el número 8: tablero de punto y raya raya raya", "9", true, false, true, "Siguiente", true, true, true));
+        numbers.add(new MorseTutorial("Presione en el disco para enviar el número 8: tablero de punto y raya raya raya", "9", true, true, true, "Siguiente", true, true, true));
 
         return numbers;
 
@@ -253,7 +254,7 @@ public class TutorialSteps {
         intro.add(new MorseTutorial("做得好！现在，我们将发送一个破折号，记得有一个破折号是一个点的长度的3倍。进度条会变成淡蓝色，当你发送一个破折号", "T", true, true, true, "下一个", true, true, true));
         intro.add(new MorseTutorial("点和线之间的时间是在莫尔斯电码很重要的。大空间意味着一个新字，而小空间代表了一种新的信。点和相同的字母破折号之间的差距非常小。试着发送一个点，然后一个破折号中间用小的差距。这告诉莫尔斯，它是相同的信", "A", true, true, true, "下一个", true, true, true));
         intro.add(new MorseTutorial("现在送点则划与之间的空间，这代表了莫尔斯一个新词", "E T", true, true, true, "下一个", true, true, true));
-        intro.add(new MorseTutorial("现在，我们将派出2个点，然后一个空间，代表一个新字，然后一个破折号", "I T", true, false, true, "下一个", true, true, true));
+        intro.add(new MorseTutorial("现在，我们将派出2个点，然后一个空间，代表一个新字，然后一个破折号", "I T", true, true, true, "下一个", true, true, true));
 
         return intro;
     }
@@ -268,7 +269,7 @@ public class TutorialSteps {
         aTof.add(new MorseTutorial("在垫按下发送字母B：破折号点点点", "B", true, true, true, "下一个", true, true, true));
         aTof.add(new MorseTutorial("在垫按下发送字母C：破折号，点划线点", "C", true, true, true, "下一个", true, true, true));
         aTof.add(new MorseTutorial("在垫按下发送字母D：破折号点点", "D", true, true, true, "下一个", true, true, true));
-        aTof.add(new MorseTutorial("在垫按下发送字母E：点", "E", true, false, true, "下一个", true, true, true));
+        aTof.add(new MorseTutorial("在垫按下发送字母E：点", "E", true, true, true, "下一个", true, true, true));
 
         return aTof;
 
@@ -283,7 +284,7 @@ public class TutorialSteps {
         gTok.add(new MorseTutorial("在垫按下发送字母H：点点点点", "H", true, true, true, "下一个", true, true, true));
         gTok.add(new MorseTutorial("在垫按下发送信我：破折号点点", "I", true, true, true, "下一个", true, true, true));
         gTok.add(new MorseTutorial("在垫按下发送字母J：点划线划线划线", "J", true, true, true, "下一个", true, true, true));
-        gTok.add(new MorseTutorial("在垫按下发送字母K：破折号，点划线", "K", true, false, true, "下一个", true, true, true));
+        gTok.add(new MorseTutorial("在垫按下发送字母K：破折号，点划线", "K", true, true, true, "下一个", true, true, true));
 
         return gTok;
 
@@ -298,7 +299,7 @@ public class TutorialSteps {
         lTop.add(new MorseTutorial("在垫按下发送字母M：短跑冲刺", "M", true, true, true, "下一个", true, true, true));
         lTop.add(new MorseTutorial("在垫按下发送字母N：破折号，点", "I", true, true, true, "下一个", true, true, true));
         lTop.add(new MorseTutorial("在垫按下发送字母O：破折号破折号破折号", "O", true, true, true, "下一个", true, true, true));
-        lTop.add(new MorseTutorial("在垫按下发送字母P：点划线划线点", "O", true, false, true, "下一个", true, true, true));
+        lTop.add(new MorseTutorial("在垫按下发送字母P：点划线划线点", "O", true, true, true, "下一个", true, true, true));
 
         return lTop;
 
@@ -313,7 +314,7 @@ public class TutorialSteps {
         qTou.add(new MorseTutorial("在垫按下发送字母R：点划线点", "R", true, true, true, "下一个", true, true, true));
         qTou.add(new MorseTutorial("在垫按下发送字母S：点点点", "S", true, true, true, "下一个", true, true, true));
         qTou.add(new MorseTutorial("在垫按下发送字母T：破折号", "T", true, true, true, "下一个", true, true, true));
-        qTou.add(new MorseTutorial("在垫按下发送字母U：破折号", "U", true, false, true, "下一个", true, true, true));
+        qTou.add(new MorseTutorial("在垫按下发送字母U：破折号", "U", true, true, true, "下一个", true, true, true));
 
         return qTou;
 
@@ -329,7 +330,7 @@ public class TutorialSteps {
         vToz.add(new MorseTutorial("在垫按下发送字母W：点划线划线", "W", true, true, true, "下一个", true, true, true));
         vToz.add(new MorseTutorial("在垫按下发送字母X：破折号，点划线点", "X", true, true, true, "下一个", true, true, true));
         vToz.add(new MorseTutorial("在垫按下发送字母Y：破折号，点划线划线", "Y", true, true, true, "下一个", true, true, true));
-        vToz.add(new MorseTutorial("在垫按下发送字母Z：破折号破折号点点", "Z", true, false, true, "下一个", true, true, true));
+        vToz.add(new MorseTutorial("在垫按下发送字母Z：破折号破折号点点", "Z", true, true, true, "下一个", true, true, true));
 
         return vToz;
 
@@ -350,7 +351,7 @@ public class TutorialSteps {
         numbers.add(new MorseTutorial("在垫按发送号码6：破折号点点点点", "6", true, false, true, "下一个", true, true, true));
         numbers.add(new MorseTutorial("在垫按发送号码7：破折号点划线点点", "7", true, false, true, "下一个", true, true, true));
         numbers.add(new MorseTutorial("按下键盘发出8号：破折号破折号破折号点点", "8", true, false, true, "下一个", true, true, true));
-        numbers.add(new MorseTutorial("按下键盘发送号码9：短跑冲刺冲刺冲刺点", "9", true, false, true, "下一个", true, true, true));
+        numbers.add(new MorseTutorial("按下键盘发送号码9：短跑冲刺冲刺冲刺点", "9", true, true, true, "下一个", true, true, true));
 
         return numbers;
 

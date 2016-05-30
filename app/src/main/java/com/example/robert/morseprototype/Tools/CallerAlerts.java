@@ -15,13 +15,14 @@ import com.gc.materialdesign.views.Switch;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class CallVibration extends AppCompatActivity {
+public class CallerAlerts extends AppCompatActivity {
 
 
     @Bind(R.id.textView18)       TextView enableDisable;
     @Bind(R.id.vibrateSwitchCall)Switch switchCall;
 
     TinyDB tinyDB;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +52,8 @@ public class CallVibration extends AppCompatActivity {
                     enableDisable.setText("Enabled");
                     tinyDB.putBoolean("vibrate", true);
 
-                    PackageManager pm  = CallVibration.this.getPackageManager();
-                    ComponentName componentName = new ComponentName(CallVibration.this, CallReceiver.class);
+                    PackageManager pm  = CallerAlerts.this.getPackageManager();
+                    ComponentName componentName = new ComponentName(CallerAlerts.this, CallReceiver.class);
                     pm.setComponentEnabledSetting(componentName,PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
                             PackageManager.DONT_KILL_APP);
                     Toast.makeText(getApplicationContext(), "Enabled", Toast.LENGTH_LONG).show();
@@ -62,8 +63,8 @@ public class CallVibration extends AppCompatActivity {
                     enableDisable.setText("Disabled");
                     tinyDB.putBoolean("vibrate", false);
 
-                    PackageManager pm  = CallVibration.this.getPackageManager();
-                    ComponentName componentName = new ComponentName(CallVibration.this, CallReceiver.class);
+                    PackageManager pm  = CallerAlerts.this.getPackageManager();
+                    ComponentName componentName = new ComponentName(CallerAlerts.this, CallReceiver.class);
                     pm.setComponentEnabledSetting(componentName,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
                             PackageManager.DONT_KILL_APP);
                     Toast.makeText(getApplicationContext(), "Disabled", Toast.LENGTH_LONG).show();

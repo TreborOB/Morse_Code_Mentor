@@ -27,8 +27,8 @@
         android:id="@+id/introProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_above="@+id/padIntro"
+        android:minWidth="350dp"
+        android:layout_below="@+id/introButtonPrev"
         android:layout_alignParentEnd="true" />
 
     <TextView
@@ -78,7 +78,7 @@
         android:onClick="onPreviousClicked"
         android:text="@string/previous"
         android:width="100dp"
-        android:layout_above="@+id/introProgressBar"
+        android:layout_below="@+id/tickOne"
         android:layout_toStartOf="@+id/tickTwo" />
 
 
@@ -90,8 +90,8 @@
         android:onClick="onNextClicked"
         android:text="@string/next_introduction"
         android:width="100dp"
-        android:layout_above="@+id/introProgressBar"
-        android:layout_toEndOf="@+id/introTextChar" />
+        android:layout_below="@+id/tickTwo"
+        android:layout_alignStart="@+id/introMorseChar" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -99,7 +99,7 @@
         android:id="@+id/tickTwo"
         android:contentDescription="@string/description"
         android:src="@drawable/blank_tick"
-        android:layout_above="@+id/introButtonNext"
+        android:layout_below="@+id/introMorseChar"
         android:layout_centerHorizontal="true" />
 
     <ImageView
@@ -108,7 +108,7 @@
         android:id="@+id/tickOne"
         android:contentDescription="@string/description"
         android:src="@drawable/blank_tick"
-        android:layout_above="@+id/introButtonPrev"
+        android:layout_below="@+id/introMorseChar"
         android:layout_alignStart="@+id/padIntro" />
 
     <ImageView
@@ -117,7 +117,7 @@
         android:id="@+id/tickThree"
         android:contentDescription="@string/description"
         android:src="@drawable/blank_tick"
-        android:layout_above="@+id/introButtonNext"
+        android:layout_below="@+id/introMorseChar"
         android:layout_alignEnd="@+id/padIntro" />
 
     <com.gc.materialdesign.views.Switch

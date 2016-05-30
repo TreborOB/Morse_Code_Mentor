@@ -53,6 +53,8 @@ public class Sos extends BaseActivity {
         }
     };
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +66,7 @@ public class Sos extends BaseActivity {
         if(Options.getScreenFlashSpeed(this)) {
             Options.setSpeedFast();
         }else{
+
             Options.setSpeedSlow();
         }
 

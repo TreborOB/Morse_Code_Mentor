@@ -45,12 +45,10 @@
     <!--Morse Pad-->
 
     <!--Call Vibration-->
-    <string name="vibrate_incoming">Incoming Caller Vibration</string>
-    <string name="vibrate_instructions">This feature allows the device to vibrate the name or number of incoming phone calls.
-     If the caller is one of your contacts then the name will be vibrated, if not then the incoming phone number will be vibrated.
-
-    Whenever a call is received the device will vibrate 3 times before the actual name or number of the caller is vibrated. This lets you know that the following
-    vibrations are going to be Morse code.</string>
+    <string name="vibrate_incoming">Incoming Caller Alerts</string>
+    <string name="vibrate_instructions">This feature uses the vibrate and flash of the device in order to notify you of incoming calls.
+        If the name of the caller is known then this will be flashed/vibrated otherwise the number will be used. When an incoming call is detected
+        the device will vibrate/flash 3 times - this lets you know that the following sequence will be Morse code.</string>
     <string name="enable_vibration">Enabled</string>
     <!--Call Vibration-->
 
@@ -85,7 +83,7 @@
     <!--tools-->
     <string name="tools_morse_tools">Morse Tools</string>
     <string name="tools_open_screen_flash">Screen Flash</string>
-    <string name="tools_vibrate">Caller Vibration</string>
+    <string name="tools_vibrate">Caller Alerts</string>
     <!--tools-->
 
     <!--training-->

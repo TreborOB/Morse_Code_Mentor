@@ -8,11 +8,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Training.TrainingAdapter">
 
-    <ListView
+    <com.twotoasters.jazzylistview.JazzyListView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:layout_alignParentStart="true">
-    </ListView>
+        android:layout_alignParentStart="true"/>
 
 </RelativeLayout>

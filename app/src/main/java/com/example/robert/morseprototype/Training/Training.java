@@ -6,13 +6,15 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ListView;
 
 import com.example.robert.morseprototype.Database.SnappyDB;
 import com.example.robert.morseprototype.Hardware.Sound;
 import com.example.robert.morseprototype.Options.Options;
 import com.example.robert.morseprototype.R;
 import com.example.robert.morseprototype.SwipeDialogs.MorseSymbols;
+import com.twotoasters.jazzylistview.JazzyListView;
+import com.twotoasters.jazzylistview.effects.ZipperEffect;
+
 import java.util.ArrayList;
 
 
@@ -100,9 +102,10 @@ public class Training extends AppCompatActivity {
         }
 
         adapter = new TrainingAdapter(this, trail);
-        ListView listView = (ListView) findViewById(R.id.list);
-
+        JazzyListView listView = (JazzyListView) findViewById(R.id.list);
         assert listView != null;
+        listView.setTransitionEffect(new ZipperEffect());
+
         listView.setAdapter(adapter);
 
 
@@ -143,10 +146,12 @@ public class Training extends AppCompatActivity {
         super.onResume();
 
         adapter = new TrainingAdapter(this, trail);
-        ListView listView = (ListView) findViewById(R.id.list);
-
+        JazzyListView listView = (JazzyListView) findViewById(R.id.list);
         assert listView != null;
+        listView.setTransitionEffect(new ZipperEffect());
+
         listView.setAdapter(adapter);
+
 
     }
 }
